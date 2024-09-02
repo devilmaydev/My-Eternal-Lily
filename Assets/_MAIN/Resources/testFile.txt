@@ -1,0 +1,14 @@
+Spada "Fala 1"
+"fala 2 do Spada"
+"fala 3 do Spada"
+
+narrator "Narrador falando agora."
+"Narrador continua falando."
+
+João "João 1"
+"João 2"
+
+Maria "Maria 1"
+"Maria 2"
+
+Spada "Fala bem longa tipo bem longa mesmo pra poder testar os o decorrer dos textos mais longos, tipo bem longos mesmo"
