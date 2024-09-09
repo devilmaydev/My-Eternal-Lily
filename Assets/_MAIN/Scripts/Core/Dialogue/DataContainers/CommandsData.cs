@@ -31,9 +31,8 @@ namespace _MAIN.Scripts.Core.Dialogue.DataContainers
 
                 if (cmd.Name.ToLower().StartsWith(WaitCommandId))
                 {
-                    cmd.Name = cmd.Name.Substring(WaitCommandId.Length + 1);
+                    cmd.Name = cmd.Name.Substring(WaitCommandId.Length);
                     cmd.WaitForCompletion = true;
-                    
                 }
                 else
                     cmd.WaitForCompletion = false;
@@ -57,8 +56,8 @@ namespace _MAIN.Scripts.Core.Dialogue.DataContainers
                 {
                     inQuotes = !inQuotes;
                     continue;
-                }
-
+                } 
+                
                 if (!inQuotes && t == ' ')
                 {
                     argList.Add(currentArg.ToString());

@@ -1,7 +1,1 @@
-Spada "Move Left and Right" PrintOneParameter("Star moving") [wait]MoveCharacter(left), [wait]MoveCharacter(right), PrintOneParameter("Movement Done!")
-
-Spada "com(args)"
-Spada "(pensamento)"
-Spada "dialogo" com(args)
-com(args), argcom(yes)
-com("args")
+Spada "Move Left and Right" PrintOneParameter("Start moving"), [wait]MoveCharacter(left), [wait]MoveCharacter(right), PrintOneParameter("Movement Done!")
