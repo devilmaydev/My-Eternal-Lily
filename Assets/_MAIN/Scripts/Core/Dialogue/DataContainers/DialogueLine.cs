@@ -1,22 +1,20 @@
-using System;
-
 namespace _MAIN.Scripts.Core.Dialogue.DataContainers
 {
     public class DialogueLine
     {
-        public string Speaker;
-        public string Dialogue;
-        public string Commands;
+        public SpeakerData SpeakerData;
+        public DialogueData DialogueData;
+        public CommandsData CommandsData;
 
-        public bool HasSpeaker => Speaker != string.Empty;
-        public bool HasDialogue => Dialogue != string.Empty;
-        public bool HasCommands => Commands != string.Empty;
+        public bool HasSpeaker => SpeakerData != null;
+        public bool HasDialogue => DialogueData != null;
+        public bool HasCommands => CommandsData != null;
 
         public DialogueLine(string speaker, string dialogue, string commands)
         {
-            Speaker = speaker;
-            Dialogue = dialogue;
-            Commands = commands;
+            SpeakerData = string.IsNullOrWhiteSpace(speaker) ? null : new SpeakerData(speaker);
+            DialogueData = string.IsNullOrWhiteSpace(dialogue) ? null : new DialogueData(dialogue);
+            CommandsData = string.IsNullOrWhiteSpace(commands) ? null : new CommandsData(commands);
         }
     }
 }

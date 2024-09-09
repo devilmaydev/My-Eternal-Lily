@@ -1,11 +1,12 @@
 using System.Text.RegularExpressions;
 using _MAIN.Scripts.Core.Dialogue.DataContainers;
+using UnityEngine;
 
 namespace _MAIN.Scripts.Core.Dialogue
 {
     public class DialogueParser
     {
-        private const string CommandRegexPattern = @"\w*[^\s]\(";
+        private const string CommandRegexPattern = @"[\w\[\]]*[^\s]\(";
         
         public static DialogueLine Parse(string rawLine)
         {
@@ -40,16 +41,21 @@ namespace _MAIN.Scripts.Core.Dialogue
             }
 
             Regex commandRegex = new(CommandRegexPattern);
-            var match = commandRegex.Match(rawLine);
+            var matches = commandRegex.Matches(rawLine);
             var commandStart = -1;
-            if (match.Success)
+
+            foreach (Match match in matches)
             {
-                commandStart = match.Index;
-
-                if (dialogueStart == -1 && dialogueEnd == -1)
-                    return ("", "", rawLine.Trim());
+                if (match.Index < dialogueStart || match.Index > dialogueEnd)
+                {
+                    commandStart = match.Index;
+                    break;
+                }
             }
-
+            
+            if (commandStart != -1 && dialogueStart == -1 && dialogueEnd == -1)
+                return ("", "", rawLine.Trim());
+            
             if (dialogueStart !=1 && dialogueEnd != -1 && (commandStart == -1 || commandStart > dialogueEnd))
             {
                 speaker = rawLine.Substring(0, dialogueStart).Trim();
@@ -62,7 +68,7 @@ namespace _MAIN.Scripts.Core.Dialogue
             else if (commandStart != -1 && dialogueStart > commandStart)
                 commands = rawLine;
             else
-                speaker = rawLine;
+                dialogue = rawLine;
             
             return (speaker, dialogue, commands);
         }

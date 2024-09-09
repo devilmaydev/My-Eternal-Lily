@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using _MAIN.Scripts.Core.Dialogue.DataContainers;
+using _MAIN.Scripts.Enums;
 using UnityEngine;
 
 namespace _MAIN.Scripts.Core.Dialogue.Managers
@@ -56,28 +57,41 @@ namespace _MAIN.Scripts.Core.Dialogue.Managers
 
                 if (lineParsed.HasCommands)
                     yield return RunCommandsLine(lineParsed);
-                
+
+                if (lineParsed.HasDialogue)
+                    yield return WaitUserInput();
             }
         }
 
         private IEnumerator RunDialogueLine(DialogueLine line)
         {
             if (line.HasSpeaker)
-                _dialogueSystem.ShowSpeakerName(line.Speaker);
+                _dialogueSystem.ShowSpeakerName(line.SpeakerData.DisplayName);
             
-            yield return BuildDialogue(line.Dialogue);
-            yield return WaitUserInput();
+            yield return BuildLineSegments(line.DialogueData);
         }
 
         private IEnumerator RunCommandsLine(DialogueLine line)
         {
-            Debug.Log(line.Commands);
+            var commands = line.CommandsData.Commands;
+
+            foreach (var command in commands)
+            {
+                if (command.WaitForCompletion)
+                    yield return CommandManager.Instance.Execute(command.Name, command.Arguments);
+                else
+                    CommandManager.Instance.Execute(command.Name, command.Arguments);
+            }
+            
             yield return null;
         }
 
-        private IEnumerator BuildDialogue(string dialogue)
+        private IEnumerator BuildDialogue(string dialogue, bool append = false)
         {
-            _textArchitect.Build(dialogue);
+            if (append)
+                _textArchitect.Append(dialogue);
+            else
+                _textArchitect.Build(dialogue);
 
             while (_textArchitect.IsBuilding)
             {
@@ -91,6 +105,33 @@ namespace _MAIN.Scripts.Core.Dialogue.Managers
                     _userPrompt = false;
                 }
                 yield return null;
+            }
+        }
+
+        IEnumerator BuildLineSegments(DialogueData dialogueLineData)
+        {
+            for (int i = 0; i < dialogueLineData.LineSegments.Count; i++)
+            {
+                var segment = dialogueLineData.LineSegments[i];
+                yield return WaitForDialogueSegmentSignalToBeTriggerd(segment);
+                yield return BuildDialogue(segment.Dialogue, segment.AppendText);
+            }
+        }
+
+        IEnumerator WaitForDialogueSegmentSignalToBeTriggerd(DialogueSegment dialogueSegment)
+        {
+            switch (dialogueSegment.StartSignal)
+            {
+                case EStartSignal.NONE:
+                    break;
+                case EStartSignal.C:
+                case EStartSignal.A:
+                    yield return WaitUserInput();
+                    break;
+                case EStartSignal.WC:
+                case EStartSignal.WA:
+                    yield return new WaitForSeconds(dialogueSegment.SignalDelay);
+                    break;
             }
         }
 
