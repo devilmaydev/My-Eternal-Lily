@@ -27,11 +27,13 @@ namespace _MAIN.Scripts.Core.Dialogue.Managers
             _userPrompt = true;
         }
         
-        public void StartConversation(List<string> conversation)
+        public Coroutine StartConversation(List<string> conversation)
         {
             StopConversation();
 
             _process = _dialogueSystem.StartCoroutine(RunningConversation(conversation));
+
+            return _process;
         }
         
         public void StopConversation()

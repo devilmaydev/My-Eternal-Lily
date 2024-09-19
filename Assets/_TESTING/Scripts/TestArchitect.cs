@@ -22,7 +22,7 @@ namespace _TESTING.Scripts
         void Start()
         {
             _dialogueSystem = DialogueSystem.Instance;
-            _architect = new TextArchitect(_dialogueSystem.dialogueContainer.DialogueText)
+            _architect = new TextArchitect(_dialogueSystem.dialogueContainer.dialogueText)
             {
                 BuildMethodChosen = EBuildMethod.Typewriter
             };
