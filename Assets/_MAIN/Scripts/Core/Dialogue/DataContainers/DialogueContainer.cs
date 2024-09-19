@@ -6,9 +6,11 @@ namespace _MAIN.Scripts.Core.Dialogue.DataContainers
     [System.Serializable]
     public class DialogueContainer
     {
-        public GameObject Root;
-        public SpeakerContainer SpeakerText;
-        public TextMeshProUGUI DialogueText;
+        public GameObject root;
+        public NameContainer nameContainer;
+        public TextMeshProUGUI dialogueText;
         
+        public void SetDialogueColor(Color color) => dialogueText.color = color;
+        public void SetDialogueFont(TMP_FontAsset font) => dialogueText.font = font;
     }
 }
