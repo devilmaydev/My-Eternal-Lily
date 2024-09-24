@@ -13,7 +13,16 @@ namespace _MAIN.Scripts.Core.Characters
         private Dictionary<string, Character> _characters = new();
 
         private CharacterConfigSO Config => DialogueSystem.Instance.Config.characterConfigurationAsset;
+        
+        private const string CharacterCastingID = " as ";
+        private const string CharacterNameID = "<charname>";
+        public string CharacterRootPathFormat => $"Characters/{CharacterNameID}";
+        public string CharacterPrefabNameFormat => $"Character - [{CharacterNameID}]";
+        public string CharacterPrefabPathFormat => $"{CharacterRootPathFormat}/{CharacterPrefabNameFormat}";
 
+
+        [SerializeField] private RectTransform characterPanel = null;
+        public RectTransform CharacterPanel => characterPanel;
         private void Awake()
         {
             Instance = this;
@@ -56,11 +65,21 @@ namespace _MAIN.Scripts.Core.Characters
         {
             CharacterInfo result = new CharacterInfo();
 
-            result.Name = characterName;
+            string[] nameData = characterName.Split(CharacterCastingID, System.StringSplitOptions.RemoveEmptyEntries);
+            result.Name = nameData[0];
+            result.CastingName = nameData.Length > 1 ? nameData[1] : result.Name;
 
-            result.Config = Config.GetConfig(characterName);
+            result.Config = Config.GetConfig(result.CastingName);
+
+            result.Prefab = GetPrefabForCharacter(result.CastingName);
 
             return result;
+        }
+        
+        private GameObject GetPrefabForCharacter(string characterName)
+        {
+            string prefabPath = FormatCharacterPath(CharacterPrefabPathFormat, characterName);
+            return Resources.Load<GameObject>(prefabPath);
         }
 
         private Character CreateCharacterFromInfo(CharacterInfo info)
@@ -68,18 +87,21 @@ namespace _MAIN.Scripts.Core.Characters
             return info.Config.characterType switch
             {
                 ECharacterType.Text => new CharacterText(info.Name, info.Config),
-                ECharacterType.Sprite or ECharacterType.SpriteSheet => new CharacterSprite(info.Name, info.Config),
-                ECharacterType.Live2D => new CharacterLive2D(info.Name, info.Config),
-                ECharacterType.Model3D => new CharacterModel3D(info.Name, info.Config),
+                ECharacterType.Sprite or ECharacterType.SpriteSheet => new CharacterSprite(info.Name, info.Config, info.Prefab),
+                ECharacterType.Live2D => new CharacterLive2D(info.Name, info.Config, info.Prefab),
+                ECharacterType.Model3D => new CharacterModel3D(info.Name, info.Config, info.Prefab),
                 _ => null
             };
         }
+        
+        public string FormatCharacterPath(string path, string characterName) => path.Replace(CharacterNameID, characterName);
 
         private class CharacterInfo
         {
             public string Name = "";
-
+            public string CastingName;
             public CharacterConfigData Config;
+            public GameObject Prefab;
         }
     }
 }
