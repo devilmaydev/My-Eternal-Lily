@@ -72,6 +72,8 @@ namespace _MAIN.Scripts.Core.Characters
             result.Config = Config.GetConfig(result.CastingName);
 
             result.Prefab = GetPrefabForCharacter(result.CastingName);
+            
+            result.RootCharacterFolder = FormatCharacterPath(CharacterRootPathFormat, result.CastingName);
 
             return result;
         }
@@ -87,9 +89,9 @@ namespace _MAIN.Scripts.Core.Characters
             return info.Config.characterType switch
             {
                 ECharacterType.Text => new CharacterText(info.Name, info.Config),
-                ECharacterType.Sprite or ECharacterType.SpriteSheet => new CharacterSprite(info.Name, info.Config, info.Prefab),
-                ECharacterType.Live2D => new CharacterLive2D(info.Name, info.Config, info.Prefab),
-                ECharacterType.Model3D => new CharacterModel3D(info.Name, info.Config, info.Prefab),
+                ECharacterType.Sprite or ECharacterType.SpriteSheet => new CharacterSprite(info.Name, info.Config, info.Prefab, info.RootCharacterFolder),
+                ECharacterType.Live2D => new CharacterLive2D(info.Name, info.Config, info.Prefab, info.RootCharacterFolder),
+                ECharacterType.Model3D => new CharacterModel3D(info.Name, info.Config, info.Prefab, info.RootCharacterFolder),
                 _ => null
             };
         }
@@ -100,6 +102,7 @@ namespace _MAIN.Scripts.Core.Characters
         {
             public string Name = "";
             public string CastingName;
+            public string RootCharacterFolder;
             public CharacterConfigData Config;
             public GameObject Prefab;
         }
