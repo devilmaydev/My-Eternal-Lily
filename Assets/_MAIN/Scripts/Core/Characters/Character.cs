@@ -8,19 +8,35 @@ namespace _MAIN.Scripts.Core.Characters
 {
     public abstract class Character
     {
+        public const bool EnableOnStart = true;
+        private const float UnhighlightedDarkenStrength = 0.65f;
+        
         public string Name;
         public string DisplayName;
         public RectTransform Root = null;
         public CharacterConfigData Config;
         public Animator Animator;
         
-        protected Coroutine CoRevealing, CoHiding;
-        protected Coroutine CoMoving;
+        public Color Color { get; protected set; } = Color.white;
+        protected Color DisplayColor => Highlighted ? HighlightedColor : UnhighlightedColor;
+        protected Color HighlightedColor => Color;
+        protected Color UnhighlightedColor => new Color(Color.r * UnhighlightedDarkenStrength, Color.g * UnhighlightedDarkenStrength, Color.b * UnhighlightedDarkenStrength, Color.a);
+        public bool Highlighted { get; protected set; } = true;
         
+        protected Coroutine CoRevealing;
+        protected Coroutine CoHiding;
+        protected Coroutine CoMoving;
+        protected Coroutine CoChangingColor;
+        protected Coroutine CoHighlighting;
+
         public bool IsRevealing => CoRevealing != null;
         public bool IsHiding => CoHiding != null;
         public bool IsMoving => CoMoving != null;
-        public virtual bool IsVisible => false;
+        public bool IsChangingColor => CoChangingColor != null;
+        public bool IsHighlighting => Highlighted && CoHighlighting != null;
+        public bool IsUnHighlighting => !Highlighted && CoHighlighting != null;
+        
+        public virtual bool IsVisible { get; set; }
         
         public DialogueSystem DialogueSystem => DialogueSystem.Instance;
         protected CharacterManager Manager => CharacterManager.Instance;
@@ -151,6 +167,63 @@ namespace _MAIN.Scripts.Core.Characters
             Vector2 maxAnchorTarget = minAnchorTarget + padding;
 
             return (minAnchorTarget, maxAnchorTarget);
+        }
+        
+        public virtual void SetColor(Color color)
+        {
+            Color = color;
+        }
+
+        // public Coroutine TransitionColor(Color color, float speed = 1f)
+        // {
+        //     Color = color;
+        //
+        //     if (IsChangingColor)
+        //         CharacterManager.StopCoroutine(CoChangingColor);
+        //
+        //     CoChangingColor = CharacterManager.StartCoroutine(ChangingColor(DisplayColor, speed));
+        //
+        //     return CoChangingColor;
+        // }
+
+        public virtual IEnumerator ChangingColor(Color color, float speed)
+        {
+            Debug.Log("Color changing is not applicable on this character type!");
+            yield return null;
+        }
+
+        // public Coroutine Highlight(float speed = 1f)
+        // {
+        //     if (IsHighlighting)
+        //         return CoHighlighting;
+        //
+        //     if (IsUnHighlighting)
+        //         CharacterManager.StopCoroutine(CoHighlighting);
+        //
+        //     Highlighted = true;
+        //     CoHighlighting = CharacterManager.StartCoroutine(Highlighting(Highlighted, speed));
+        //
+        //     return CoHighlighting;
+        // }
+        //
+        // public Coroutine UnHighlight(float speed = 1f)
+        // {
+        //     if (IsUnHighlighting)
+        //         return CoHighlighting;
+        //
+        //     if (IsHighlighting)
+        //         CharacterManager.StopCoroutine(CoHighlighting);
+        //
+        //     Highlighted = false;
+        //     CoHighlighting = CharacterManager.StartCoroutine(Highlighting(Highlighted, speed));
+        //
+        //     return CoHighlighting;
+        // }
+
+        public virtual IEnumerator Highlighting(bool highlight, float speedMultiplier)
+        {
+            Debug.Log("Highlighting is not available on this character type!");
+            yield return null;
         }
     }
 }

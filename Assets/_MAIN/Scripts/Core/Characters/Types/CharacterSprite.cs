@@ -1,17 +1,101 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using _MAIN.Scripts.Enums;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _MAIN.Scripts.Core.Characters.Types
 {
     public class CharacterSprite : Character
     {
+        private const string SpriteRendererParentName = "Renderer";
+        private const string SpritesheetDefaultSheetname = "Default";
+        private const char SpritesheetTEXSpriteDelimitter = '-';
         private CanvasGroup RootCg => Root.GetComponent<CanvasGroup>();
 
-        public CharacterSprite(string name, CharacterConfigData config, GameObject prefab) : base(name, config, prefab)
+        public List<CharacterSpriteLayer> Layers = new ();
+
+        private string _artAssetsDirectory = "";
+
+        public override bool IsVisible
+        {
+            get => IsRevealing || RootCg.alpha == 1;
+            set => RootCg.alpha = value ? 1 : 0;
+        }
+
+
+        public CharacterSprite(string name, CharacterConfigData config, GameObject prefab, string rootAssetsFolder) : base(name, config, prefab)
         {
             RootCg.alpha = 0;
             
+            RootCg.alpha = EnableOnStart ? 1 : 0;
+            _artAssetsDirectory = rootAssetsFolder + "/Images";
+
+            GetLayers();
+            
             Debug.Log($"Created Sprite Character: '{name}'");
+        }
+        
+        private void GetLayers()
+        {
+            Transform rendererRoot = Animator.transform.Find(SpriteRendererParentName);
+
+            if (rendererRoot == null)
+                return;
+
+            for (int i = 0; i < rendererRoot.transform.childCount; i++)
+            {
+                Transform child = rendererRoot.transform.GetChild(i);
+
+                Image rendererImage = child.GetComponent<Image>();
+
+                if (rendererImage != null)
+                {
+                    CharacterSpriteLayer layer = new CharacterSpriteLayer(rendererImage, i);
+                    Layers.Add(layer);
+                    child.name = $"Layer: {i}";
+                }
+            }
+        }
+
+        public void SetSprite(Sprite sprite, int layer = 0)
+        {
+            Layers[layer].SetSprite(sprite);
+        }
+
+        public Sprite GetSprite(string spriteName)
+        {
+            if (Config.characterType == ECharacterType.SpriteSheet)
+            {
+                string[] data = spriteName.Split(SpritesheetTEXSpriteDelimitter);
+                Sprite[] spriteArray = new Sprite[0]; 
+
+                if (data.Length == 2)
+                {
+                    string textureName = data[0];
+                    spriteName = data[1];
+                    spriteArray = Resources.LoadAll<Sprite>($"{_artAssetsDirectory}/{textureName}");
+                }
+                else
+                {
+                    spriteArray = Resources.LoadAll<Sprite>($"{_artAssetsDirectory}/{SpritesheetDefaultSheetname}");
+                }
+
+                if (spriteArray.Length == 0)
+                    Debug.LogWarning($"Character '{Name}' does not have a default art asset called '{SpritesheetDefaultSheetname}'");
+
+                return Array.Find(spriteArray, sprite => sprite.name == spriteName);
+            }
+            else
+                return Resources.Load<Sprite>($"{_artAssetsDirectory}/{spriteName}");
+        }
+
+        public Coroutine TransitionSprite(Sprite sprite, int layer = 0, float speed = 1)
+        {
+            CharacterSpriteLayer spriteLayer = Layers[layer];
+
+            return spriteLayer.TransitionSprite(sprite, speed);
         }
 
         public override IEnumerator ShowingOrHiding(bool show)
