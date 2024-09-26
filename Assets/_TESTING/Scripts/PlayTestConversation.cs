@@ -15,7 +15,7 @@ public class PlayTestConversation : MonoBehaviour
         var Avo = CharacterManager.Instance.CreateCharacter("Avó") as CharacterSprite;
         var Alex = CharacterManager.Instance.CreateCharacter("Alex") as CharacterSprite;
         var Nano = CharacterManager.Instance.CreateCharacter("Nano") as CharacterSprite;
-        var Bona = CharacterManager.Instance.CreateCharacter("Bona") as CharacterText;
+        var Bona = CharacterManager.Instance.CreateCharacter("Bona") as CharacterSprite;
         var Cliente = CharacterManager.Instance.CreateCharacter("Cliente") as CharacterText;
         
         var panel = GraphicPanelManager.Instance.GetPanel("Background");
@@ -27,7 +27,8 @@ public class PlayTestConversation : MonoBehaviour
         Mae.SetPosition(new Vector2(1.2f, 0f));
         Avo.SetPosition(new Vector2(1.2f, 0f));
         Alex.SetPosition(new Vector2(1.2f, 0f));
-        Nano.SetPosition(new Vector2(1.2f, 0f));
+        Nano.SetPosition(new Vector2(1.2f, 0f));        
+        Bona.SetPosition(new Vector2(1.4f, 0f));
         
         yield return DialogueSystem.Instance.Say("narrator", "Som de despertador");
         yield return DialogueSystem.Instance.Say("narrator", "Conor acorda e desliga o despertador");
@@ -158,6 +159,8 @@ public class PlayTestConversation : MonoBehaviour
         
         Spada.SetSprite(Spada.GetSprite("work_idle"));
         
+        Bona.MoveToPosition(new Vector2(0.8f, 0f));
+
         yield return DialogueSystem.Instance.Say("narrator", "Bona, amiga do Conor, entra em cena");
         
         yield return Bona.Say("Nem me fala. Plena quarta-feira de tarde e esse lugar lotado. {a}Eita povo desocupado.");
@@ -203,7 +206,8 @@ public class PlayTestConversation : MonoBehaviour
         yield return Spada.Say("Vou ficar no balcão cuidando dos drinks e servindo umas mesas.");
         yield return Bona.Say("Bem, então boa sorte. Até amanhã!");
         
-        yield return Spada.MoveToPosition(new Vector2(-0.2f, 0f));
+        Spada.MoveToPosition(new Vector2(-0.2f, 0f));
+        Bona.MoveToPosition(new Vector2(1.4f, 0f));
         
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/bar_noite", blendingTexture: bTPitchBlack);
