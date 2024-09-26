@@ -24,7 +24,7 @@ public class PlayTestConversation : MonoBehaviour
         var bTPitchBlack = Resources.Load<Texture>("Graphics/Transition Effects/pitchBlack");
         
         Spada.SetPosition(new Vector2(-1f, 0f));
-        Mae.SetPosition(new Vector2(1.2f, 0f));
+        Mae.SetPosition(new Vector2(1.3f, 0f));
         Avo.SetPosition(new Vector2(1.2f, 0f));
         Alex.SetPosition(new Vector2(1.2f, 0f));
         Nano.SetPosition(new Vector2(1.2f, 0f));        
@@ -103,7 +103,7 @@ public class PlayTestConversation : MonoBehaviour
         yield return Spada.Say("Quem sabe ela já acordou nessa hora. Vou lá dar uma olhada.");
         
         Spada.MoveToPosition(new Vector2(-0.2f, 0f));
-        Mae.MoveToPosition(new Vector2(1.2f, 0f), speed: 4f);
+        Mae.MoveToPosition(new Vector2(1.3f, 0f), speed: 4f);
         Mae.Hide();
         
         yield return new WaitForSeconds(1);
@@ -365,7 +365,7 @@ public class PlayTestConversation : MonoBehaviour
         yield return DialogueSystem.Instance.Say("narrator", "Conor volta para casa, permanecendo em silêncio durante o caminho todo.");
         yield return DialogueSystem.Instance.Say("narrator", "A porta abre e fecha com um baque, e lá estava ele, derrotado.");
         
-        Mae.SetPosition(new Vector2(1.2f, 0f));
+        Mae.SetPosition(new Vector2(1.3f, 0f));
         Mae.Show();
         Mae.MoveToPosition(new Vector2(0.8f, 0f));
         
@@ -403,7 +403,7 @@ public class PlayTestConversation : MonoBehaviour
         
         Spada.Hide();
         Mae.Hide();
-        Mae.MoveToPosition(new Vector2(1.2f, 0f));
+        Mae.MoveToPosition(new Vector2(1.3f, 0f));
         Spada.MoveToPosition(new Vector2(-0.2f, 0f));
         
         yield return new WaitForSeconds(1);
