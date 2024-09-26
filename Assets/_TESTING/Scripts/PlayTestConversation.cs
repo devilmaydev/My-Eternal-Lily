@@ -30,8 +30,8 @@ public class PlayTestConversation : MonoBehaviour
         Nano.SetPosition(new Vector2(1.2f, 0f));        
         Bona.SetPosition(new Vector2(1.4f, 0f));
         
-        yield return DialogueSystem.Instance.Say("narrator", "Som de despertador");
-        yield return DialogueSystem.Instance.Say("narrator", "Conor acorda e desliga o despertador");
+        yield return DialogueSystem.Instance.Say("narrator", "Conor acorda, ouvindo seu despertador tocar, fazendo o som repetitivo que o incomodava toda manhã.");
+        yield return DialogueSystem.Instance.Say("narrator", "Lentamente ele ergue o braço, procurando pelo despertador, sem querer abrir os olhos, até finalmente desligá-lo.");
 
         bgMainLayer.SetTexture("Graphics/PlayTest/quarto_spada", blendingTexture: bTPitchBlack);
         
@@ -48,7 +48,7 @@ public class PlayTestConversation : MonoBehaviour
         Spada.SetSprite(Spada.GetSprite("spada_surprised"));
         yield return Spada.Say("Tô indo!");
         
-        yield return DialogueSystem.Instance.Say("narrator", "Conor levanta depressa e percebe o braço ciborgue fazendo barulhos estranhos");
+        yield return DialogueSystem.Instance.Say("narrator", "Conor levanta depressa e percebe o braço ciborgue fazendo barulhos estranhos.");
         
         Spada.SetSprite(Spada.GetSprite("spada_thinking"));
         
@@ -59,8 +59,8 @@ public class PlayTestConversation : MonoBehaviour
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/cozinha", blendingTexture: bTPitchBlack);
         
-        yield return DialogueSystem.Instance.Say("narrator", "Sala da casa dos Spada.");
-        yield return DialogueSystem.Instance.Say("narrator", "Conor entra na sala.");
+        yield return DialogueSystem.Instance.Say("narrator", "Na sala da casa dos Spada...");
+        yield return DialogueSystem.Instance.Say("narrator", "Conor entra na sala, nervoso só de pensar na bronca que levaria por demorar para levantar.");
         
         Spada.MoveToPosition(new Vector2(0.2f, 0f));
         
@@ -91,7 +91,7 @@ public class PlayTestConversation : MonoBehaviour
         yield return Spada.Say("Mãe, a gente é pobre...");
         yield return Mae.Say("De dinheiro, não da mente.");
         
-        yield return DialogueSystem.Instance.Say("narrator", "Silêncio Constrangedor...");
+        yield return DialogueSystem.Instance.Say("narrator", ".................................");
         
         Spada.SetSprite(Spada.GetSprite("spada_idle"));
         
@@ -109,11 +109,11 @@ public class PlayTestConversation : MonoBehaviour
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/quarto_vo", blendingTexture: bTPitchBlack);
         
-        yield return DialogueSystem.Instance.Say("narrator", "Quarto da Avó");
+        yield return DialogueSystem.Instance.Say("narrator", "Indo para o andar de cima, Conor para em frente ao quarto da avó, e dá leves batidas na porta antes de entrar.");
         
         yield return Spada.MoveToPosition(new Vector2(0.2f, 0f));
         
-        yield return DialogueSystem.Instance.Say("narrator", "Som de batidas");
+        yield return DialogueSystem.Instance.Say("narrator", "Toc, toc, toc.");
         
         yield return Spada.Say("Vó? {a}Tá acordada?");
         
@@ -146,8 +146,8 @@ public class PlayTestConversation : MonoBehaviour
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/bar_manha", blendingTexture: bTPitchBlack);
         
-        yield return DialogueSystem.Instance.Say("narrator", "Bar e Café Barão");
-        yield return DialogueSystem.Instance.Say("narrator", "Música de bar chique e sons de pessoas conversando");
+        yield return DialogueSystem.Instance.Say("narrator", "Após um longo dia de expediente no bar e café Barão, Conor e sua amiga Bona tiveram um momento mais tranquilo.");
+        yield return DialogueSystem.Instance.Say("narrator", "Depois de atenderem todos os clientes, eles pararam para conversar.");
         
         Spada.SetSprite(Spada.GetSprite("work_idle"));
         
@@ -161,7 +161,7 @@ public class PlayTestConversation : MonoBehaviour
         
         Bona.MoveToPosition(new Vector2(0.8f, 0f));
 
-        yield return DialogueSystem.Instance.Say("narrator", "Bona, amiga do Conor, entra em cena");
+        yield return DialogueSystem.Instance.Say("narrator", "Bona vira para Conor, arrumando-se em sua cadeira.");
         
         yield return Bona.Say("Nem me fala. Plena quarta-feira de tarde e esse lugar lotado. {a}Eita povo desocupado.");
         yield return Bona.Say("Cê tava a todo vapor fazendo as bebidas lá trás.");
@@ -184,7 +184,7 @@ public class PlayTestConversation : MonoBehaviour
         
         Spada.SetSprite(Spada.GetSprite("work_idle"));
         
-        yield return DialogueSystem.Instance.Say("narrator", "Bona envia por mensagem uma imagem da fachada de uma loja");
+        yield return DialogueSystem.Instance.Say("narrator", "Ela envia por mensagem uma imagem da fachada de uma loja.");
         
         Spada.SetSprite(Spada.GetSprite("work_thinking"));
         
@@ -264,7 +264,7 @@ public class PlayTestConversation : MonoBehaviour
         yield return Nano.MoveToPosition(new Vector2(1.2f, 0f));
         yield return Spada.MoveToPosition(new Vector2(-0.2f, 0f));
         
-        yield return DialogueSystem.Instance.Say("narrator", "Conor prepara o drink.");
+        yield return DialogueSystem.Instance.Say("narrator", "Conor prepara o drink, com todo cuidado possível.");
         
         yield return Spada.MoveToPosition(new Vector2(0.5f, 0f));
         
@@ -280,7 +280,7 @@ public class PlayTestConversation : MonoBehaviour
         yield return Spada.Say("Meu braço não deu mais problema desde manhã… Mas se eu continuar sem usar ele, talvez ele fique ainda mais bixado…");
         yield return Spada.Say("............");
         
-        yield return DialogueSystem.Instance.Say("narrator", "Som de metal batendo de leve contra vidro quando Conor segura o copo com o braço mecânico");
+        yield return DialogueSystem.Instance.Say("narrator", "Tentando sua sorte, Conor segura o copo com firmeza utilizando seu braço mecânico, tomando o máximo de cuidado para levá-lo ao cliente.");
         
         Spada.SetSprite(Spada.GetSprite("alt_work_idle"));
         
@@ -291,14 +291,14 @@ public class PlayTestConversation : MonoBehaviour
         
         yield return Spada.Say("Prontinho! Aqui sua bebida, moço-");
         
-        yield return DialogueSystem.Instance.Say("narrator", "Som de metal batendo de leve contra vidro quando Conor segura o copo com o braço mecânico");
+        yield return DialogueSystem.Instance.Say("narrator", "O som de metal batendo de leve contra vidro ecoava no ouvido do garoto, que nem percebia seu braço mecânico tremer enquanto apertava o copo cada vez mais.");
         
         yield return Nano.MoveToPosition(new Vector2(0.8f, 0f));
         
         yield return Nano.Say("Cê tá bem?");
         yield return Spada.Say("O quê-");
         
-        yield return DialogueSystem.Instance.Say("narrator", "O copo explode na mão de Conor e o líquido cai no colo de Nano");
+        yield return DialogueSystem.Instance.Say("narrator", "O copo explode na mão de Conor e o líquido cai no colo do cliente.");
         
         Nano.SetSprite(Nano.GetSprite("nano_upset"));
         Spada.SetSprite(Spada.GetSprite("alt_work_shock"));
@@ -314,7 +314,7 @@ public class PlayTestConversation : MonoBehaviour
         Nano.SetSprite(Nano.GetSprite("nano_upset"));
         yield return Nano.Say("Eu disse que tá tudo bem, entendeu?");
         
-        yield return DialogueSystem.Instance.Say("narrator", "Nano deixa algumas moedas no balcão");
+        yield return DialogueSystem.Instance.Say("narrator", "Irritado, o homem apenas deixa algumas moedas na mesa e se retira.");
         
         yield return Nano.MoveToPosition(new Vector2(1.2f, 0f));
         yield return Spada.MoveToPosition(new Vector2(0.5f, 0f), 2f, true);
@@ -325,7 +325,7 @@ public class PlayTestConversation : MonoBehaviour
         Spada.SetSprite(Spada.GetSprite("alt_work_laugh"));
         yield return Spada.Say("Bom, dinheiro é dinheiro.");
         
-        yield return DialogueSystem.Instance.Say("narrator", "Conor pega as moedas");
+        yield return DialogueSystem.Instance.Say("narrator", "Conor pega as moedas, visivelmente confuso e volta para o balcão.");
         
         Spada.SetSprite(Spada.GetSprite("alt_work_idle"));
         
@@ -335,8 +335,8 @@ public class PlayTestConversation : MonoBehaviour
         
         yield return Spada.Say("Ah sim, claro!");
         
-        yield return DialogueSystem.Instance.Say("narrator", "Conor sai correndo de trás do balcão");
-        yield return DialogueSystem.Instance.Say("narrator", "Algumas faíscas começam a sair do braço mecânico e fazer barulhos de máquina rangendo");
+        yield return DialogueSystem.Instance.Say("narrator", "Atendendo o chamado de outro cliente, ele sai correndo de trás do balcão.");
+        yield return DialogueSystem.Instance.Say("narrator", "No entanto, algumas faíscas começam a sair do braço mecânico e barulhos de máquina rangendo se misturam com a música do bar.");
         
         Spada.SetSprite(Spada.GetSprite("alt_work_shock"));
         
@@ -345,13 +345,13 @@ public class PlayTestConversation : MonoBehaviour
         
         Spada.SetSprite(Spada.GetSprite("alt_work_surprised"));
         
-        yield return DialogueSystem.Instance.Say("narrator", "O braço começa a se mexer sozinho e acaba acertando o cliente");
+        yield return DialogueSystem.Instance.Say("narrator", "Sem controle algum, o braço do garoto começa a mover-se sozinho, e acerta o rosto do cliente.");
         
         yield return Cliente.Say("AAAAAAAAAAAAH MEU OLHO!!!");
         yield return Spada.Say("MEU DEUS, VOCÊ TA BEM!?");
         yield return Cliente.Say("É CLARO QUE NÃO! TU ME DEU UM SOCO, CARA! CÊ TÁ MALUCO!?");
         
-        yield return DialogueSystem.Instance.Say("narrator", "Pessoas cochichando e tentando ajudar o Cliente");
+        yield return DialogueSystem.Instance.Say("narrator", "Pessoas começam a falar entre si, cochichando, apontando para Conor e tentando ajudar o homem que acabara de ser golpeado.");
         
         yield return Spada.Say("Ai, minha nossa, eu sinto muito! Eu não sei o que aconteceu com o meu braço.");
         yield return Cliente.Say("CADÊ O GERENTE!? EU VOU PROCESSAR ESSE LUGAR! MEU PAI É ADVOGADO! {a}NÃO, EU VOU PROCESSAR VOCÊ, SEU FILHO DA PUTA! VOCÊ VAI PAGAR POR ISSO!");
@@ -362,8 +362,8 @@ public class PlayTestConversation : MonoBehaviour
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/cozinha", blendingTexture: bTPitchBlack);
         
-        yield return DialogueSystem.Instance.Say("narrator", "Casa dos Spada");
-        yield return DialogueSystem.Instance.Say("narrator", "A porta abre e fecha com um baque");
+        yield return DialogueSystem.Instance.Say("narrator", "Conor volta para casa, permanecendo em silêncio durante o caminho todo.");
+        yield return DialogueSystem.Instance.Say("narrator", "A porta abre e fecha com um baque, e lá estava ele, derrotado.");
         
         Mae.SetPosition(new Vector2(1.2f, 0f));
         Mae.Show();
@@ -409,8 +409,8 @@ public class PlayTestConversation : MonoBehaviour
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/quarto_spada", blendingTexture: bTPitchBlack);
         
-        yield return DialogueSystem.Instance.Say("narrator", "Quarto do Conor");
-        yield return DialogueSystem.Instance.Say("narrator", "Som de porta abrindo e fechando");
+        yield return DialogueSystem.Instance.Say("narrator", "Se sentindo ainda pior, Conor sobe para seu quarto.");
+        yield return DialogueSystem.Instance.Say("narrator", "Gentilmente, ele abre e fecha a porta, sem fazer muito barulho.");
         
         Spada.MoveToPosition(new Vector2(0.5f, 0f));
         Spada.Show();
@@ -427,16 +427,16 @@ public class PlayTestConversation : MonoBehaviour
         Spada.MoveToPosition(new Vector2(-0.2f, 0f));
         Spada.Hide();
         
-        yield return DialogueSystem.Instance.Say("narrator", "Conor fecha os olhos");
-        yield return DialogueSystem.Instance.Say("narrator", "Barulho de notificação de mensagem");
-        yield return DialogueSystem.Instance.Say("narrator", "Conor abre os olhos");
+        yield return DialogueSystem.Instance.Say("narrator", "Conor fecha os olhos, tentando dormir na esperança de se sentir um pouco melhor no dia seguinte.");
+        yield return DialogueSystem.Instance.Say("narrator", "No entanto, o barulho de notificação de mensagem faz com que ele abra os olhos mais uma vez.");
+        yield return DialogueSystem.Instance.Say("narrator", "Ele pega o celular sem muitas expectativas.");
         yield return DialogueSystem.Instance.Say("narrator", "[NOVA MENSAGEM DE BONA:\nAmg! Esqueci de te mandar o link do Enstragrama daquela loja q te falei\nDá uma olhada lá depois bjsssss <3]");
         yield return Spada.Say("Não resta outra opção, né?");
         
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/rua_republica", blendingTexture: bTPitchBlack);
         
-        yield return DialogueSystem.Instance.Say("narrator", "No dia seguinte...");
+        yield return DialogueSystem.Instance.Say("narrator", "No dia seguinte, Conor se levanta, e sai para trabalhar... se é que sair para arrumar o braço é trabalhar.");
         
         Spada.SetSprite(Spada.GetSprite("spada_thinking"));
         Spada.Show();
@@ -454,7 +454,7 @@ public class PlayTestConversation : MonoBehaviour
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/loja_frente", blendingTexture: bTPitchBlack);
         
-        yield return DialogueSystem.Instance.Say("narrator", "Spada se encontra de frente para a loja.");
+        yield return DialogueSystem.Instance.Say("narrator", "Parado em frente a uma loja, Conor observa a fachada antiga e ultrapassada, não confiando muito na procedência do lugar.");
         
         Spada.SetSprite(Spada.GetSprite("spada_idle"));
         
@@ -463,14 +463,14 @@ public class PlayTestConversation : MonoBehaviour
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/loja_interior", blendingTexture: bTPitchBlack);
         
-        yield return DialogueSystem.Instance.Say("narrator", "Dentro da loja");
+        yield return DialogueSystem.Instance.Say("narrator", "Dentro da loja, ele olha para os lados, procurando alguém que pudesse atendê-lo.");
         
         Spada.Show();
         Spada.MoveToPosition(new Vector2(0.2f, 0f));
         
         yield return Spada.Say("Oi? Licença?");
         
-        yield return DialogueSystem.Instance.Say("narrator", "Silêncio...");
+        yield return DialogueSystem.Instance.Say("narrator", "...............");
         
         Spada.SetSprite(Spada.GetSprite("spada_thinking"));
         
@@ -528,8 +528,8 @@ public class PlayTestConversation : MonoBehaviour
         yield return Alex.Hide();
         
         //Escolha A
-        yield return DialogueSystem.Instance.Say("narrator", "Conor espera.");
-        yield return DialogueSystem.Instance.Say("narrator", "Som de mensagem");
+        yield return DialogueSystem.Instance.Say("narrator", "Ele apenas aguarda por Alex, ansiosamente mexendo os pés.");
+        yield return DialogueSystem.Instance.Say("narrator", "De repente, som de uma mensagem vem de seu celular.");
         yield return DialogueSystem.Instance.Say("narrator", "[NOVA MENSAGEM DE BONA:\nE aí???????]");
         
         yield return Spada.Say("Eu tô aqui na loja já. Veio uma mulher super maneira falar comigo e na realidade era uma IA super avançada!");
@@ -541,7 +541,7 @@ public class PlayTestConversation : MonoBehaviour
         
         yield return DialogueSystem.Instance.Say("narrator", "[Tá bom!! <3]");
         
-        yield return DialogueSystem.Instance.Say("narrator", "Uma voz surge.");
+        yield return DialogueSystem.Instance.Say("narrator", "Uma voz surge do segundo andar da loja, junto do som de passos de alguém descendo escadas.");
         
         yield return Nano.Say("Espero que cê não esteja fazendo esse fuzuê todo por causa de outro mendigo que queria usar o banheiro…");
         yield return Alex.Say("Dessa vez não é! Eu juro!");
@@ -585,8 +585,8 @@ public class PlayTestConversation : MonoBehaviour
         yield return Spada.Say("'Ele não parece que tá bravo mais…'");
         Spada.SetSprite(Spada.GetSprite("spada_idle"));
         
-        yield return DialogueSystem.Instance.Say("narrator", "Conor remove o braço e coloca no balcão");
-        yield return DialogueSystem.Instance.Say("narrator", "Silêncio enquanto Nano analisa o braço");
+        yield return DialogueSystem.Instance.Say("narrator", "Conor remove o braço e coloca no balcão.");
+        yield return DialogueSystem.Instance.Say("narrator", "Em silêncio, Nano começa a analisar cada parte daquele braço, junto de Alex.");
         
         yield return Nano.Say("Quê que você acha?");
         
@@ -692,7 +692,7 @@ public class PlayTestConversation : MonoBehaviour
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/loja_frente", blendingTexture: bTPitchBlack);
         
-        yield return DialogueSystem.Instance.Say("narrator", "Do lado de fora da loja.");
+        yield return DialogueSystem.Instance.Say("narrator", "Do lado de fora da loja, Conor resmungava consigo mesmo, caminhando até a entrada do metrô com seu braço velho em mãos.");
         
         Spada.SetSprite(Spada.GetSprite("spada_shock"));
         Spada.Show();
@@ -744,7 +744,7 @@ public class PlayTestConversation : MonoBehaviour
         yield return new WaitForSeconds(1);
         bgMainLayer.SetTexture("Graphics/PlayTest/loja_interior", blendingTexture: bTPitchBlack);
         
-        yield return DialogueSystem.Instance.Say("narrator", "Dentro da loja.");
+        yield return DialogueSystem.Instance.Say("narrator", "Conor retorna para a loja, seguido da IA que o guiava de volta.");
         
         Alex.SetSprite(Alex.GetSprite("alex_laugh"));
         Spada.SetSprite(Spada.GetSprite("spada_idle"));      
