@@ -39,7 +39,7 @@ namespace _MAIN.Scripts.Core.Characters
         public virtual bool IsVisible { get; set; }
         
         public DialogueSystem DialogueSystem => DialogueSystem.Instance;
-        protected CharacterManager Manager => CharacterManager.Instance;
+        protected CharacterManager CharacterManager => CharacterManager.Instance;
         
 
         public Character(string name, CharacterConfigData config, GameObject prefab)
@@ -50,8 +50,8 @@ namespace _MAIN.Scripts.Core.Characters
             
             if (prefab != null)
             {
-                GameObject ob = Object.Instantiate(prefab, Manager.CharacterPanel);
-                ob.name = Manager.FormatCharacterPath(Manager.CharacterPrefabNameFormat, name);
+                GameObject ob = Object.Instantiate(prefab, CharacterManager.CharacterPanel);
+                ob.name = CharacterManager.FormatCharacterPath(CharacterManager.CharacterPrefabNameFormat, name);
                 ob.SetActive(true);
                 Root = ob.GetComponent<RectTransform>();
                 Animator = Root.GetComponentInChildren<Animator>();
@@ -79,9 +79,9 @@ namespace _MAIN.Scripts.Core.Characters
                 return CoRevealing;
 
             if (IsHiding)
-                Manager.StopCoroutine(CoHiding);
+                CharacterManager.StopCoroutine(CoHiding);
 
-            CoRevealing = Manager.StartCoroutine(ShowingOrHiding(true));
+            CoRevealing = CharacterManager.StartCoroutine(ShowingOrHiding(true));
 
             return CoRevealing;
         }
@@ -92,9 +92,9 @@ namespace _MAIN.Scripts.Core.Characters
                 return CoHiding;
 
             if (IsRevealing)
-                Manager.StopCoroutine(CoRevealing);
+                CharacterManager.StopCoroutine(CoRevealing);
 
-            CoHiding = Manager.StartCoroutine(ShowingOrHiding(false));
+            CoHiding = CharacterManager.StartCoroutine(ShowingOrHiding(false));
 
             return CoHiding;
         }
@@ -122,9 +122,9 @@ namespace _MAIN.Scripts.Core.Characters
                 return null;
 
             if (IsMoving)
-                Manager.StopCoroutine(CoMoving);
+                CharacterManager.StopCoroutine(CoMoving);
 
-            CoMoving = Manager.StartCoroutine(MovingToPosition(positon, speed, smooth));
+            CoMoving = CharacterManager.StartCoroutine(MovingToPosition(positon, speed, smooth));
 
             return CoMoving;
         }
@@ -174,17 +174,17 @@ namespace _MAIN.Scripts.Core.Characters
             Color = color;
         }
 
-        // public Coroutine TransitionColor(Color color, float speed = 1f)
-        // {
-        //     Color = color;
-        //
-        //     if (IsChangingColor)
-        //         CharacterManager.StopCoroutine(CoChangingColor);
-        //
-        //     CoChangingColor = CharacterManager.StartCoroutine(ChangingColor(DisplayColor, speed));
-        //
-        //     return CoChangingColor;
-        // }
+        public Coroutine TransitionColor(Color color, float speed = 1f)
+        {
+            Color = color;
+        
+            if (IsChangingColor)
+                CharacterManager.StopCoroutine(CoChangingColor);
+        
+            CoChangingColor = CharacterManager.StartCoroutine(ChangingColor(DisplayColor, speed));
+        
+            return CoChangingColor;
+        }
 
         public virtual IEnumerator ChangingColor(Color color, float speed)
         {
@@ -192,33 +192,33 @@ namespace _MAIN.Scripts.Core.Characters
             yield return null;
         }
 
-        // public Coroutine Highlight(float speed = 1f)
-        // {
-        //     if (IsHighlighting)
-        //         return CoHighlighting;
-        //
-        //     if (IsUnHighlighting)
-        //         CharacterManager.StopCoroutine(CoHighlighting);
-        //
-        //     Highlighted = true;
-        //     CoHighlighting = CharacterManager.StartCoroutine(Highlighting(Highlighted, speed));
-        //
-        //     return CoHighlighting;
-        // }
-        //
-        // public Coroutine UnHighlight(float speed = 1f)
-        // {
-        //     if (IsUnHighlighting)
-        //         return CoHighlighting;
-        //
-        //     if (IsHighlighting)
-        //         CharacterManager.StopCoroutine(CoHighlighting);
-        //
-        //     Highlighted = false;
-        //     CoHighlighting = CharacterManager.StartCoroutine(Highlighting(Highlighted, speed));
-        //
-        //     return CoHighlighting;
-        // }
+        public Coroutine Highlight(float speed = 1f)
+        {
+            if (IsHighlighting)
+                return CoHighlighting;
+        
+            if (IsUnHighlighting)
+                CharacterManager.StopCoroutine(CoHighlighting);
+        
+            Highlighted = true;
+            CoHighlighting = CharacterManager.StartCoroutine(Highlighting(Highlighted, speed));
+        
+            return CoHighlighting;
+        }
+        
+        public Coroutine UnHighlight(float speed = 1f)
+        {
+            if (IsUnHighlighting)
+                return CoHighlighting;
+        
+            if (IsHighlighting)
+                CharacterManager.StopCoroutine(CoHighlighting);
+        
+            Highlighted = false;
+            CoHighlighting = CharacterManager.StartCoroutine(Highlighting(Highlighted, speed));
+        
+            return CoHighlighting;
+        }
 
         public virtual IEnumerator Highlighting(bool highlight, float speedMultiplier)
         {
