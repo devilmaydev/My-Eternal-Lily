@@ -14,7 +14,7 @@ Connor Spada [tired] "É isso, tô ferrado…"
 
 ClearLayerMedia(background -spd 0.5 -blend sides), Connor Spada.Hide()
 
-Narrator "Connor fecha os olhos"
+Narrator "Connor fecha os olhos, tentando dormir para ao menos descansar depois de um dia terrível."
 
 Narrator "..................."
 
@@ -22,7 +22,7 @@ wait(1)
 
 PlaySFX(message_in)
 
-Narrator "Connor abre os olhos"
+Narrator "Connor abre os olhos ao ouvir o barulho da mensagem vindo de seu celular. Curioso, ele estica o braço e pega o celular."
 
 SetLayerMedia(background "quarto spada" -blend sides)
 

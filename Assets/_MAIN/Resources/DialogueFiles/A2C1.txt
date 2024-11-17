@@ -18,7 +18,7 @@ Connor Spada [laugh] "Prontinho! A gente entra em contato pra te falar quanto fi
 
 Cliente "Ok, obrigado, moço!"
 
-Narrator "O cliente sai da loja"
+Narrator "O cliente sai da loja, e ao virar-se, Connor dá de cara com Alex."
 
 Connor Spada.Move(0.2 0)
 

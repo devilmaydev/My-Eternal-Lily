@@ -60,7 +60,7 @@ Connor Spada [alt_work_laugh] "Prontinho! Aqui sua bebida, moço-"
 
 StopSong(cyberjazz)
 
-Narrator "O braço mecânico de Conor para de se mexer e de repente e começa a apertar o copo"
+Narrator "O braço mecânico de Conor para de se mexer, e de repente e começa a apertar o copo, fazendo com que a mão começasse a tremer."
 
 Connor Spada.Move(0.2 0)
 
@@ -70,7 +70,7 @@ Connor Spada [alt_work_surprised] "O quê-"
 
 PlaySFX(glass_break)
 
-Narrator "O copo explode na mão de Conor e o líquido cai no colo de Nano"
+Narrator "O copo explode na mão de Conor, assustando o garoto. O líquido cai no colo de Nano, molhando o chão luminoso do bar."
 
 Connor Spada [alt_work_shock] "PORRA!"
 "D-Desculpa moço! Meu braço tava dando problema hoje de manhã e eu queria saber se ele ainda tava ruim ou—-"
@@ -86,7 +86,7 @@ PlaySFX(som_moedas), [wait]Nano.Move(1.2 0)
 Connor Spada [alt_work_tired] at 0.5 "........ Ele só saiu e deixou o dinheiro aqui?"
 "Bom, dinheiro é dinheiro."
 
-Narrator "Conor pega as moedas"
+Narrator "Conor pega as moedas, rápidamente colocando-as no bolso para não derrubar nenhuma delas."
 
 Cliente "Ei! Pode limpar nossa mesa? Meu amigo acabou derrubando a bebida aqui."
 
@@ -94,15 +94,15 @@ Connor Spada [alt_work_idle] "Ah sim, claro!"
 
 PlaySFX(Som_passos_rápidos)
 
-Narrator "Conor sai correndo de trás do balcão"
+Narrator "Conor sai correndo de trás do balcão, guardando as moedas dentro do caixa antes de ir."
 
-Narrator "Algumas faíscas começam a sair do braço mecânico e fazer barulhos de máquina rangendo"
+Narrator "No entanto, enquanto o garoto corria, algumas faíscas começam a sair do braço mecânico, que fazia barulhos de máquina rangendo."
 
 Connor Spada "O quê!? De novo não-"
 
 Cliente "Licença, dá pra você fazer isso log- HÃ!?"
 
-Narrator "O braço começa a se mexer sozinho e acaba acertando o cliente"
+Narrator "O braço começa a mexer-se sozinho, e acaba acertando o cliente em cheio."
 
 PlaySFX(bonk)
 
@@ -112,7 +112,7 @@ Connor Spada [alt_work_shock] "MEU DEUS, VOCÊ TA BEM!?"
 
 Cliente "É CLARO QUE NÃO! TU ME DEU UM SOCO, CARA! CÊ TÁ MALUCO!?"
 
-Narrator "Pessoas cochichando e tentando ajudar o Cliente"
+Narrator "A música do local parece desaparecer em meio aos cochichos dos clientes ao redor, enquanto outros procuravam ajudar o cliente que havia sido atingido."
 
 Connor Spada "Ai, minha nossa, eu sinto muito! Eu não sei o que aconteceu com o meu braço." 
 
