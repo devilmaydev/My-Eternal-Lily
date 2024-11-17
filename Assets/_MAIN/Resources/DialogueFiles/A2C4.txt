@@ -12,7 +12,7 @@ Connor Spada "Hau tchu construquíti a…"
 "....................................."
 Connor Spada [tired] "Aí, deixa quieto."
 
-Narrator "Desistindo, ele apenas caminha para o outro lado, parando em frente a uma estante"
+Narrator "Desistindo, ele apenas caminha para o outro lado, parando em frente a uma estante."
 
 Connor Spada [surprised] "‘É bem sujo como as prateleiras da loja…’"
 Connor Spada [thinking] "‘Tem tanta coisa aqui… Foi ele quem fez tudo isso? Porque ele não cuida delas?’"
@@ -24,7 +24,7 @@ Connor Spada [surprised] "‘Que linda… Tenho nem ideia do quão velho isso aq
 "‘Não sabia que o Nano gostava tanto dessas coisas antigas, ele parece tão…’"
 "'Hm?'"
 
-Narrator "Mesmo com a beleza da caixinha, ela parecia um pouco… Incompleta"
+Narrator "Mesmo com a beleza da caixinha, ela parecia um pouco… Incompleta?"
 
 Connor Spada [thinking] "‘Não tem manivela.’"
 

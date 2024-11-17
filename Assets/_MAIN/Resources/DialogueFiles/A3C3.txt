@@ -6,7 +6,7 @@ Nano [conflict] "………………"
 
 Nano [upset, thinking] "‘Vamos… São só bugigangas…’"
 
-Nano [neutral] "Ele para no meio do cômodo, olhando fixamente para o cabideiro com um colete e boina antigos bem ao fundo, como se estivesse esperando alguma resposta vinda deles."
+Nano [neutral] "parando no meio do cômodo, olhando fixamente para o cabideiro com um colete e boina antigos bem ao fundo, como se estivesse esperando alguma resposta vinda deles."
 
 Nano [tired] "Ele tenta se aproximar, mas recua no meio do caminho quando sente seus dedos tremerem."
 
@@ -16,17 +16,17 @@ PlaySound(melodia_triste)
 
 PlaySFX(batida_de_coracao_baixinho)
 
-Nano [neutral] "Tudo parecia fazer seu bolo na garganta aumentar mais e mais. Era quase impossível passar por tantas lembranças sem deixar que uma tempestade tomasse conta de seus olhos."
+Narrator "Tudo parecia fazer seu bolo na garganta aumentar mais e mais. Era quase impossível passar por tantas lembranças sem deixar que uma tempestade tomasse conta de seus olhos."
 
 (Foco no vaso com lírios murchos)
 
 Nano [neutral] ‘Eu deveria limpar esse lugar. Ele não ia gostar de vê-lo sujo…’
 
-Nano [neutral] "Seus olhos foram diretamente para o porta retrato, fazendo sua respiração ficar presa."
+Narrator "Seus olhos foram diretamente para o porta retrato, fazendo sua respiração ficar presa."
 
 PlaySFX(batida_de_coracao_aumento)
 
-Nano [neutral] (Narrator) (Imagem do quadro dele e o Franz abraçados)
+Narrator "(Imagem do quadro dele e o Franz abraçados)"
 
 PlaySFX(batida_de_coracao_aumento)
 
@@ -38,11 +38,11 @@ PlaySFX(piiiiiiii_parando)
 
 Nano [upset] "Não. Essa vida foi tirada de mim há muito tempo."
 
-Nano [neutral] (Narrator) (Foco na caixinha de música consertada pelo Spada)
+Narrator "CAIXCINHA CALMA KKKKKK calcinha"
 
 Nano [sad] "Mas eu queria lembrar sem doer tanto…"
 
-Nano [neutral] (Narrator) "Passando os dedos pelas formas esculpidas, um rastro escuro e limpo surgia em meio a grossa camada de pó, terminando na manivela remendada."
+Narrator "Passando os dedos pelas formas esculpidas, um rastro escuro e limpo surgia em meio a grossa camada de pó, terminando na manivela remendada."
 
 Narrator "..........................."
 

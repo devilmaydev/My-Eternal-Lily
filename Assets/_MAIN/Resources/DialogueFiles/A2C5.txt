@@ -12,7 +12,7 @@ Narrator "Nano se aproximou já cansado da pequena mesinha de centro, imediatame
 
 Nano [upset] "Isso é…"
 
-Narrator "Foco na caixinha de música consertada e no porta-retrato com marcas de dedo sobre o pó."
+Narrator "Os olhos de Nano imediatamente focam na caixinha de música consertada, e no porta-retrato com marcas de dedo sobre o pó."
 
 Nano "………………………"
 

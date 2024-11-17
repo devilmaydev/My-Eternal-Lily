@@ -2,34 +2,34 @@ Alex [laugh] "Bom, se precisar de alguma coisa, me dá um toque."
 Alex.Hide()
 Connor Spada.Move(0.5 0)
 
-Narrator "Conor apenas se apoia no balcão com tédio, olhando para a loja vazia"
-"Ele observa as prateleiras repletas de cacarecos estranhos, notando como tudo estava cheio de pó"
+Narrator "Conor apenas se apoia no balcão com tédio, olhando para a loja vazia, como se estivesse esperando algo acontecer para tirá-lo da monotonia."
+"Ele observa as prateleiras repletas de cacarecos estranhos, notando como tudo estava cheio de pó, e uma ideia sobe á cabeça do garoto. Por que não fazer uma faxina?"
 
 Connor Spada [laugh] "‘Isso aqui não parece ser limpo faz tempo…’"
 
 Connor Spada [laugh] "‘Eu nunca vi o Nano ou a Alex limpando esse lugar também.’"
 
-Narrator "Conor pega um paninho com álcool que sempre deixa no balcão"
+Narrator "Conor pega um paninho com álcool que sempre deixa no balcão, e borrifa mais um pouco do líquido."
 
 Connor Spada [laugh] "‘Nah, eles tão focados no trabalho, dar um tapa na loja vai agilizar um pouco as coisas pra eles!’"
 
 PlaySFX(borrifador), PlaySound(calmsong)
 
-Narrator "Ele começa a limpar as prateleiras empoeiradas, tomando cuidado com - seja lá o que fosse - que estava tirando do lugar"
-"No entanto, Connor acaba não medindo sua força ao pegar um Firby reconstruído e apertá-lo um pouco demais"
+Narrator "Ele começa a limpar as prateleiras empoeiradas, tomando cuidado com - seja lá o que fosse - que estava tirando do lugar."
+"No entanto, Connor acaba não medindo sua força ao pegar um Firby reconstruído e apertá-lo um pouco demais."
 
 Connor Spada [laugh] "Eu hein, que trem sinistro…"
 
 Connor Spada [laugh] "HM!?"
 
 PlaySound(CrazyFrog)
-Narrator "Assim que apertado, o Firby começa a tocar alto uma música estourada e repetitiva"
+Narrator "Assim que apertado, o Firby começa a tocar alto uma música estourada e repetitiva, assustando Connor."
 
 Connor Spada [laugh] "Ai caramba, como desliga isso!?"
 
 Connor Spada.Move(0.2 0)
 Alex.Show(), Alex.Move(0.8 0)
-Alex.SetSprite(smile)
+Alex.SetSprite(neutral)
 
 enter Nano 0.6 [kindamad] "Que tá acontecendo!?"
 
@@ -38,7 +38,7 @@ Connor Spada [pain] "Esse trem não quer parar! Como que desliga!?"
 Nano "………………"
 "Me dá isso aqui."
 
-Narrator "Se aproximando em passos pesados, Nano tomou, sem qualquer delicadeza, o Firby de Connor. O desligando facilmente"
+Narrator "Se aproximando em passos pesados, Nano tomou, sem qualquer delicadeza, o Firby de Connor. O desligando facilmente."
 
 Alex.SetSprite(baffled)
 
@@ -62,7 +62,7 @@ Connor Spada [tired] "Sim senhor…"
 
 Nano.Hide()
 
-Narrator "Cabisbaixo, Connor apenas retorna para o balcão, voltando a se apoiar e ficar quieto, apenas pensado em uma única coisa"
+Narrator "Cabisbaixo, Connor apenas retorna para o balcão, voltando a se apoiar e ficar quieto, apenas pensado em uma única coisa..."
 
 Alex.SetSprite(pensive)
 

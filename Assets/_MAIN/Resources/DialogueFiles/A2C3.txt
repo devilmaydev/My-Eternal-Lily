@@ -12,23 +12,23 @@ Connor Spada "Hau tchu construquíti a…"
 "....................................."
 Connor Spada [tired] "Aí, deixa quieto."
 
-Narrator "Desistindo, ele apenas caminha para o outro lado, parando em frente a uma estante"
+Narrator "Desistindo, ele apenas caminha para o outro lado, parando em frente a uma estante."
 
 Connor Spada [surprised] "‘É bem sujo como as prateleiras da loja…’"
 Connor Spada [thinking] "‘Tem tanta coisa aqui… Foi ele quem fez tudo isso? Porque ele não cuida delas?’"
 
 Narrator "Passando os olhos por todas as coisas estranhas dispostas, Conor pousou os olhos em uma caixinha de música com seus pequenos detalhes de flores e coelhos cheios de pó"
-"A pegando com todo cuidado possível com sua única mão"
+"A pegando com todo cuidado possível com sua única mão."
 
 Connor Spada [surprised] "‘Que linda… Tenho nem ideia do quão velho isso aqui deve ser…’"
 "‘Não sabia que o Nano gostava tanto dessas coisas antigas, ele parece tão…’"
 "'Hm?'"
 
-Narrator "Mesmo com a beleza da caixinha, ela parecia um pouco… Incompleta"
+Narrator "Mesmo com a beleza da caixinha, ela parecia um pouco… Incompleta?"
 
 Connor Spada [thinking] "‘Não tem manivela.’"
 
-Narrator "Ficando na ponta dos pés, Conor apoiou a caixinha na prateleira de baixo e se esticou ao máximo para buscar a peça que faltava, acabando por pegar algo diferente do esperado"
+Narrator "Ficando na ponta dos pés, Conor apoiou a caixinha na prateleira de baixo e se esticou ao máximo para buscar a peça que faltava, acabando por pegar algo diferente do esperado."
 
 Connor Spada [surprised] "‘Que isso..? Um porta retrato? Eles ainda são fábrica…dos…’"
 
@@ -45,20 +45,20 @@ Narrator "Apenas o colocando na mesinha de centro da sala, Conor voltou a ficar 
 Connor Spada [tired] "‘Tá quebrada… Desse jeito não vai dar pra usar isso aqui nunca!’"
 Connor Spada [thinking] "‘A não ser que…’"
 
-PlaySFX(ducktape)
+PlaySFX(ducktape) 
 
 Connor Spada [laugh] "‘Eis aqui! A salvadora de todas as pátrias!’"
 
 PlaySFX(ducktape)
 
 Narrator "Juntando as duas metades, ele rapidamente as conectou as enrolando em um longo pedaço de fita."
-"Talvez tenha exagerado um pouco, mas era melhor prevenir do que remediar."
+"Talvez tenha exagerado um pouco, mas era melhor prevenir do que remediar!"
 "Assim que ficou pronta, ele prontamente conectou a manivela de volta na caixinha, dando algumas voltas para ver se funcionava."
 
 PlaySFX(tectec), PlaySong(boxmusic)
 
 "Connor respirou fundo, sentindo uma súbita paz apenas com o som daquela melodia preenchendo o ambiente."
-"Era melancólica, mas de certa forma, reconfortante. Preenchendo o coração e se alastrando pela alma como um campo colorido de lírios"
+"Era melancólica, mas de certa forma, reconfortante. Preenchendo o coração e se alastrando pela alma como um campo colorido de lírios."
 "Subitamente, todas as preocupações entaladas em seu âmago desapareceram quando ele finalmente se permitiu relaxar."
 
 wait(1), StopSong(boxmusic)

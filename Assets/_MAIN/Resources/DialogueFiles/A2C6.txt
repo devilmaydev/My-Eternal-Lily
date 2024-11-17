@@ -38,9 +38,9 @@ Narrator "O silêncio paira entre ambos, mas, mesmo assim, Connor continua sorri
 
 Connor Spada [laugh] "Eu não tava querendo falar disso na frente da Alex, porque ela provavelmente não pode comer, mas eu passei numa padaria antes de vir pra cá e trouxe pão de queijo pra voc—"
 
-Nano.Move(0.4 0)
+Nano.Move(0.3 0)
 
-Narrator "Nano chega bem perto do Spada..."
+Narrator "Nano se aproxima de Spada, visivelmente incomodado. Na verdade, nem incomodado, ele estava furioso."
 
 Nano "Você entrou lá, não foi?"
 
@@ -48,7 +48,7 @@ Connor Spada [nervous] "O-O quê!? N-Nãaaao, eu não fui lá nos fundos não…
 
 Connor Spada "‘Muito perto! Muito perto…!’"
 
-Narrator "Nano olha puto e em silêncio até o Spada se tocar."
+Narrator "........................................................."
 
 Connor Spada [pain] "Ai, bosta…"
 
