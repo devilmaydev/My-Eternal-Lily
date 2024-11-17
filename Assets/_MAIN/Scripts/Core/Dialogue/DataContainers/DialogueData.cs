@@ -7,11 +7,14 @@ namespace _MAIN.Scripts.Core.Dialogue.DataContainers
 {
     public class DialogueData 
     {
+        public string RawData { get; private set; } = string.Empty;
+
         public List<DialogueSegment> LineSegments;
         private const string SegmentIdentifierPattern = @"\{[ca]\}|\{w[ca]\s\d*\.?\d*\}";
         
         public DialogueData(string rawDialogue)
         {
+            RawData = rawDialogue;
             LineSegments = RipSegments(rawDialogue);
         }
 

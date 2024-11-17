@@ -1,0 +1,23 @@
+SetLayerMedia(background "sala_nano")
+
+PlaySFX(som de passos)
+
+enter Nano [thinking] "Eu juro por tudo que é mais sagrado que se isso não estiver aqui…"
+
+Narrator "…………………………………"
+
+Nano [kindamad] "Meu, três horas procurando essa bagaça de celular pra estar aqui embaixo. E nem pra Alex se reativar pra me ajudar a procurar."
+
+Narrator "Nano se aproximou já cansado da pequena mesinha de centro, imediatamente notando como ela parecia mais cheia do que antes."
+
+Nano [upset] "Isso é…"
+
+Narrator "Foco na caixinha de música consertada e no porta-retrato com marcas de dedo sobre o pó."
+
+Nano "………………………"
+
+Nano.SetSprite(upset)
+
+wait(1), Nano.Hide(), ClearLayerMedia(background)
+
+Load(A2C6 true)

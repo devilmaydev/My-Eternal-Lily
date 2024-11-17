@@ -1,0 +1,29 @@
+Narrator "Quarto da avó - 19h37"
+
+SetLayerMedia(background "quarto_vo")
+
+PlaySFX(knock)
+
+enter Connor Spada at 0.2 [idle] "Vó?"
+
+enter Avó at 0.8 "Connie? É você? Não to vendo nada, eu fiquei cega??"
+
+Connor Spada [laugh] "Haha, não vovó. Olha, eu trouxe luz pra senhora."
+
+Avó "Ah, obrigada. Sua mãe deve tá de cabelo em pé lá embaixo, não trouxe nenhuma velinha pra mãezinha querida dela."
+
+Connor Spada "Não se preocupe, o seu netinho veio em resgate só para você."
+
+Narrator "......................."
+
+Avó "Vem, senta aqui um pouco."
+
+Narrator "Ele lentamente se sentou no chão de costas para a cama, sentindo como a mão esquelética da avó começava a lhe fazer um carinho singelo no cabelo."
+
+Avó "Como foi seu dia?"
+
+Connor Spada [neutral] "Foi bom, o trem tava bem vazio e rápido hoje."
+
+Avó "Bom, bom. E o trabalho?"
+
+Load(A3C2E6 true)

@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
+using _MAIN.Scripts.Core.Commands.Database;
 using UnityEngine;
 
-public class CMD_Extension_Example : CMD_DatabaseExtension
+public class CMD_Extension_Example : CmdDatabaseExtension
 {
     public new static void Extend(CommandsDatabase database)
     {
@@ -22,7 +23,7 @@ public class CMD_Extension_Example : CMD_DatabaseExtension
         database.AddCommand("LinesProcess", new Func<string[], IEnumerator>(LinesProcess));
         
         //Test
-        database.AddCommand("MoveCharacter", new Func<string, IEnumerator>(MoveCharacter));
+        //database.AddCommand("MoveCharacter", new Func<string, IEnumerator>(MoveCharacter));
     }
 
     private static void PrintDebugMessage()
@@ -75,25 +76,25 @@ public class CMD_Extension_Example : CMD_DatabaseExtension
         }
     }
 
-    private static IEnumerator MoveCharacter(string direction)
-    {
-        var isLeft = direction.ToLower() == "left";
-
-        var character = GameObject.Find("Image").transform;
-        float moveSpeed = 15;
-
-        float targetX = isLeft ? -8 : 8;
-
-        float currentX = character.position.x;
-
-        while (Mathf.Abs(targetX - currentX) > 0.1f)
-        {
-            currentX = Mathf.MoveTowards(currentX, targetX, moveSpeed * Time.deltaTime);
-            character.position = new Vector3(currentX, character.position.y, character.position.z);
-            yield return null;
-        }
-        
-        
-    }
+    // private static IEnumerator MoveCharacter(string direction)
+    // {
+    //     var isLeft = direction.ToLower() == "left";
+    //
+    //     var character = GameObject.Find("Image").transform;
+    //     float moveSpeed = 15;
+    //
+    //     float targetX = isLeft ? -8 : 8;
+    //
+    //     float currentX = character.position.x;
+    //
+    //     while (Mathf.Abs(targetX - currentX) > 0.1f)
+    //     {
+    //         currentX = Mathf.MoveTowards(currentX, targetX, moveSpeed * Time.deltaTime);
+    //         character.position = new Vector3(currentX, character.position.y, character.position.z);
+    //         yield return null;
+    //     }
+    //     
+    //     
+    // }
 
 }

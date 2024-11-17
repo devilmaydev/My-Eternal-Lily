@@ -54,10 +54,10 @@ namespace _MAIN.Scripts.Core.GraphicPanel
             return layer;
         }
 
-        public void Clear()
+        public void Clear(float transitionSpeed = 1, Texture blendTexture = null, bool immediate = false)
         {
             foreach(var layer in _layers)
-                layer.Clear();
+                layer.Clear(transitionSpeed, blendTexture, immediate);
         }
     }
 }

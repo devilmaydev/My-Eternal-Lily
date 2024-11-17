@@ -1,0 +1,7 @@
+choice "Escolha:"
+{
+    -Ir falar com a Vovó
+        wait(1), Load(A1C2E2A true)
+    -Ir trabalhar
+        wait(1), Load(A1C2E2B true)
+}

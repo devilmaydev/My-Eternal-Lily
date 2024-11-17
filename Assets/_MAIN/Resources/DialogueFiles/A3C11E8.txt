@@ -1,0 +1,7 @@
+choice "Escolha:"
+{
+    -LOJA
+        wait(1), Load(A3C11E8A true)
+    -MARCENARIA
+        wait(1), Load(A3C11E8B true)
+}

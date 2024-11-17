@@ -12,7 +12,7 @@ namespace _MAIN.Scripts.Core.Dialogue
         {
             var (speaker, dialogue, commands) = RipContent(rawLine);
             
-            return new DialogueLine(speaker, dialogue, commands);
+            return new DialogueLine(rawLine, speaker, dialogue, commands);
         }
 
         private static (string, string, string) RipContent(string rawLine)

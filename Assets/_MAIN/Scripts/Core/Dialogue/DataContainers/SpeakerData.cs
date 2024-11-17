@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace _MAIN.Scripts.Core.Dialogue.DataContainers
 {
     public class SpeakerData
     {
+        public string RawData { get; private set; } = string.Empty;
+
         public string Name, CastName;
         public Vector2 CastPosition;
         
@@ -15,15 +18,25 @@ namespace _MAIN.Scripts.Core.Dialogue.DataContainers
 
         public List<(int layer, string expression)> CastExpressions { get; set; }
         
+        public bool IsCastingName => CastName != string.Empty;
+        public bool IsCastingPosition = false;
+        public bool IsCastingExpressions => CastExpressions.Count > 0;
+        public bool MakeCharacterEnter = false;
+        
         private const string NameCastID = " as ";
         private const string PositionCastID = " at ";
         private const string ExpressionCastID = " [";
         private const char AxisDelimiter = ':';
         private const char ExpressionLayerJoiner = ',';
         private const char ExpressionLayerDelimiter = ':';
+        
+        private const string EnterKeyword = "enter ";
 
         public SpeakerData(string rawSpeaker)
         {
+            RawData = rawSpeaker;
+            rawSpeaker = ProcessKeywords(rawSpeaker);
+            
             string pattern = @" as | at | \[";
             MatchCollection matches = Regex.Matches(rawSpeaker, pattern);
 
@@ -53,16 +66,18 @@ namespace _MAIN.Scripts.Core.Dialogue.DataContainers
                 }
                 else if(match.Value == PositionCastID)
                 {
+                    IsCastingPosition = true;
                     startIndex = match.Index + PositionCastID.Length;
                     endIndex = (i < matches.Count - 1) ? matches[i + 1].Index : rawSpeaker.Length;
                     string castPosition = rawSpeaker.Substring(startIndex, endIndex - startIndex);
 
                     string[] axis = castPosition.Split(AxisDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
-                    float.TryParse(axis[0], out CastPosition.x);
+                    float.TryParse(axis[0], NumberStyles.Float, CultureInfo.InvariantCulture, out CastPosition.x);
 
                     if (axis.Length > 1)
-                        float.TryParse(axis[1], out CastPosition.y);
+                        float.TryParse(axis[1], NumberStyles.Float, CultureInfo.InvariantCulture, out CastPosition.y);
+
                 }
                 else if (match.Value == ExpressionCastID)
                 {
@@ -74,11 +89,22 @@ namespace _MAIN.Scripts.Core.Dialogue.DataContainers
                         .Select(x =>
                         {
                             var parts = x.Trim().Split(ExpressionLayerDelimiter);
-                            return (int.Parse(parts[0]), parts[1]);
+                            return parts.Length == 2 ? (int.Parse(parts[0]), parts[1]) : (0, parts[0]);
                         }).ToList();
                 }
             }
             
+        }
+        
+        private string ProcessKeywords(string rawSpeaker)
+        {
+            if (rawSpeaker.StartsWith(EnterKeyword))
+            {
+                rawSpeaker = rawSpeaker.Substring(EnterKeyword.Length);
+                MakeCharacterEnter = true;
+            }
+
+            return rawSpeaker;
         }
         
     }

@@ -8,7 +8,7 @@ namespace _MAIN.Scripts.Core.Characters
 {
     public abstract class Character
     {
-        public const bool EnableOnStart = true;
+        public const bool EnableOnStart = false;
         private const float UnhighlightedDarkenStrength = 0.65f;
         
         public string Name;
@@ -20,9 +20,10 @@ namespace _MAIN.Scripts.Core.Characters
         public Color Color { get; protected set; } = Color.white;
         protected Color DisplayColor => Highlighted ? HighlightedColor : UnhighlightedColor;
         protected Color HighlightedColor => Color;
-        protected Color UnhighlightedColor => new Color(Color.r * UnhighlightedDarkenStrength, Color.g * UnhighlightedDarkenStrength, Color.b * UnhighlightedDarkenStrength, Color.a);
+        protected Color UnhighlightedColor => new(Color.r * UnhighlightedDarkenStrength, Color.g * UnhighlightedDarkenStrength, Color.b * UnhighlightedDarkenStrength, Color.a);
         public bool Highlighted { get; protected set; } = true;
-        
+        public int Priority { get; protected set; }
+
         protected Coroutine CoRevealing;
         protected Coroutine CoHiding;
         protected Coroutine CoMoving;
@@ -62,7 +63,7 @@ namespace _MAIN.Scripts.Core.Characters
         public void SetDialogueFont(TMP_FontAsset font) => Config.dialogueFont = font;
         public void SetNameColor(Color color) => Config.nameColor = color;
         public void SetDialogueColor(Color color) => Config.dialogueColor = color;
-        public void ResetConfigurationData() => Config = CharacterManager.Instance.GetCharacterConfig(Name);
+        public void ResetConfigurationData() => Config = CharacterManager.Instance.GetCharacterConfig(Name, true);
         public void UpdateTextCustomizationsOnScreen() => DialogueSystem.ApplySpeakerDataToDialogueContainer(Config);
 
         public Coroutine Say(string dialogue) => Say(new List<string> { dialogue });
@@ -73,7 +74,7 @@ namespace _MAIN.Scripts.Core.Characters
             return DialogueSystem.Say(dialogue);
         }
         
-        public virtual Coroutine Show()
+        public virtual Coroutine Show(float speedMultiplier = 1f)
         {
             if (IsRevealing)
                 return CoRevealing;
@@ -81,12 +82,12 @@ namespace _MAIN.Scripts.Core.Characters
             if (IsHiding)
                 CharacterManager.StopCoroutine(CoHiding);
 
-            CoRevealing = CharacterManager.StartCoroutine(ShowingOrHiding(true));
+            CoRevealing = CharacterManager.StartCoroutine(ShowingOrHiding(true, speedMultiplier));
 
             return CoRevealing;
         }
 
-        public virtual Coroutine Hide()
+        public virtual Coroutine Hide(float speedMultiplier = 1f)
         {
             if (IsHiding)
                 return CoHiding;
@@ -94,12 +95,12 @@ namespace _MAIN.Scripts.Core.Characters
             if (IsRevealing)
                 CharacterManager.StopCoroutine(CoRevealing);
 
-            CoHiding = CharacterManager.StartCoroutine(ShowingOrHiding(false));
+            CoHiding = CharacterManager.StartCoroutine(ShowingOrHiding(false, speedMultiplier));
 
             return CoHiding;
         }
 
-        public virtual IEnumerator ShowingOrHiding(bool show)
+        public virtual IEnumerator ShowingOrHiding(bool show, float speedMultiplier)
         {
             Debug.Log("Show/Hide cannot be called from a base character type.");
             yield return null;
@@ -169,10 +170,7 @@ namespace _MAIN.Scripts.Core.Characters
             return (minAnchorTarget, maxAnchorTarget);
         }
         
-        public virtual void SetColor(Color color)
-        {
-            Color = color;
-        }
+        public virtual void SetColor(Color color) => Color = color;
 
         public Coroutine TransitionColor(Color color, float speed = 1f)
         {
@@ -188,11 +186,10 @@ namespace _MAIN.Scripts.Core.Characters
 
         public virtual IEnumerator ChangingColor(Color color, float speed)
         {
-            Debug.Log("Color changing is not applicable on this character type!");
             yield return null;
         }
 
-        public Coroutine Highlight(float speed = 1f)
+        public Coroutine Highlight(float speed = 1f, bool immediate = false)
         {
             if (IsHighlighting)
                 return CoHighlighting;
@@ -201,12 +198,12 @@ namespace _MAIN.Scripts.Core.Characters
                 CharacterManager.StopCoroutine(CoHighlighting);
         
             Highlighted = true;
-            CoHighlighting = CharacterManager.StartCoroutine(Highlighting(Highlighted, speed));
+            CoHighlighting = CharacterManager.StartCoroutine(Highlighting(speed, immediate));
         
             return CoHighlighting;
         }
         
-        public Coroutine UnHighlight(float speed = 1f)
+        public Coroutine UnHighlight(float speed = 1f, bool immediate = false)
         {
             if (IsUnHighlighting)
                 return CoHighlighting;
@@ -215,15 +212,27 @@ namespace _MAIN.Scripts.Core.Characters
                 CharacterManager.StopCoroutine(CoHighlighting);
         
             Highlighted = false;
-            CoHighlighting = CharacterManager.StartCoroutine(Highlighting(Highlighted, speed));
+            CoHighlighting = CharacterManager.StartCoroutine(Highlighting(speed, immediate));
         
             return CoHighlighting;
         }
 
-        public virtual IEnumerator Highlighting(bool highlight, float speedMultiplier)
+        public virtual IEnumerator Highlighting(float speedMultiplier, bool immediate = false)
         {
             Debug.Log("Highlighting is not available on this character type!");
             yield return null;
         }
+
+        public void SetPriority(int priority, bool autoSortCharactersOnUI = true)
+        {
+            Priority = priority;
+            if (autoSortCharactersOnUI)
+                CharacterManager.SortCharacters();        
+        }
+
+        public virtual void OnSort(int sortingIndex) { }
+
+        public virtual void OnReceiveCastingExpression(int layer, string expression) { }
+        
     }
 }

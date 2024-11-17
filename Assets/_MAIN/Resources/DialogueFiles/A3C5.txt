@@ -1,0 +1,59 @@
+SetLayerMedia(background "sala_nano")
+
+Connor Spada [pain] "Adivinha? Via Calamidade DE NOVO."
+
+PlaySFX(door_bell)
+
+Alex [laugh] "Bom dia! Bem-vind-"
+
+Alex [surprised] "Connor Spada? Ué, achei que cê não fosse vir hoje."
+
+Connor Spada [pain] "Pois é. Se o Buber não fosse tão caro pra cá, eu pegava sem nem pensar duas vezes!"
+
+PlaySFX(passo_descendo_escada)
+
+Nano [neutral] "Alex, você viu o meu…"
+
+Narrator "………………………"
+
+Nano.SetSprite(idle)
+
+Connor Spada.SetSprite(pain)
+
+Alex.SetSprite(pain)
+
+Narrator "………………………"
+
+Nano [neutral] "Bom dia."
+
+Connor Spada [pain] "Bom dia."
+
+Narrator "Outro silêncio desconfortável."
+
+Nano [neutral] "Alex, cê viu meu headset?"
+
+Alex [neutral] "Lá em cima."
+
+Nano [neutral] "Valeu."
+
+Nano.Hide()
+
+Connor Spada.SetSprite(tired)
+
+Alex.SetSprite(tired)
+
+Narrator "Silêncio com ambos se encarando."
+
+Connor Spada [pain] "Então…"
+
+Alex [baffled] "Por favor, não fala nada."
+
+Connor Spada [tired] "Tá bom."
+
+Alex [tired] ".............. suspiro"
+
+Alex [baffled] "Me ajuda com uma coisa?"
+
+ClearLayerMedia(background)
+
+Load(A3C6 true)

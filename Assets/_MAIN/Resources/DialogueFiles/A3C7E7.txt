@@ -1,0 +1,7 @@
+choice "Escolha:"
+{
+    -NÃO PERGUNTAR
+        wait(1), Load(A3C7E7A true)
+    -PERGUNTAR
+        wait(1), Load(A3C7E7B true)
+}

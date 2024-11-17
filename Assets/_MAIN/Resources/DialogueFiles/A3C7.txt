@@ -1,0 +1,29 @@
+SetLayerMedia(background "quarto_conor")
+
+Bona [sem sprite, Ligação] "E aí eu POW na cara dela com o saco de farinha!"
+
+Connor Spada [surpreso] "Nem fudendo!"
+
+Bona [sem sprite, Ligação] "Ah, mas ela mereceu, tá ligado? Toda hora ficava pegando o que eu ia botar no meio da massa e comendo na minha frente!"
+
+Bona [sem sprite, Ligação] "Só porque é filha do patrão fica se achando a bambambam e fazendo o que bem entende!"
+
+Connor Spada [cansado] "Aquela menina era insuportável mesmo, vivia me fazendo de gato e sapato no salão pra só eu atender ela."
+
+Connor Spada [confuso] "E o patrão não falou nada contigo sobre isso?"
+
+Bona [sem sprite, Ligação] "Falar falou né, mas graças a tudo que é mais sagrado eu não perdi o emprego. Ainda..."
+
+Bona [sem sprite, Ligação] "Mas agora que cê falou de patrão, quero saber, como que tá indo lá na loja? E teu braço? Já tá pronto?"
+
+Connor Spada [sorrindo] "Nesses últimos meses tem sido tudo bem. Eu e meu patrão estamos nos dando bem melhor, ele tem sido mais gentil comigo."
+
+Connor Spada "E dá pra ver que ele tá tentando se aproximar um pouco. Até pagou um Buber pra eu voltar pra casa anteontem quando deu aquele temporal!"
+
+Bona [sem sprite, Ligação] "Caramba, achei que cê fosse falar da Alex, mas cê foi direto pro teu patrão haha!"
+
+Connor Spada [envergonhado] "A-Ah, é que não tem novidade envolvendo ela, sabe?........"
+
+Bona [sem sprite, Ligação] "Sei. Pois se controle viu, o Franz é comprometido e cê não vai querer se meter com o namorado dele hein."
+
+Load(A3C7E7 true)

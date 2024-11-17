@@ -1,0 +1,35 @@
+SetLayerMedia(background "oficina_interior" -blend rightLeft)
+
+PlaySFX(door_bell)
+
+Connor Spada.Move(0.2 0), Connor Spada.Show()
+
+Nano.SetPosition(0.8), Nano.Show()
+
+enter Alex at 0.4 [laugh] "Diga oi para o seu novo balconista!"
+
+Connor Spada.Show(), Alex.Show()
+
+Nano "Meu novo o que?"
+
+Connor Spada [laugh] "Ela me disse que eu posso trabalhar aqui para pagar meu braço, e que eu receberia no fim do mês também."
+ 
+Nano [upset] "ELA O QUE!?"
+
+Alex "Relaxa, seu salário dá pra pagar ele tranquilamente, e um balconista vai te dar mais liberdade para trabalhar nos fundos com o pedido dos clientes! Eu já pensei em tudo, querido."
+
+Nano "Não surta, não surta……"
+
+Connor Spada [laugh] "Já que agora você é meu novo patrão, nada mais justo do que eu me apresentar. Eu sou Conor Spada!"
+
+Nano "Nano e Alex."
+
+Nano "Agora, você sabe consertar coisas simples, tipo, um celular?"
+
+Connor Spada "Eu nunca mexi com esse tipo de coisa na realidade, mas eu imagino que não seja tão difícil. E se ficar, dá pra remendar com um pouquinho de fita!"
+
+Nano "……………… O quê-"
+
+ClearLayerMedia(background -blend leftRight), Connor Spada.Hide(), Alex.Hide(), Nano.Hide()
+
+Load(A2C1 true)

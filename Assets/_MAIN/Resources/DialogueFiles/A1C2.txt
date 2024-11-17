@@ -1,0 +1,44 @@
+wait(1)
+
+Narrator "Sala da casa dos Spada - 8h20"
+
+PlaySFX(stairs)
+
+HideDB(), wait(5)
+
+[wait]SetLayerMedia(background "sala_spada" -blend pitchBlack)
+
+[wait]PlaySong(BGM -v 0.3)
+
+StopSFX(stairs)
+enter Connor Spada at 0.2:0 [nervous] "Foi mal, mãe."
+
+enter Mãe at 0.8 "Desculpas não consertam o registro."
+"Sério, o relógio lá fora tá girando adoidado! {a}Quero nem ver quanto vai vir de conta esse mês."
+
+Connor Spada [laugh] "A fita só deve ter molhado um pouco. Mas olha só, tá funcionando bem! Aguentou 2 semanas dessa vez!"
+
+Mãe "Claro, você e sua fita dos milagres..."
+"Vem cá, tem coisas mais importantes pra você gastar seu salário do que com Silver Tape."
+
+choice "Escolha:"
+{
+    -Relaxa, esse tipo de coisa nunca é demais.
+    -Não é como se eu tivesse dinheiro para gastar com outra coisa.
+}
+
+Mãe "Que pensamento de pobre!"
+
+Connor Spada [tired] "Mãe, a gente é pobre..."
+
+Mãe "De dinheiro, não da mente."
+
+Narrator "................................."
+
+Connor Spada [idle] "A vovó ainda não levantou?"
+
+Mãe "Essa hora? Sua avó parece que está voltando na fase de adolescente, só dorme até meio dia."
+
+Mãe "Bom, não é como se ela tivesse muita coisa pra fazer de toda forma com aquela idade…"
+
+wait(1), Load(A1C2E2 true)

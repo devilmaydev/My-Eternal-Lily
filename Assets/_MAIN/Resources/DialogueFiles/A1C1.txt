@@ -1,0 +1,49 @@
+wait(1)
+
+Narrator "Quarto do Connor 8:00 AM"
+
+SetLayerMedia(background "quarto_spada" -spd 0.7 -blend sides)
+
+PlaySFX(Despertador -l true)
+
+Narrator "Connor acorda, ouvindo seu despertador tocar, fazendo o som repetitivo que o incomodava toda manhã."
+Narrator "Lentamente ele ergue o braço, procurando pelo despertador, sem querer abrir os olhos, até finalmente desligá-lo."
+
+StopSFX(Despertador)
+
+enter Connor Spada [tired] "Mas já...? Não era noite tipo, uns 5 minutos atrás?"
+"Não é como se tivesse algo importante para fazer tão cedo."
+
+Connor Spada.Hide(), ClearLayerMedia(background -spd 0.5 -blend sides)
+
+HideDB()
+
+wait(4)
+
+CreateCharacter(Mãe e- false)
+
+Mãe "CONNIE! LEVANTA! O REGISTRO TÁ VAZANDO DE NOVO!"
+
+Narrator "..............."
+
+Mãe "Connie! Já levantou!?"
+
+Narrator "..................................."
+
+Mãe "CONNIE!!!"
+
+SetLayerMedia(background "quarto_spada" -i true)
+
+Connor Spada.Show(-i true)
+
+Connor Spada [surprised] "Tô indo!"
+
+Narrator "Conor levanta depressa e percebe o braço ciborgue fazendo barulhos estranhos."
+
+Connor Spada [thinking] "Talvez um pouquinho de graxa nesse braço ajude."
+
+Connor Spada.Hide(), Connor Spada.SetPosition(-0.2 0)
+
+ClearLayerMedia(background -i true), HideDB()
+
+wait(1), Load(A1C2 true)

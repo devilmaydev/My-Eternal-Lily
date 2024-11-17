@@ -1,0 +1,7 @@
+choice "Escolha:"
+{
+    -Procurar algo para fazer dentro da loja
+        wait(1), Load(A2C1E4A true)
+    -Questionar sobre o braço
+        wait(1), Load(A2C1E4B true)
+}

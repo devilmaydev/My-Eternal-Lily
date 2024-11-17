@@ -1,0 +1,31 @@
+SetLayerMedia(background "rua_loja" -blend radialClock)
+
+enter Connor Spada [tired] at 0.5 "5 mil reais! Isso dava 5 meses do meu antigo salário! Tá compensando mais ir no Seu Marcelo mesmo!"
+
+Connor Spada [tired] at 0.5 "Vai sair uma merda? É claro que vai! Mas tá melhor do que gastar tudo e ficar com nome sujo no SIRESA!"
+
+Alex "Moço! Perai!!!"
+
+Alex.Show(), Alex.Move(0.8 0)
+
+Connor Spada at 0.2 [nervous] "Moça, desculpa fazer cê ir até aqui mas eu não posso pagar aquele preço-"
+
+Alex [smile] "Eu tenho uma proposta para te fazer."
+
+Connor Spada [thinking] "Hã?"
+
+Alex "Pelo o que eu ouvi, você está desempregado e procurando um emprego aqui no centro, certo? O que acha disso: Se trabalhar na loja, você pode pagar o seu braço pelas suas horas de trabalho e ainda ganhar um salário no fim do mês."
+
+Connor Spada "Você ouviu que eu estava desempregado? Ah… Bem, não é uma proposta ruim… Quanto tempo eu teria que trabalhar?"
+
+Alex "De acordo com minhas estatísticas, seria uma média de 40 horas semanais, sendo de segunda à sexta, com exceção de feriados, do período das 10h até às 18h. Por exatos 3 meses."
+
+Alex "O que me diz?"
+
+Connor Spada [idle] "Uau, essa escala tá bem melhor do que no meu antigo emprego…"
+
+Connor Spada [laugh] "Bom, eu aceito!"
+
+ClearLayerMedia(background -blend leftRight), HideDB(), Connor Spada.Hide(), Alex.Hide()
+
+wait(1), Load(A1C11 true)

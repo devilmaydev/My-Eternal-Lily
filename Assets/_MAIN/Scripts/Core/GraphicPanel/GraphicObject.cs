@@ -10,6 +10,7 @@ namespace _MAIN.Scripts.Core.GraphicPanel
         GraphicPanelManager PanelManager => GraphicPanelManager.Instance;
 
         private const string NameFormat = "Graphic - [{0}]";
+        private const string DefaultUiMaterial = "Default UI Material";
         private const string MaterialPath = "Materials/layerTransitionMaterial";
         private const string MaterialFieldColor =     "_Color";
         private const string MaterialFieldMaintex =   "_MainTex";
@@ -30,7 +31,7 @@ namespace _MAIN.Scripts.Core.GraphicPanel
         private Coroutine _coFadingIn;
         private Coroutine _coFadingOut;
 
-        public GraphicObject(GraphicLayer layer, string graphicPath, Texture tex)
+        public GraphicObject(GraphicLayer layer, string graphicPath, Texture tex, bool immediate)
         {
             GraphicPath = graphicPath;
             _layer = layer;
@@ -41,13 +42,13 @@ namespace _MAIN.Scripts.Core.GraphicPanel
 
             GraphicName = tex.name;
 
-            InitGraphic();
+            InitGraphic(immediate);
 
             Renderer.name = string.Format(NameFormat, GraphicName);
             Renderer.material.SetTexture(MaterialFieldMaintex, tex);
         }
 
-        public GraphicObject(GraphicLayer layer, string graphicPath, VideoClip clip, bool useAudio)
+        public GraphicObject(GraphicLayer layer, string graphicPath, VideoClip clip, bool useAudio, bool immediate)
         {
             GraphicPath = graphicPath;
             _layer = layer;
@@ -59,7 +60,7 @@ namespace _MAIN.Scripts.Core.GraphicPanel
             GraphicName = clip.name;
             Renderer.name = string.Format(NameFormat, GraphicName);
 
-            InitGraphic();
+            InitGraphic(immediate);
 
             RenderTexture tex = new RenderTexture(Mathf.RoundToInt(clip.width), Mathf.RoundToInt(clip.height), 0);
             Renderer.material.SetTexture(MaterialFieldMaintex, tex);
@@ -75,7 +76,7 @@ namespace _MAIN.Scripts.Core.GraphicPanel
             Video.audioOutputMode = VideoAudioOutputMode.AudioSource;
             Audio = Video.gameObject.AddComponent<AudioSource>();
 
-            Audio.volume = 0;
+            Audio.volume = immediate ? 1 : 0;
             if (!useAudio)
                 Audio.mute = true;
 
@@ -89,7 +90,7 @@ namespace _MAIN.Scripts.Core.GraphicPanel
             Video.enabled = true;
         }
 
-        private void InitGraphic()
+        private void InitGraphic(bool immediate)
         {
             Renderer.transform.localPosition = Vector3.zero;
             Renderer.transform.localScale = Vector3.one;
@@ -102,8 +103,9 @@ namespace _MAIN.Scripts.Core.GraphicPanel
 
             Renderer.material = GetTransitionMaterial();
 
-            Renderer.material.SetFloat(MaterialFieldBlend, 0);
-            Renderer.material.SetFloat(MaterialFieldAlpha, 0);
+            float startingOpacity = immediate ? 1.0f : 0f;
+            Renderer.material.SetFloat(MaterialFieldBlend, startingOpacity);
+            Renderer.material.SetFloat(MaterialFieldAlpha, startingOpacity);
         }
 
         private Material GetTransitionMaterial()
@@ -147,13 +149,20 @@ namespace _MAIN.Scripts.Core.GraphicPanel
             bool isBlending = blend != null;
             bool fadingIn = target > 0;
 
+            if (Renderer.material.name == DefaultUiMaterial)
+            {
+                var texture = Renderer.material.GetTexture(MaterialFieldMaintex);
+                Renderer.material = GetTransitionMaterial();
+                Renderer.material.SetTexture(MaterialFieldMaintex, texture);
+            }
+
             Renderer.material.SetTexture(MaterialFieldBlendtex, blend);
             Renderer.material.SetFloat(MaterialFieldAlpha, isBlending ? 1 : fadingIn ? 0 : 1);
             Renderer.material.SetFloat(MaterialFieldBlend, isBlending ? fadingIn ? 0 : 1 : 1);
 
             string opacityParam = isBlending ? MaterialFieldBlend : MaterialFieldAlpha;
 
-            while (Renderer.material.GetFloat(opacityParam) != target)
+            while (!Mathf.Approximately(Renderer.material.GetFloat(opacityParam), target))
             {
                 float opacity = Mathf.MoveTowards(Renderer.material.GetFloat(opacityParam), target, speed * GraphicPanelManager.DefaultTransitionSpeed * Time.deltaTime);
                 Renderer.material.SetFloat(opacityParam, opacity);
@@ -168,16 +177,25 @@ namespace _MAIN.Scripts.Core.GraphicPanel
             _coFadingOut = null;
 
             if (target == 0)
+            {
                 Destroy();
+            }
             else
+            {
                 DestroyBackgroundGraphicsOnLayer();
+                Renderer.texture = Renderer.material.GetTexture(MaterialFieldMaintex);
+                Renderer.material = null;
+            }
         }
 
-        private void Destroy()
+        public void Destroy()
         {
             if (_layer.CurrentGraphic != null && _layer.CurrentGraphic.Renderer == Renderer)
                 _layer.CurrentGraphic = null;
 
+            if (_layer.OldGraphics.Contains(this))
+                _layer.OldGraphics.Remove(this);
+            
             Object.Destroy(Renderer.gameObject);
         }
 

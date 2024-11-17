@@ -1,0 +1,44 @@
+Narrator "Casa dos Spada - 23h"
+
+SetLayerMedia(background "sala_spada" -blend radialClock)
+
+PlayAmbience(ambience_dark_tv_sounds)
+
+PlaySFX(door_slam)
+
+wait(1)
+
+enter Mãe at 0.2 "Connie! Chegou tão cedo, teve algum problema no trabalho?"
+
+enter Connor Spada at 0.8 [tired] "Não, mãe. Foi tudo bem! Eu só fui dispensado mais cedo porque…"
+"Tinha outro cara escalado pra fazer meio turno e calhou de ser o mesmo que o meu."
+
+Mãe "É sério isso? Não avisaram nada pra você? Sinceramente, eu espero que eles tenham te pagado certinho e não só por meio período.
+
+Connor Spada "Não não, eles pagaram direitinho pra mim, não se preocupa…"
+
+Mãe "O que foi, Connie? Porque essa cara tão xoxa, filho…"
+
+Connor Spada "É que meu braço deu problema, acho que vou ter que ir no concerto no fim das contas…"
+
+Mãe "Não fica triste por isso. Lembra, a oficina do Seu Marcelo sempre consegue remendar ele pra você."
+
+Connor Spada "Mãe, aquele cabra me cobra uma nota só pra apertar meus parafusos…"
+
+Mãe "Mas ele te conhece desde criança. Não se pode confiar em qualquer um pra concertar esse tipo de coisa!"
+
+Connor Spada "*suspiro* Tá legal, amanhã eu vou lá e vejo se ele tem um braço reserva enquanto esse aqui arruma."
+
+Mãe "Isso aí. Agora vai descansar que já tá muito tarde."
+
+Mãe "Ah! Sua avó mandou um beijo pra você e disse que tem muito orgulho do netinho dela."
+
+Connor Spada "Dá outro nela depois."
+
+Connor Spada "Vou ir deitar, boa noite mãe."
+
+Mãe "Boa noite, Connie."
+
+ClearLayerMedia(background), HideDB(), Connor Spada.Hide(), Mãe.Hide()
+
+wait(1), Load(A1C6 true)

@@ -1,0 +1,7 @@
+choice "Escolha:"
+{
+    -Esperar pelo atendente
+        wait(1), Load(A1C8E3A true)
+    -Explorar a loja
+        wait(1), Load(A1C8E3B true)
+}

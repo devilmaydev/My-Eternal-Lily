@@ -1,0 +1,55 @@
+Narrator "Apartamento do Nano - 10h10"
+
+SetLayerMedia(background "nano_casa")
+
+PlaySFX(door_open)
+
+enter Nano [tired] at 0.2 "‘Namoral, que dor de cabeça esse rapaz dá…’"
+
+enter Alex [baffled] at 0.8 "Como você pode ser tão escroto?"
+
+Nano [idle] "................."
+
+Nano [thinking] "E aí? Vai ficar encarando?"
+
+Alex [baffled] "Você age como se as outras pessoas tivessem que andar em ovos para estar do seu lado. O Connor tava tentando te ajudar! Não foi nada demais. E você fica fazendo um auê todo por algo que nem é tão sério assim!"
+
+Nano [upset] "Ah agora eu sou o culpado? Eu deixei claro no primeiro dia pra ele não mexer em nada."
+
+Alex [baffled] "Independente! Todo mundo tem problemas, você não é o único que lida com eles. Ele não sabia que isso poderia te afetar negativamente, e você nem se deu ao trabalho de tentar explicar o porquê!"
+
+Alex [baffled] "Cê espera que o quê? Ele use uma bola de cristal pra adivinhar como cê se sente!?"
+
+Nano [upset] "Eu não preciso explicar nada. Ele tá aqui só tem um mês e você espera que eu coloque pra fora tudo o que eu passei nesses últimos 2 anos!?"
+
+Alex [baffled] "Tá vendo? Você se fecha, não fala nada e depois faz todo mundo ser o vilão quando explode!"
+
+Alex [baffled] "Você não percebe que só vai afastá-lo assim? Tá só fugindo de algo fácil de se resolver."
+
+Nano [idle] "......................."
+
+Alex [neutral] "Olha, se você não quer falar, beleza. Mas os outros não tem culpa se você só vive no passado e não olha pro agora."
+
+Alex.Hide()
+
+Nano.Move(0.5 0)
+
+Narrator "Em silêncio, Nano caminha até a mesa perto da janela, não se importando nem um pouco com a vista deturpada da cidade."
+
+Narrator "Indo diretamente para a pequena placa holográfica ali apoiada e passando o dedo algumas vezes pelas fotos guardadas, parando por alguns segundos ao ver uma foto específica."
+
+HideDB(), SetLayerMedia(cinematic "nano_franz" -blend pitchBlack)
+
+Nano.Hide(), ClearLayerMedia(background)
+
+wait(2)
+
+Narrator "Nano acaba deixando gotas de suas lagrimas cair, causando falhas no holograma."
+
+SetLayerMedia(cinematic "retrato_nano_franz" -blend pitchBlack)
+
+Nano "Onde quer que você esteja, por favor, me ajuda…"
+
+ClearLayerMedia(cinematic)
+
+Load(A3C1 true)

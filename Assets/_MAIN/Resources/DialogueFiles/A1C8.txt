@@ -1,0 +1,49 @@
+Narrator "Dentro da loja, ele olha para os lados, procurando alguém que pudesse atendê-lo."
+
+PlaySFX(door_bell)
+
+SetLayerMedia(background "oficina_interior" -blend rightLeft)
+
+wait(3)
+
+enter Connor Spada [idle] at 0.5 "Oi? Licença?"
+
+Narrator "...................................."
+
+Connor Spada [thinking] "Ué, tá fechado? Mas na página tava escrito que-"
+
+PlaySFX(click), Connor Spada.Move(0.2 0)
+    
+enter Alex at 0.8 "Pelos códigos, um cliente!"
+
+PlaySong(cybersong)
+
+Connor Spada [shock] "AH! Quase tu me mata de susto, moça!"
+
+Alex "Foi mal! Sempre me empolgo quando vou falar com uma pessoa diferente."
+
+Alex "Eu sou Alex. E você é?"
+
+Connor Spada [laugh] "Conor Spada, prazer em te conhecer."
+
+Connor Spada "Ah… Desculpa se eu tô sendo indelicado e tals, mas você não me parece tão…"
+
+Alex [smile] "Humana? Isso porquê eu de fato não sou."
+
+Alex "Sou um sistema programado com emoções, pensamentos e uma consciência própria, com capacidade de gerar superfícies sólidas através de átomos de luz e converter dióxido de carbono em energia funcional e limpa para todo tipo de dispositivo."
+
+Connor Spada "Eh?"
+
+Alex "Uma IA com corpo físico. Com um plus em habilidades."
+
+Connor Spada "Ah tá. Caramba! Você tem um corpo mesmo! Eu achei que IAs não conseguiam fazer isso…"
+
+Alex [laugh] "Se fosse há 100 anos atrás, talvez eu conseguisse só criar respostas rápidas e umas imagens bem meia boca. Tá precisando se atualizar, rapaz."
+
+Connor Spada "Ha ha… Não é muito o meu forte…"
+
+Alex "Enfim, vou chamar alguém pra vir te atender. Me dá um segundinho."
+
+PlaySFX(click), Alex.Hide()
+
+wait(1), Load(A1C8E3 true)
