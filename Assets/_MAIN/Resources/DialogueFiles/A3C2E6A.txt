@@ -50,7 +50,7 @@ Avó "Connie, foque no que precisa agora, você não pode ficar sem braço para 
 
 Avó "Você só tem 20 anos, ninguém da sua idade deveria assumir tanta responsabilidade."
 
-Narrator "Connor apenas assente em silêncio, incapaz de falar qualquer coisa."
+Narrator "Connor permanece em silêncio, incapaz de falar qualquer coisa."
 
 ClearLayerMedia(background), Connor Spada.Hide(), Avó.Hide()
 

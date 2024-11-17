@@ -35,32 +35,32 @@ Connor Spada "Boa noite e até amanhã!"
 
 Nano.Hide(), Connor Spada.Move(0.5 0)
 
-Narrator "Com um breve aceno de mão, Nano subiu silenciosamente as escadas para o segundo andar, onde era seu apartamento"
+Narrator "Com um breve aceno de mão, Nano subiu silenciosamente as escadas para o segundo andar, onde era seu apartamento."
 PlaySFX(door_open)
-"Enquanto isso, Conor já se dirigia para a entrada do loja para finalmente voltar para casa, até um ranger surgir de repente"
+"Enquanto isso, Conor já se dirigia para a entrada do loja para finalmente voltar para casa, até um ranger surgir de repente."
 "Connor se vira visivelmente confuso, apenas notando a porta da sala dos fundos entreaberta."
 
 Connor Spada [surprised] "Ué?"
 
-Narrator "Ele se aproxima, sendo guiado por sua curiosidade"
+Narrator "Ele se aproxima, sendo guiado por sua curiosidade."
 
 Connor Spada [surprised] "‘Ele nunca esquece de trancar os fundos…’"
 
-Narrator "Tentado pela luz fraca que vinha de dentro, ele se aproximou mais automaticamente, até parar no meio do caminho"
+Narrator "Tentado pela luz fraca que vinha de dentro, ele se aproximou mais automaticamente, até parar no meio do caminho."
 
 Connor Spada [tired] "‘Toma juízo, Connie! Se ele não deixa entrar lá, é porque não é pra ir!’"
 
-Narrator "Ele apenas olha para a maçaneta em dúvida por longos segundos"
+Narrator "Ele apenas olha para a maçaneta em dúvida por longos segundos. Uma espiada não dói, né?"
 
 Connor Spada [pain] "‘................Só uma olhadinha de leve.’"
 
-Narrator "Conor respira fundo, se agarrando com firmeza na maçaneta e abrindo um pouco mais a porta, apenas o suficiente para colocar a cabeça para dentro"
-"Com receio, ele passa os olhos por todo o cômodo, notando como era apenas uma sala comum"
+Narrator "Conor respira fundo, se agarrando com firmeza na maçaneta e abrindo um pouco mais a porta, apenas o suficiente para colocar a cabeça para dentro."
+"Com receio, ele passa os olhos por todo o cômodo, notando como era apenas uma sala comum."
 
 Connor Spada [surprised] "Uau....."
 
 PlaySFX(walk), PlaySong(calmsong)
-Narrator "Mesmo sendo uma sala comum, Conor imediatamente entra ao notar a quantidade de coisas espalhadas por todos os lados e os LEDs em vermelho no teto"
+Narrator "Mesmo sendo uma sala comum, Conor imediatamente entra ao notar a quantidade de coisas espalhadas por todos os lados e os LEDs em vermelho no teto. Tudo isso era...bem a cara do Nano."
 
 Connor Spada.Hide(), ClearLayerMedia(background -blend leftRight)
 
