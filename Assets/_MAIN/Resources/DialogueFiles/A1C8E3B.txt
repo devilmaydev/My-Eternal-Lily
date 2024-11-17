@@ -1,0 +1,5 @@
+Connor Spada "A fachada é bem velha, mas até que aqui dentro tá bem bonitinho e atualizado."
+"Na verdade tem um monte de coisa que também parece velha…"
+"Essa loja é de algum velhinho ou-"
+
+Load(A1C9 true)

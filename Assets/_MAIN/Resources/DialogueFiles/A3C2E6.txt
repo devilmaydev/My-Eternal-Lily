@@ -1,0 +1,7 @@
+choice "Escolha:"
+{
+    -CONTAR
+        wait(1), Load(A3C2E6A true)
+    -NÃO CONTAR
+        wait(1), Load(A3C2E6B true)
+}

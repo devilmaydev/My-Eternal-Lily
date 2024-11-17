@@ -1,0 +1,57 @@
+Connor Spada [neutral] "………Tem um rapaz que trabalha comigo, e eu queria ficar mais próximo dele. Mas acho que ele me odeia ou algo do tipo."
+
+Avó "Porque você acha isso?"
+
+Connor Spada [thinking] "... Eu gosto de trabalhar lá, fiz até uma amiga, a Alex. Então, eu quero mostrar que eu to sendo útil pra me manterem. Sabe, o que eu puder fazer além do meu serviço que ajude, eu quero fazer."
+
+Connor Spada [neutral] "Mas acho que esse colega não gosta muito disso. Parece que eu mais atrapalho do que eu ajudo ele."
+
+Avó "Hm… Isso é complicado."
+
+Connor Spada [thinking] "Pior que eu achei que nosso relacionamento tava melhorando, sabe? Mas eu acabei vacilando e mexendo onde não devia, e ele ficou muito puto por causa disso."
+
+Avó "Entendo."
+
+Avó "Não acho que ele te odeie."
+
+Connor Spada [neutral] "Não?"
+
+Avó "Claro que não. Levar uma bronca de vez em quando é normal, e como você mesmo disse, vocês estavam evoluindo aos pouquinhos. Brigas fazem parte de todo relacionamento."
+
+Connor Spada [embarrassed, thinking] "........."
+
+Connor Spada [neutral] "E se tudo tiver sido em vão?"
+
+Avó "Não foi, confie em mim. Pessoas têm motivos para agirem como agem. Às vezes, elas estão segurando tanta coisa dentro de si, que o mais irrelevante dos problemas se torna gigantesco."
+
+Connor Spada [thinking] "Acha que ele só tava estressado?"
+
+Avó "Com toda certeza."
+
+Avó "Mas não significa que você também não errou."
+
+Connor Spada [pain] "suspiro Eu sei, quero me desculpar com ele."
+
+Avó "Isso mesmo. As coisas ficam mais fáceis quando se ouve os dois lados. Vocês dois só precisam se comunicar melhor."
+
+Connor Spada [thinking] "................"
+
+Connor Spada [neutral] "Vovó, eu não sei se vou conseguir dinheiro o suficiente para consertar suas pernas."
+
+Connor Spada [neutral] "Agora que cortaram a luz, vou ter que fazer milagre pra cobrir essa conta."
+
+Connor Spada [neutral] "suspiro Só espero que o dinheiro que a mãe receber daquela cliente seja o suficiente para o resto das despesas."
+
+Avó "Não coloque tanta pressão nos teus ombros, meu filho… Quanto maior o abismo, maior a queda."
+
+Connor Spada [neutral] "Mas eu não posso deixar minha mãe fazer tudo sozinha, vó. Depois que o pai morreu, eu me tornei o homem da casa, eu preciso fazer cês duas ficarem bem."
+
+Avó "Connie, foque no que precisa agora, você não pode ficar sem braço para sempre. Eu já tô velha, não se preocupe com minhas pernas ou com as contas."
+
+Avó "Você só tem 20 anos, ninguém da sua idade deveria assumir tanta responsabilidade."
+
+Narrator "Connor apenas assente em silêncio, incapaz de falar qualquer coisa."
+
+ClearLayerMedia(background), Connor Spada.Hide(), Avó.Hide()
+
+Load(A3C3 true)

@@ -1,0 +1,125 @@
+[wait]SetLayerMedia(background "barao_noite" -blend radialClock)
+
+PlaySong(cyberjazz), ShowDB()
+
+enter Connor Spada at 0.5 [alt_work_tired] "A Bona tinha razão, esse lugar fica muito pior durante a noite, eu respiro e já tem cliente!"
+
+enter Connor Spada [alt_work_laugh] " Pelo menos o pagamento vai ser bom, daí posso ver para consertar esse braço de uma vez."
+
+Nano "Com licença-"
+
+Connor Spada "Ah, mas até que a música é divertida também-"
+
+Nano "Com licença."
+
+Connor Spada [alt_work_idle] "Ah! Desculpe, senhor!"
+
+Connor Spada.Move(0.2 0)
+
+enter Nano at 0.8 "Não, relaxa, tá de boa."
+
+Connor Spada "Sinto muito, o que gostaria?"
+
+Nano "Quê que cês tem que é forte e barato?"
+
+Connor Spada "Ah, tem a dose de cachaça se você quer algo rápido, ou então tem a caipirinha de limão que tá no precinho hoje."
+
+Nano "Quanto."
+
+Connor Spada "R$19,90"
+
+Nano "Desce essa."
+
+Connor Spada "Pra já, chefia"
+
+HideDB(), Nano.Hide(), Connor Spada.Hide(), ClearLayerMedia(background)
+
+wait(4)
+
+[wait]SetLayerMedia(background "barao_noite" -spd 0.7 -blend rightLeft)
+
+wait(1)
+
+enter Connor Spada at 0.5 [alt_work_thinking] "‘Primeiro drink complicado da noite feito com sucesso e sem um braço, senhoras e senhores!’"
+
+Connor Spada [alt_work_idle] "‘Espero que aquele cara goste, caprichei na cachaça pra ele.’"
+
+Connor Spada "...................."
+
+Connor Spada "‘Meu braço não deu mais problema desde manhã… Mas se eu continuar sem usar ele, talvez ele fique ainda mais bixado…’"
+
+Connor Spada "........", PlaySFX(som_metal_vidro)
+
+Connor Spada "Beleza, é só ir devagar que vai dar certo. Sem movimentos bruscos."
+
+[wait]PlaySFX(som_passos_lentos)
+
+Connor Spada "Devagar… Devagar…"
+
+Connor Spada [alt_work_laugh] "Prontinho! Aqui sua bebida, moço-"
+
+StopSong(cyberjazz)
+
+Narrator "O braço mecânico de Conor para de se mexer e de repente e começa a apertar o copo"
+
+Connor Spada.Move(0.2 0)
+
+enter Nano [thinking] "Cê tá bem?"
+
+Connor Spada [alt_work_surprised] "O quê-"
+
+PlaySFX(glass_break)
+
+Narrator "O copo explode na mão de Conor e o líquido cai no colo de Nano"
+
+Connor Spada [alt_work_shock] "PORRA!"
+"D-Desculpa moço! Meu braço tava dando problema hoje de manhã e eu queria saber se ele ainda tava ruim ou—-"
+
+Nano [kindamad] "*suspiro*.... Tá tranquilo."
+
+Connor Spada "Hã? Mas-"
+
+Nano [upset] "Eu disse que tá tudo bem, entendeu?"
+
+PlaySFX(som_moedas), [wait]Nano.Move(1.2 0)
+
+Connor Spada [alt_work_tired] at 0.5 "........ Ele só saiu e deixou o dinheiro aqui?"
+"Bom, dinheiro é dinheiro."
+
+Narrator "Conor pega as moedas"
+
+Cliente "Ei! Pode limpar nossa mesa? Meu amigo acabou derrubando a bebida aqui."
+
+Connor Spada [alt_work_idle] "Ah sim, claro!"
+
+PlaySFX(Som_passos_rápidos)
+
+Narrator "Conor sai correndo de trás do balcão"
+
+Narrator "Algumas faíscas começam a sair do braço mecânico e fazer barulhos de máquina rangendo"
+
+Connor Spada "O quê!? De novo não-"
+
+Cliente "Licença, dá pra você fazer isso log- HÃ!?"
+
+Narrator "O braço começa a se mexer sozinho e acaba acertando o cliente"
+
+PlaySFX(bonk)
+
+Cliente "AAAAAAAAAAAAH MEU OLHO!!!"
+
+Connor Spada [alt_work_shock] "MEU DEUS, VOCÊ TA BEM!?" 
+
+Cliente "É CLARO QUE NÃO! TU ME DEU UM SOCO, CARA! CÊ TÁ MALUCO!?"
+
+Narrator "Pessoas cochichando e tentando ajudar o Cliente"
+
+Connor Spada "Ai, minha nossa, eu sinto muito! Eu não sei o que aconteceu com o meu braço." 
+
+Cliente "CADÊ O GERENTE!? EU VOU PROCESSAR ESSE LUGAR! MEU PAI É ADVOGADO! NÃO, EU VOU PROCESSAR VOCÊ, SEU FILHO DA PUTA! VOCÊ VAI PAGAR POR ISSO!
+
+Connor Spada "*suspiro* Eu tô tão ferrado…"
+
+ClearLayerMedia(background), HideDB(), Connor Spada.Hide()
+
+wait(1), Load(A1C5 true)

@@ -1,0 +1,10 @@
+Connor Spada "Se ela levantar, fala que eu mandei um beijão pra ela e que é pra ela não se preocupar com o horário."
+
+Mãe "Certo, tinha esquecido que hoje você faz turno extra... Juízo, viu?"
+"Ah! E avisa a hora que você sair de lá, viu!?" 
+
+Connor Spada "Pode deixar!"
+
+Mãe.Hide(), Connor Spada.Hide(), ClearLayerMedia(background)
+
+Load(A1C3 true)

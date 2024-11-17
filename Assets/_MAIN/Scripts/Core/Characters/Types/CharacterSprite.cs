@@ -60,21 +60,18 @@ namespace _MAIN.Scripts.Core.Characters.Types
             }
         }
 
-        public void SetSprite(Sprite sprite, int layer = 0)
-        {
-            Layers[layer].SetSprite(sprite);
-        }
+        public void SetSprite(Sprite sprite, int layer = 0) => Layers[layer].SetSprite(sprite);
 
         public Sprite GetSprite(string spriteName)
         {
             if (Config.characterType == ECharacterType.SpriteSheet)
             {
-                string[] data = spriteName.Split(SpritesheetTEXSpriteDelimitter);
-                Sprite[] spriteArray = new Sprite[0]; 
+                var data = spriteName.Split(SpritesheetTEXSpriteDelimitter);
+                Sprite[] spriteArray; 
 
                 if (data.Length == 2)
                 {
-                    string textureName = data[0];
+                    var textureName = data[0];
                     spriteName = data[1];
                     spriteArray = Resources.LoadAll<Sprite>($"{_artAssetsDirectory}/{textureName}");
                 }
@@ -99,14 +96,14 @@ namespace _MAIN.Scripts.Core.Characters.Types
             return spriteLayer.TransitionSprite(sprite, speed);
         }
 
-        public override IEnumerator ShowingOrHiding(bool show)
+        public override IEnumerator ShowingOrHiding(bool show, float speedMultiplier = 1)
         {
-            float targetAlpha = show ? 1f : 0;
-            CanvasGroup self = RootCg;
+            var targetAlpha = show ? 1f : 0;
+            var self = RootCg;
             
-            while (self.alpha != targetAlpha)
+            while (!Mathf.Approximately(self.alpha, targetAlpha))
             {
-                self.alpha = Mathf.MoveTowards(self.alpha, targetAlpha, 3f * Time.deltaTime);
+                self.alpha = Mathf.MoveTowards(self.alpha, targetAlpha, 3f * Time.deltaTime * speedMultiplier);
                 yield return null;
             }
 
@@ -120,7 +117,7 @@ namespace _MAIN.Scripts.Core.Characters.Types
 
             color = DisplayColor;
 
-            foreach (CharacterSpriteLayer layer in Layers)
+            foreach (var layer in Layers)
             {
                 layer.StopChangingColor();
                 layer.SetColor(color);
@@ -129,7 +126,7 @@ namespace _MAIN.Scripts.Core.Characters.Types
 
         public override IEnumerator ChangingColor(Color color, float speed)
         {
-            foreach (CharacterSpriteLayer layer in Layers)
+            foreach (var layer in Layers)
                 layer.TransitionColor(color, speed);
 
             yield return null;
@@ -140,11 +137,19 @@ namespace _MAIN.Scripts.Core.Characters.Types
             CoChangingColor = null;
         }
 
-        public override IEnumerator Highlighting(bool highlight, float speedMultiplier)
+        public override IEnumerator Highlighting(float speedMultiplier, bool immediate = false)
         {
-            Color targetColor = DisplayColor;
+            var targetColor = DisplayColor;
+            
+            foreach (var layer in Layers)
+            {
+                if (immediate)
+                    layer.SetColor(DisplayColor);
+                else
+                    layer.TransitionColor(targetColor, speedMultiplier);
+            }
 
-            foreach (CharacterSpriteLayer layer in Layers)
+            foreach (var layer in Layers)
                 layer.TransitionColor(targetColor, speedMultiplier);
 
             yield return null;
@@ -153,6 +158,18 @@ namespace _MAIN.Scripts.Core.Characters.Types
                 yield return null;
 
             CoHighlighting = null;
+        }
+        public override void OnReceiveCastingExpression(int layer, string expression)
+        {
+            var sprite = GetSprite(expression);
+
+            if (sprite == null)
+            {
+                Debug.LogWarning($"Sprite '{expression}' could not be found for character '{Name}'");
+                return;
+            }
+
+            TransitionSprite(sprite, layer);
         }
     }
 }

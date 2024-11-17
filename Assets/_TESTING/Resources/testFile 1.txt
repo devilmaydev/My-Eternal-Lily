@@ -1,1 +1,27 @@
-Spada "Move Left and Right" PrintOneParameter("Start moving"), [wait]MoveCharacter(left), [wait]MoveCharacter(right), PrintOneParameter("Movement Done!")
+wait(1)
+
+SetLayerMedia(background "Fantasy Landscape" -aud true -spd 0.7 -blend hurricane -i true)
+
+CreateCharacter(Alex -e true i- true)
+
+Alex "Hi! <mainChar>"
+
+SetLayerMedia(cinematic -m "~/Graphics/Gallery/flower")
+
+Alex "Flozinha ne"
+
+ClearLayerMedia(cinematic -i true)
+
+SetLayerMedia(background "market" -i true)
+
+choice "Chose something FUCJKKJKKJKJKJ"
+{
+    -SHUT UPPPP
+        Alex "DIE MOTHERFUCKERRRRRRRRR"
+    -NASTY BITCH
+        Alex "I'LL RIP YOUR ASS OFF!!!!!"
+    -I'LL FUCKING KILL YOUUUU
+        Alex "ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+}
+
+Narrator "And they all died."

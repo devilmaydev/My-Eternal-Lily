@@ -1,0 +1,40 @@
+Connor Spada "Quem sabe ela já acordou nessa hora. Vou lá dar uma olhada."
+
+Mãe.Hide(), Connor Spada.Hide(), ClearLayerMedia(background)
+
+Narrator "Quarto da avó - 8h30"
+
+PlaySFX(knock)
+
+SetLayerMedia(background "quarto_vo" -blend leftRight)
+
+enter Connor Spada "Vó? {a}Tá acordada?"
+
+enter Avó at 0.8 "É claro que eu estou. {a}Sua mãe não fechou a cortina ontem de noite e eu acordei com o sol na minha fuça."
+
+Connor Spada [laugh] "A senhora deveria aproveitar, tão raro ver um sol nessa cidade hoje em dia."
+
+Avó "E eu lá quero ver o sol essa hora da manhã, menino? Já acordei cedo demais na minha vida, agora eu vou aproveitar."
+
+Connor "Tá certo…"
+
+Connor Spada [idle] "Olha, hoje eu vou fazer um turno extra lá no bar. Então não se preocupe em chegar tarde, tá bom?"
+
+Avó "Meu filho, não fica fazendo tanto esforço por causa de dinheiro..."
+"Você e sua mãe ficam trabalhando dobrado e depois ficam exaustos."
+
+Connor Spada "É o jeito né."
+
+Connor Spada [laugh]"Mas fica tranquila, esse turno extra vai pagar bem. Quem sabe dá pra arrumar o registro finalmente e guardar mais dinheiro para consertar suas pernas?"
+
+Avó "......... {c}Vai logo, se não você perde o ônibus e chega atrasado."
+
+Connor Spada"Pode deixar, até depois vó!"
+
+Avó "Até."
+
+HideDB(), Avó.Hide(), Connor Spada.Hide()
+
+ClearLayerMedia(background)
+
+wait(1), Load(A1C3 true)

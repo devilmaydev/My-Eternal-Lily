@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: Character Configuration Asset
   m_EditorClassIdentifier: 
   characters:
-  - name: Conor Spada
+  - name: Connor Spada
     alias: s
     characterType: 1
     nameColor: {r: 1, g: 1, b: 1, a: 1}
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
   - name: Nano
     alias: n
     characterType: 1
@@ -27,6 +29,8 @@ MonoBehaviour:
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
   - name: Alex
     alias: a
     characterType: 1
@@ -34,6 +38,8 @@ MonoBehaviour:
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
   - name: "M\xE3e"
     alias: m
     characterType: 1
@@ -41,6 +47,8 @@ MonoBehaviour:
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
   - name: "Av\xF3"
     alias: a
     characterType: 1
@@ -48,6 +56,8 @@ MonoBehaviour:
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
   - name: Bona
     alias: b
     characterType: 1
@@ -55,6 +65,8 @@ MonoBehaviour:
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1
   - name: Cliente
     alias: c
     characterType: 0
@@ -62,3 +74,5 @@ MonoBehaviour:
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    nameFontScale: 1
+    dialogueFontScale: 1

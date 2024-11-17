@@ -1,0 +1,20 @@
+Narrator "........................."
+
+PlaySFX(message_in)
+
+Narrator "[NOVA MENSAGEM DE BONA: E aí???????]"
+
+PlaySFX(message_out)
+
+Connor Spada "Eu tô aqui na loja já. Veio uma mulher super maneira falar comigo e na realidade era uma IA super avançada!"
+
+Narrator "[Eu falei pra tu confiar em mim >:)]"
+"[Aliás, eu e o pessoal achamos uma casa de City Pop que a gente tá pensando em ir hoje de noite. Tá afim??]"
+
+PlaySFX(message_out)
+
+Connor Spada "Vou não, minha grana tá muito curta e eu tô vendo se tem emprego aqui pelo centro. Mas aproveitem por aí e dá um abraço no pessoal por mim!"
+
+Narrator "[Tá bom!! <3]"
+
+Load(A1C9 true)

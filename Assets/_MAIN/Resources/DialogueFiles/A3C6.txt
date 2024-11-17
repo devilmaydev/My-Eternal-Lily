@@ -1,0 +1,31 @@
+SetLayerMedia(background "fachada_loja")
+
+Alex [sorridente] "Agora tá piscando o A!"
+
+Nano [assustado] "Que barulheira é essa!?"
+
+Connor Spada [confuso] "É o F que tá piscando agora??"
+
+Connor Spada [carinha de dor] "A-Ah, oi Nano…"
+
+Nano [assustado] "Meu, que que cê tá se pendurando aí!?"
+
+Connor Spada [pensando] "Por favor, não briga. Por favor, não briga…"
+
+Nano [pensando] "Não surta, não surta…"
+
+Connor Spada [neutro] "Eu… mexi no letreiro."
+
+Connor Spada [carinha de dor] "Alex disse que tava piscando, então fui lá dar uma ajeitada."
+
+Nano [surpreso] "Você fez O QUÊ!? É sério isso?"
+
+Connor Spada [pensando] "Mano, esse vai ser o fim da linha, né? Não posso fazer nada certo."
+
+Alex [entrando em cena, sorrindo] "Ah, o Connor Spada consertou o letreiro! Tá tudo certo agora."
+
+Nano [cansado] "Alex, eu não acredito que você trouxe o Connor Spada aqui pra fazer isso!"
+
+Alex [sorrindo] "Relaxou! Ele tem uns truques."
+
+Load(A3C7 true)

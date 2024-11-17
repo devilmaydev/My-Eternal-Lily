@@ -11,14 +11,18 @@ namespace _MAIN.Scripts.Core.Dialogue
     {
         public static DialogueSystem Instance { get; private set; }
         
+        [SerializeField] private CanvasGroup mainCanvas;
         [SerializeField] private DialogueSystemConfigurationSO config;
         public DialogueSystemConfigurationSO Config => config;
         
         public DialogueContainer dialogueContainer = new();
-        private ConversationManager _conversationManager;
+        public DialogueContinuePrompt dialogueContinuePrompt;
+        public ConversationManager ConversationManager { get; private set; }
         private TextArchitect _textArchitect;
+        private AutoReader _autoReader;
+        private CanvasGroupController _cgController;
 
-        public bool IsRunningConversation => _conversationManager.IsRunning;
+        public bool IsRunningConversation => ConversationManager.IsRunning;
         private bool _isInitialized;
 
         public delegate void DialogueSystemEvent();
@@ -41,14 +45,19 @@ namespace _MAIN.Scripts.Core.Dialogue
                 return;
 
             _textArchitect = new TextArchitect(dialogueContainer.dialogueText);
-            _conversationManager = new ConversationManager(_textArchitect);
-            _isInitialized = true;
+            ConversationManager = new ConversationManager(_textArchitect);
+            
+            _cgController = new CanvasGroupController(this, mainCanvas);
+            dialogueContainer.Initialize();    
+            
+            if (TryGetComponent(out _autoReader))
+                _autoReader.Initialize(ConversationManager);
         }
         
         public void ApplySpeakerDataToDialogueContainer(string speakerName)
         {
-            Character character = CharacterManager.Instance.GetCharacter(speakerName);
-            CharacterConfigData characterConfigData = character != null ? character.Config : CharacterManager.Instance.GetCharacterConfig(speakerName);
+            var character = CharacterManager.Instance.GetCharacter(speakerName);
+            var characterConfigData = character != null ? character.Config : CharacterManager.Instance.GetCharacterConfig(speakerName);
 
             ApplySpeakerDataToDialogueContainer(characterConfigData);
         }
@@ -57,8 +66,13 @@ namespace _MAIN.Scripts.Core.Dialogue
         {
             dialogueContainer.SetDialogueColor(configuration.dialogueColor);
             dialogueContainer.SetDialogueFont(configuration.dialogueFont);
+            var fontSize = config.defaultDialogueFontSize * configuration.dialogueFontScale;
+            dialogueContainer.SetDialogueFontSize(fontSize);
+            
             dialogueContainer.nameContainer.SetNameColor(configuration.nameColor);
             dialogueContainer.nameContainer.SetNameFont(configuration.nameFont);
+            fontSize = config.defaultNameFontSize * configuration.nameFontScale;
+            dialogueContainer.nameContainer.SetNameFontSize(fontSize);
         }
 
         public void ShowSpeakerName(string speakerName = "")
@@ -77,14 +91,32 @@ namespace _MAIN.Scripts.Core.Dialogue
             return Say(conversation);
         }
 
-        public Coroutine Say(List<string> conversation)
+        public Coroutine Say(List<string> lines)
         {
-            return _conversationManager.StartConversation(conversation);
+            var conversation = new Conversation(lines);
+            return ConversationManager.StartConversation(conversation);
+        }
+
+        public Coroutine Say(Conversation conversation)
+        {
+            return ConversationManager.StartConversation(conversation);
         }
 
         public void OnUserPromptNext()
         {
             OnUserPromptNextEvent?.Invoke();
+            
+            if(_autoReader != null && _autoReader.isOn)
+                _autoReader.Disable();
         }
+
+        public void OnSystemPromptNext()
+        {
+            OnUserPromptNextEvent?.Invoke();
+        }
+        
+        public Coroutine Show(float speed = 1f, bool immediate = false) => _cgController.Show(speed, immediate);
+
+        public Coroutine Hide(float speed = 1f, bool immediate = false) => _cgController.Hide(speed, immediate);
     }
 }

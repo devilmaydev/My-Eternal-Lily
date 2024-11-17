@@ -1,0 +1,35 @@
+PlaySFX(door_open)
+
+Narrator "Quarto do Conor - 23h07"
+
+SetLayerMedia(background "quarto_spada" -blend radialClock)
+
+enter Connor Spada at 0.5 [pain] "*Suspiro* É vovó, seu netinho que você tem tanto orgulho tá desempregado agora, yeeey…"
+
+Connor Spada "Pelo menos deu pra pegar uma boa gorjeta do turno da manhã, dá pra pagar o registro tranquilo."
+
+Connor Spada "Agora com a gorjeta da noite… Ah, não dá nem pra dar entrada num concerto lá no Seu Marcelo!"
+
+Connor Spada [tired] "É isso, tô ferrado…"
+
+ClearLayerMedia(background -spd 0.5 -blend sides), Connor Spada.Hide()
+
+Narrator "Connor fecha os olhos"
+
+Narrator "..................."
+
+wait(1)
+
+PlaySFX(message_in)
+
+Narrator "Connor abre os olhos"
+
+SetLayerMedia(background "quarto spada" -blend sides)
+
+Narrator "[NOVA MENSAGEM DE BONA: Amg! Esqueci de te mandar o link do Enstragrama daquela loja q te falei. Dá uma olhada lá depois bjsssss <3]"
+
+Connor Spada "Não resta outra opção, né?"
+
+ClearLayerMedia(background -spd 0.5 -blend sides)
+
+wait(1), Load(A1C7 true)

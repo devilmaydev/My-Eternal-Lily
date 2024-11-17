@@ -1,0 +1,59 @@
+SetLayerMedia(background "quarto_conor")
+
+Connor Spada [nervoso] "N-Não, relaxa amiga, eu não ia ficar desejando o homem dos outros…"
+
+Bona [sem sprite, Ligação] "Acho bom mesmo."
+
+Bona [sem sprite, Ligação] "Mudando um pouco de assunto, cê disse que o seu contrato vai acabar logo mais, né?"
+
+[Sprite Connor Spada surpreso]
+
+Bona [sem sprite, Ligação] "Então, aquela marcenaria perto de casa tá precisando de gente pra trabalhar lá."
+
+Bona [sem sprite, Ligação] "Eu peguei o contato com um cara de lá e ele me disse que o salário é de uns R$3,000 por mês."
+
+Connor Spada [surpreso] "‘Caramba, tá pagando bem…’"
+
+Bona [sem sprite, Ligação] "É aquela escala fudida de 6x1, mas tem vale transporte, VA, convênio…"
+
+Bona [sem sprite, Ligação] "E também é algo que cê gosta de fazer! Lembrei na hora daqueles seus bonequinhos de madeira de dinossauro do seu quarto, que cê faz no tempo livre."
+
+Connor Spada [envergonhado] "Ah, não sabia que cê lembrava deles…"
+
+Connor Spada "Mas não fala nada com o moço ainda. Eu preciso… Pensar um pouco."
+
+Bona [sem sprite, Ligação] "Cê que sabe. Vou indo amigo, a gente se fala mais depois. Beijos!"
+
+Connor Spada [sorrindo] "Beijos!"
+
+[Som de Bip]
+
+[Respirando fundo, Connor apenas se jogou na cama de costas, divagando enquanto olhava pensativo para o teto]
+
+Connor Spada [confuso] "‘Quem é Franz?’"
+
+Connor Spada "‘Bom, não importa agora, o que importa é que pelo menos eu vou ter um emprego quando meu contrato do braço acabar…’"
+
+Connor Spada "‘E vai ser muito mais rápido pra consertar as pernas da vovó. Então vai valer muito a pena.’"
+
+[Sprite Connor Spada olhos fechados]
+
+[Sprite Connor Spada carinha de dor]
+
+Connor Spada [determinado] "‘Para de ficar se sentindo mal, Connie. Você precisa pensar na vovó, não importa que você queira ficar na loja!’"
+
+[Fade In]
+
+[Imagem do Nano aparece sorrindo pequeno em algum momento dos dois juntos entre os 2 meses]
+
+[Fade Out]
+
+[De volta para o quarto]
+
+[Sprite Connor Spada cansado e corado]
+
+Connor Spada "Era melhor apenas ir trabalhar de uma vez."
+
+[Fade Out]
+
+Load(A3C8 true)

@@ -1,0 +1,33 @@
+SetLayerMedia(background "sala_nano")
+
+Nano [frustrated] "Aaaaaah caralho, não consigo fazer isso!"
+
+PlaySFX(teclado_digitando_rapido)
+
+Nano [tired] "suspiro Isso tava mais fácil na minha cabeça…"
+
+Nano [neutral] (Narrator) "Olhando diretamente para a tela do computador, Nano já tinha perdido as contas de quantas vezes tinha escrito um pedido de desculpas, sendo nenhum deles bom o suficiente."
+
+Nano [frustrated, thinking] ‘Meu, quando foi que eu fiquei tão ruim em falar com outro ser humano!?’
+
+Nano [tired] ‘Odeio admitir que a Alex tá certa…’
+
+Silêncio
+
+Nano [neutral] ‘Tá. Uma última vez, depois uma partida de LAL pra esfriar a cabeça.’
+
+PlaySFX(teclado_digitando_rapido)
+
+Nano.SetSprite(surpreso)
+
+Conor [idle] "Foi!?!?"
+
+Alex [idle] "Ainda não! Tenta de novo!"
+
+Nano [surprised] "............................"
+
+Nano [thinking] ‘O que caralhos esses dois tão fazendo?’
+
+ClearLayerMedia(background)
+
+Load(A3C5 true)

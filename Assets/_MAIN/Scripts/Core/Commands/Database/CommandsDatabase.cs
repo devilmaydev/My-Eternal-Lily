@@ -1,18 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 
-public class CommandsDatabase
+namespace _MAIN.Scripts.Core.Commands.Database
 {
-    private Dictionary<string, Delegate> _database = new ();
+    public class CommandsDatabase
+    {
+        private Dictionary<string, Delegate> _database = new ();
 
-    public bool HasCommand(string commandName) 
-        => _database.ContainsKey(commandName);
+        public bool HasCommand(string commandName) => _database.ContainsKey(commandName.ToLower());
 
-    public void AddCommand(string commandName, Delegate command) 
-        => _database.TryAdd(commandName, command);
+        public void AddCommand(string commandName, Delegate command) => _database.TryAdd(commandName.ToLower(), command);
     
-    public Delegate GetCommand(string commandName) 
-        => _database.GetValueOrDefault(commandName);
+        public Delegate GetCommand(string commandName) => _database.GetValueOrDefault(commandName.ToLower());
+    }
 }

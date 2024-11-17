@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using _MAIN.Scripts.Core.Dialogue;
 using UnityEngine;
 

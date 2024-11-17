@@ -1,0 +1,19 @@
+Nano [upset] "Independente! Eu deixei bem claro pra você que não era pra ir lá, e na primeira oportunidade você vai!? E ainda mexe nas minhas coisas!"
+
+Connor Spada [nervous] "Tá bom! Foi mal! Você guarda um monte de tranqueira antiga e quebrada, eu só consertei a caixinha de música porque eu achei que—"
+
+Nano [upset] "NÃO ERA PRA MEXER!"
+
+Nano [upset] "....................."
+
+Nano [upset] "Vou te dar um último aviso. Se eu descobrir que você entrou lá de novo, ou mexeu nas minhas coisas sem minha permissão, pode esquecer seu braço e ir pro olho da rua. Entendeu?"
+
+Connor Spada [pain] "........ Sim, sinto muito."
+
+Nano [kindamad] "Ótimo. Essa é sua segunda chance, espero que não tenha uma próxima vez."
+
+Nano.Hide(), Connor Spada.Hide()
+
+ClearLayerMedia(background)
+
+Load(A2C8 true)

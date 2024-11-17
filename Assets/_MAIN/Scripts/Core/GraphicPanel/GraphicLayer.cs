@@ -10,77 +10,91 @@ namespace _MAIN.Scripts.Core.GraphicPanel
         public int LayerDepth = 0;
         public Transform Panel;
 
-        public GraphicObject CurrentGraphic = null;
-        private List<GraphicObject> _oldGraphics = new();
+        public GraphicObject CurrentGraphic;
+        public List<GraphicObject> OldGraphics = new();
 
-        public void SetTexture(string filePath, float transitionSpeed = 1f, Texture blendingTexture = null)
+        public Coroutine SetTexture(string filePath, float transitionSpeed = 1f, Texture blendingTexture = null, bool immediate = false)
         {
             Texture tex = Resources.Load<Texture2D>(filePath);
 
             if (tex == null)
             {
                 Debug.LogError($"Could not load graphic texture from path '{filePath}.' Please ensure it exists within Resources!");
-                return;
+                return null;
             }
 
-            SetTexture(tex, transitionSpeed, blendingTexture, filePath);
+            return SetTexture(tex, transitionSpeed, blendingTexture, filePath);
         }
 
-        public void SetTexture(Texture tex, float transitionSpeed = 1f, Texture blendingTexture = null, string filepath = "")
+        public Coroutine SetTexture(Texture tex, float transitionSpeed = 1f, Texture blendingTexture = null, string filepath = "", bool immediate = false)
         {
-            CreateGraphic(tex, transitionSpeed, filepath, blendingTexture: blendingTexture);
+            return CreateGraphic(tex, transitionSpeed, filepath, blendingTexture: blendingTexture, immediate: immediate);
         }
 
-        public void SetVideo(string filePath, float transitionSpeed = 1f, bool useAudio = true, Texture blendingTexture = null)
+        public Coroutine SetVideo(string filePath, float transitionSpeed = 1f, bool useAudio = true, Texture blendingTexture = null, bool immediate = false)
         {
             VideoClip clip = Resources.Load<VideoClip>(filePath);
 
             if (clip == null)
             {
                 Debug.LogError($"Could not load graphic video from path '{filePath}.' Please ensure it exists within Resources!");
-                return;
+                return null;
             }
 
-            SetVideo(clip, transitionSpeed, useAudio, blendingTexture, filePath);
+            return SetVideo(clip, transitionSpeed, useAudio, blendingTexture, filePath);
         }
 
-        public void SetVideo(VideoClip video, float transitionSpeed = 1f, bool useAudio = true, Texture blendingTexture = null, string filepath = "")
+        public Coroutine SetVideo(VideoClip video, float transitionSpeed = 1f, bool useAudio = true, Texture blendingTexture = null, string filepath = "", bool immediate = false)
         {
-            CreateGraphic(video, transitionSpeed, filepath, useAudio, blendingTexture);
+            return CreateGraphic(video, transitionSpeed, filepath, useAudio, blendingTexture, immediate);
         }
 
-        private void CreateGraphic<T>(T graphicData, float transitionSpeed, string filePath, bool useAudioForVideo = true, Texture blendingTexture = null)
+        private Coroutine CreateGraphic<T>(T graphicData, float transitionSpeed, string filePath, bool useAudioForVideo = true, Texture blendingTexture = null, bool immediate = false)
         {
             GraphicObject newGraphic = null;
 
             if (graphicData is Texture)
-                newGraphic = new GraphicObject(this, filePath, graphicData as Texture);
+                newGraphic = new GraphicObject(this, filePath, graphicData as Texture, immediate);
             else if (graphicData is VideoClip)
-                newGraphic = new GraphicObject(this, filePath, graphicData as VideoClip, useAudioForVideo);
+                newGraphic = new GraphicObject(this, filePath, graphicData as VideoClip, useAudioForVideo, immediate);
 
-            if (CurrentGraphic != null && !_oldGraphics.Contains(CurrentGraphic))
-                _oldGraphics.Add(CurrentGraphic);
+            if (CurrentGraphic != null && !OldGraphics.Contains(CurrentGraphic))
+                OldGraphics.Add(CurrentGraphic);
 
             CurrentGraphic = newGraphic;
 
-            CurrentGraphic.FadeIn(transitionSpeed, blendingTexture);
+            if (!immediate)
+                return CurrentGraphic.FadeIn(transitionSpeed, blendingTexture);
+            
+            DestroyOldGraphics();
+            return null;
         }
 
         public void DestroyOldGraphics()
         {
-            foreach (var g in _oldGraphics)
-                Object.Destroy(g.Renderer.gameObject);
+            foreach (var g in OldGraphics)
+                    Object.Destroy(g.Renderer.gameObject);
 
-            _oldGraphics.Clear();
+            OldGraphics.Clear();
         }
 
-        public void Clear()
+        public void Clear(float transitionSpeed = 1, Texture blendTexture = null, bool immediate = false)
         {
             if (CurrentGraphic != null)
-                CurrentGraphic.FadeOut();
+            {
+                if (!immediate)
+                    CurrentGraphic.FadeOut(transitionSpeed, blendTexture);
+                else
+                    CurrentGraphic.Destroy();
+            }
 
-            foreach (var g in _oldGraphics)
-                g.FadeOut();
+            foreach (var g in OldGraphics)
+            {
+                if (!immediate)
+                    g.FadeOut(transitionSpeed, blendTexture);
+                else
+                    g.Destroy();
+            }
         }
     }
 }
