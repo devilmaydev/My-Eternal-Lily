@@ -30,7 +30,7 @@ Nano "Tá, me mostra."
 
 Connor Spada "'Ele não parece que tá bravo mais…'" 
 
-Narrator "Conor remove o braço e coloca no balcão"
+Narrator "Conor remove o braço e coloca no balcão, tomando muito cuidado para não danificá-lo ainda mais."
 
 Narrator ".............................."
 
