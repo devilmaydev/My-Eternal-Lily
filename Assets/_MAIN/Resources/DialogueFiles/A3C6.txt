@@ -1,31 +1,127 @@
-SetLayerMedia(background "fachada_loja")
+Narrator "Fachada da Loja - 11h33"
 
-Alex [sorridente] "Agora tá piscando o A!"
+PlaySong(cybersong -vol 0.1)
 
-Nano [assustado] "Que barulheira é essa!?"
+SetLayerMedia(background "rua_loja")
 
-Connor Spada [confuso] "É o F que tá piscando agora??"
+enter Alex [laugh] at 0.5 "Agora tá piscando o A!"
 
-Connor Spada [carinha de dor] "A-Ah, oi Nano…"
+enter Nano [kindamad] at 0.8 "Que barulheira é essa!?"
 
-Nano [assustado] "Meu, que que cê tá se pendurando aí!?"
+Alex "Olhe por você mesmo."
 
-Connor Spada [pensando] "Por favor, não briga. Por favor, não briga…"
+Narrator "Se assustando, os olhos de Nano quase saem do rosto ao ver Conor se apoiando em uma escada velha e enferrujada no letreiro da loja"
 
-Nano [pensando] "Não surta, não surta…"
+CreateCharacter(Connor Spada),Connor Spada.SetSprite(armless_thinking), Connor Spada.Move(0.2 0), Connor Spada.Show()
 
-Connor Spada [neutro] "Eu… mexi no letreiro."
+Alex.Hide()
 
-Connor Spada [carinha de dor] "Alex disse que tava piscando, então fui lá dar uma ajeitada."
+Nano [upset] "FRA- SPADA!?"
 
-Nano [surpreso] "Você fez O QUÊ!? É sério isso?"
+Connor Spada "É o F que tá piscando agora??"
 
-Connor Spada [pensando] "Mano, esse vai ser o fim da linha, né? Não posso fazer nada certo."
+Connor Spada [armless_pain] "A-Ah, oi Nano…"
 
-Alex [entrando em cena, sorrindo] "Ah, o Connor Spada consertou o letreiro! Tá tudo certo agora."
+Nano "Meu, que que cê tá se pendurando aí!?"
 
-Nano [cansado] "Alex, eu não acredito que você trouxe o Connor Spada aqui pra fazer isso!"
+Connor Spada "A Alex disse que o letreiro tava piscando e pediu pra eu mexer aqui!"
 
-Alex [sorrindo] "Relaxou! Ele tem uns truques."
+Connor Spada "'Por favor não briga. Por favor não briga…'"
+
+Nano [kindamad] "'Não surta, não surta…'"
+
+Connor Spada.Hide()
+
+Alex.Show()
+
+Nano "Mano, da onde você tirou que isso é uma boa ideia?"
+
+Alex [sigh] "Ah sei lá, até achar alguém pra consertar isso o negócio já teria pifado tudo."
+
+Nano [thinking] "Dai você pensou que seria uma boa chamar o Spada pra isso?"
+
+Alex [laugh] "É!"
+
+Nano "E porque você mesma não foi lá? Não fiquei dias trabalhando pra você ter corpo físico atoa."
+
+Alex [baffled] "Agora além de IA ajudante de negócios eu sou eletricista?"
+
+Nano [kindamad] "*suspiro*"
+
+Narrator "......................"
+
+Alex [neutral] "Mudando de assunto, foi mal sobre ontem."
+
+PlaySong(drama -vol 0.1)
+
+Nano "Hm?"
+
+Alex "Peguei pesado contigo, e não quis dar a entender que a sua dor pela perda do Franz era insignificante."
+
+Nano.SetSprite(idle)
+
+Alex [pensive] "Eu sinto falta dele tanto quanto você, afinal, ele também foi meu criador. Mas te ver ainda tão apegado ao passado e sofrendo tanto é… Frustrante."
+
+Alex "Ele não ia gostar de te ver assim."
+
+Nano "Sei disso."
+
+Nano [kindamad] "…………………Eu mexi nas coisas dele ontem."
+
+Alex [neutral] "O que?"
+
+Nano [idle] "Cê tava certa. Por mais que ainda doa, não dá pra ficar pra sempre naquela vida."
+
+Nano "Aquela discussão me ajudou a ver como eu tô mal. Como… eu mesmo tô me afogando."
+
+Nano "Então, não se desculpe. Sou eu quem deveria estar fazendo isso."
+
+Alex [neutral] "....................."
+
+Alex [idle] "É muito bom ouvir isso."
+
+Nano [smile] "E também, não é justo deixar o Spada às cegas sobre o braço dele por egoísmo meu."
+
+Alex "Cê vai usar os cadernos dele então?"
+
+Nano "………………Eles não podem ficar guardados pra sempre, né?"
+
+Alex ".................."
+
+Alex "Vai contar para o Conor?"
+
+Nano "Ainda não. Preciso reunir mais coragem para falar sobre isso em voz alta."
+
+PlaySong(cybersong -vol 0.1)
+    
+enter Connor Spada [armless_idle] at 0.2 "Beleza, eu acho que agora foi."
+
+Alex "Ah, valeu Conor, de verdade."
+
+Nano [idle] "Não sabia que cê sabia mexer com esse tipo de coisa."
+
+Connor Spada [armless_nervous] "Aprendi uma coisinha ou outra nuns bicos que eu fazia…"
+
+Connor Spada [armless_laugh] "Foi lá que eu aprendi que uma gambiarra bem feita resolve tudo."
+
+Nano "Deixa eu advinhar, fita?"
+
+Connor Spada [armless_nervous] "É… Cê me conhece bem…"
+
+Narrator "Conor sentia a ansiedade crescer dentro do peito gradativamente, convicto de que Nano não gostaria do que tinha feito por estar olhando tempo demais o letreiro."
+
+Nano [smile] ".........Nada mal."
+
+Connor Spada [armless_surprised] "Hm? C-Cê gostou? De verdade?"
+
+Nano "Sim. Cê consertou até os LEDs que tavam fracos, fez um bom trabalho."
+
+HideDB(), wait(2)
+
+Nano.Hide(), Connor Spada.Hide()
+
+Alex [laugh] "*sussurro* Yes!!!"
+
+ClearLayerMedia(background), Alex.Hide()
 
 Load(A3C7 true)

@@ -1,4 +1,24 @@
-CINEMÁTICA
-CARTA
-[Fade out]
-[Subir créditos]
+ClearLayerMedia(background), Connor Spada.Hide(), Alex.Hide(), Nano.Hide()
+
+wait(1)
+
+Narrator "Nano em seu apartamento sozinho e em silêncio, sentado na mesa perto da janela enquanto escreve concentrado em um papel."
+"O telefone apita com um som de notificação de mensagem e ele pega para checar"
+
+HideDB(), SetLayerMedia(cinematic "nano_scroll")
+
+wait(60)
+
+ClearLayerMedia(cinematic)
+
+HideDB(), wait(4)
+
+SetLayerMedia(cinematic "CARTA")
+
+wait(60)
+
+ClearLayerMedia(cinematic)
+
+wait(1)
+
+SetLayerMedia(cinematic "CREDITOS")

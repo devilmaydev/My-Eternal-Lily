@@ -16,7 +16,7 @@ PlaySFX(click), Connor Spada.Move(0.2 0)
     
 enter Alex at 0.8 "Pelos códigos, um cliente!"
 
-PlaySong(cybersong)
+PlaySong(cybersong -vol 0.1)
 
 Connor Spada [shock] "AH! Quase tu me mata de susto, moça!"
 
@@ -24,7 +24,7 @@ Alex "Foi mal! Sempre me empolgo quando vou falar com uma pessoa diferente."
 
 Alex "Eu sou Alex. E você é?"
 
-Connor Spada [laugh] "Conor Spada, prazer em te conhecer."
+Connor Spada [laugh] "Connor Spada, prazer em te conhecer."
 
 Connor Spada "Ah… Desculpa se eu tô sendo indelicado e tals, mas você não me parece tão…"
 
@@ -32,17 +32,19 @@ Alex [smile] "Humana? Isso porquê eu de fato não sou."
 
 Alex "Sou um sistema programado com emoções, pensamentos e uma consciência própria, com capacidade de gerar superfícies sólidas através de átomos de luz e converter dióxido de carbono em energia funcional e limpa para todo tipo de dispositivo."
 
-Connor Spada "Eh?"
+Connor Spada [nervous] "Eh?"
 
 Alex "Uma IA com corpo físico. Com um plus em habilidades."
 
-Connor Spada "Ah tá. Caramba! Você tem um corpo mesmo! Eu achei que IAs não conseguiam fazer isso…"
+Connor Spada [surprised] "Ah tá. Caramba! Você tem um corpo mesmo! Eu achei que IAs não conseguiam fazer isso…"
 
 Alex [laugh] "Se fosse há 100 anos atrás, talvez eu conseguisse só criar respostas rápidas e umas imagens bem meia boca. Tá precisando se atualizar, rapaz."
 
-Connor Spada "Ha ha… Não é muito o meu forte…"
+Connor Spada [nervous] "Ha ha… Não é muito o meu forte…"
 
 Alex "Enfim, vou chamar alguém pra vir te atender. Me dá um segundinho."
+
+Connor Spada.SetSprite(idle)
 
 PlaySFX(click), Alex.Hide()
 

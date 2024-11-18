@@ -1,22 +1,24 @@
+PlaySong(BGM -v 0.1)
+
 Narrator "Casa dos Spada - 19h29"
 
 PlaySFX(door_open)
 
 PlaySFX(door_slam)
 
-enter Connor Spada at 0.8 [idle] "Mãe? Tá em casa?"
+enter Connor Spada at 0.8 [armless_idle] "Mãe? Tá em casa?"
 
 enter Mãe at 0.2 "Connie! Já chegou, meu filho? Achei que você fosse demorar mais."
 
-Connor Spada [surprised] "O trem tava operando normal hoje…"
+Connor Spada [armless_surprised] "O trem tava operando normal hoje…"
 
-Connor Spada [neutral] "Porque que tá tudo escuro- MÃE!?"
+Connor Spada [armless_neutral] "Porque que tá tudo escuro- MÃE!?"
 
 Narrator "Ele se aproxima rápidamente do móvel alto, preocupado ao ver a mãe em cima dele em pé mexendo na caixa de energia da casa."
 
 Mãe "Ai que bom. Vai, pega aquela vela e traz aqui pra perto de mim por favor."
 
-Connor Spada [surprised] "Mãe que que cê tá fazendo!? Desce daí que a senhora vai cair!"
+Connor Spada [armless_surprised] "Mãe que que cê tá fazendo!? Desce daí que a senhora vai cair!"
 
 Mãe "Relaxa, tô só fazendo um gato aqui, é dois minutos."
 
@@ -24,11 +26,11 @@ Connor Spada "Gato? Cortaram a energia daqui de casa??"
 
 Mãe "Pois é, e eu tava falando ainda por cima falando com aquela cliente ricassa que eu te falei. Connie, pega aquela sua fita lá pra mim, por favor?"
 
-Connor Spada [thinking] "....................."
+Connor Spada [armless_thinking] "....................."
 
 Mãe "Filho?"
 
-Connor Spada [neutral] "Ah, tá, tá bom…"
+Connor Spada [armless_neutral] "Ah, tá, tá bom…"
 
 Connor Spada "A vovó tá lá em cima, né?"
 

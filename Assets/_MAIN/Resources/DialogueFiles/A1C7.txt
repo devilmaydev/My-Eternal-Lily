@@ -4,11 +4,11 @@ SetLayerMedia(background "rua_loja" -blend radialClock)
 
 PlayAmbience(ambience_street)
 
-enter Connor Spada [idle] at 0.5 "Ok, é mais longe do que eu pensei…"
+enter Connor Spada [nervous] at 0.5 "Ok, é mais longe do que eu pensei…"
 
-Connor Spada "Vejamos, já vi alguém ser assaltado, um cara vestido de porco cantando em uma praça, um provável cadáver em uma esquina…"
+Connor Spada [thinking] "Vejamos, já vi alguém ser assaltado, um cara vestido de porco cantando em uma praça, um provável cadáver em uma esquina…"
 
-Connor Spada "É, não tavam mentindo quando disseram que o Centro de São Paulo é um dos lugares dessa cidade…"
+Connor Spada [pain] "É, não tavam mentindo quando disseram que o Centro de São Paulo é um dos lugares dessa cidade…"
 
 Connor Spada "Parece antiga…"
 

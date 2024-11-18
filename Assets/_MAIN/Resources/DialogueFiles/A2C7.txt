@@ -1,19 +1,57 @@
-Nano [upset] "Independente! Eu deixei bem claro pra você que não era pra ir lá, e na primeira oportunidade você vai!? E ainda mexe nas minhas coisas!"
+SetLayerMedia(background "nano_casa")
 
-Connor Spada [nervous] "Tá bom! Foi mal! Você guarda um monte de tranqueira antiga e quebrada, eu só consertei a caixinha de música porque eu achei que—"
+PlaySong(nano -vol 0.2)
 
-Nano [upset] "NÃO ERA PRA MEXER!"
+PlaySFX(door_open)
 
-Nano [upset] "....................."
+enter Nano [tired] at 0.2 "‘Namoral, que dor de cabeça esse rapaz dá…’"
 
-Nano [upset] "Vou te dar um último aviso. Se eu descobrir que você entrou lá de novo, ou mexeu nas minhas coisas sem minha permissão, pode esquecer seu braço e ir pro olho da rua. Entendeu?"
+enter Alex [baffled] at 0.8 "Como você pode ser tão escroto?"
 
-Connor Spada [pain] "........ Sim, sinto muito."
+Nano [idle] "................."
 
-Nano [kindamad] "Ótimo. Essa é sua segunda chance, espero que não tenha uma próxima vez."
+Nano [thinking] "E aí? Vai ficar encarando?"
 
-Nano.Hide(), Connor Spada.Hide()
+Alex [baffled] "Você age como se as outras pessoas tivessem que andar em ovos para estar do seu lado. O Connor tava tentando te ajudar! Não foi nada demais. E você fica fazendo um auê todo por algo que nem é tão sério assim!"
 
-ClearLayerMedia(background)
+Nano [upset] "Ah agora eu sou o culpado? Eu deixei claro no primeiro dia pra ele não mexer em nada."
 
-Load(A2C8 true)
+Alex [baffled] "Independente! Todo mundo tem problemas, você não é o único que lida com eles. Ele não sabia que isso poderia te afetar negativamente, e você nem se deu ao trabalho de tentar explicar o porquê!"
+
+Alex [baffled] "Cê espera que o quê? Ele use uma bola de cristal pra adivinhar como cê se sente!?"
+
+Nano [upset] "Eu não preciso explicar nada. Ele tá aqui só tem um mês e você espera que eu coloque pra fora tudo o que eu passei nesses últimos 2 anos!?"
+
+Alex [baffled] "Tá vendo? Você se fecha, não fala nada e depois faz todo mundo ser o vilão quando explode!"
+
+Alex [baffled] "Você não percebe que só vai afastá-lo assim? Tá só fugindo de algo fácil de se resolver."
+
+Nano [idle] "......................."
+
+Alex [neutral] "Olha, se você não quer falar, beleza. Mas os outros não tem culpa se você só vive no passado e não olha pro agora."
+
+Alex.Hide()
+
+wait(1), PlaySong(sad -vol 0.1)
+
+Nano.Move(0.5 0), Nano.SetSprite(sad)
+
+Narrator "Em silêncio, Nano caminha até a mesa perto da janela, não se importando nem um pouco com a vista deturpada da cidade."
+
+Narrator "Indo diretamente para a pequena placa holográfica ali apoiada e passando o dedo algumas vezes pelas fotos guardadas, parando por alguns segundos ao ver uma foto específica."
+
+HideDB(), SetLayerMedia(cinematic "retrato_nano_franz_nano" -blend pitchBlack)
+
+Nano.Hide(), ClearLayerMedia(background)
+
+wait(2)
+
+Narrator "Nano acaba deixando gotas de suas lagrimas cair, causando falhas no holograma."
+
+Nano "Onde quer que você esteja, por favor, me ajuda…"
+
+ClearLayerMedia(cinematic)
+
+HideDB(), wait(4)
+
+Load(A3C1 true)

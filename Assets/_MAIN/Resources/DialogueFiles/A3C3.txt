@@ -1,55 +1,51 @@
 Narrator "Sala dos fundos - 19h"
 
+PlaySong(drama -v 0.1)
+
 SetLayerMedia(background "sala_nano_escura")
 
-Nano [conflict] "………………"
+enter Nano [sad] "………………"
 
-Nano [upset, thinking] "‘Vamos… São só bugigangas…’"
+Nano "‘Vamos… São só bugigangas…’"
 
-Nano [neutral] "parando no meio do cômodo, olhando fixamente para o cabideiro com um colete e boina antigos bem ao fundo, como se estivesse esperando alguma resposta vinda deles."
+Narrator "Ele para no meio do cômodo, olhando fixamente para o cabideiro com um colete e boina antigos bem ao fundo, como se estivesse esperando alguma resposta vinda deles."
+"Nano tenta se aproximar, mas recua no meio do caminho quando sente seus dedos tremerem."
 
-Nano [tired] "Ele tenta se aproximar, mas recua no meio do caminho quando sente seus dedos tremerem."
+Nano "‘Calma, respira fundo… É só ir de uma vez.’"
 
-Nano [neutral] "‘Calma, respira fundo… É só ir de uma vez.’"
+PlaySound(fightsong -vol 0.1)
 
-PlaySound(melodia_triste)
+Narrator "Expirando, ele finalmente se aproximou da estante num impulso, observando o que estava exposto sujo pelo tempo e a falta de cuidado"
+"Tudo parecia fazer seu bolo na garganta aumentar mais e mais. Era quase impossível passar por tantas lembranças sem deixar que uma tempestade tomasse conta de seus olhos."
 
-PlaySFX(batida_de_coracao_baixinho)
+Nano.Hide(), ClearLayerMedia(background), SetLayerMedia(cinematic "lirios")
 
-Narrator "Tudo parecia fazer seu bolo na garganta aumentar mais e mais. Era quase impossível passar por tantas lembranças sem deixar que uma tempestade tomasse conta de seus olhos."
+Narrator "Mas ele não expressaria sequer uma gota"
 
-(Foco no vaso com lírios murchos)
+wait(4), ClearLayerMedia(cinematic), SetLayerMedia(background "sala_nano_escura"), Nano.Show()
 
-Nano [neutral] ‘Eu deveria limpar esse lugar. Ele não ia gostar de vê-lo sujo…’
+Nano "‘Eu deveria limpar esse lugar. Ele não ia gostar de vê-lo sujo…’"
 
 Narrator "Seus olhos foram diretamente para o porta retrato, fazendo sua respiração ficar presa."
 
-PlaySFX(batida_de_coracao_aumento)
+HideDB(), SetLayerMedia(cinematic "retrato_nano_franz_nano" -blend pitchBlack), wait(4), StopSong(sad)
 
-Narrator "(Imagem do quadro dele e o Franz abraçados)"
-
-PlaySFX(batida_de_coracao_aumento)
-
-PlaySFX(piiiiiii_aumentando)
-
-PlaySFX(batida_de_coracao_alta)
-
-PlaySFX(piiiiiiii_parando)
+ClearLayerMedia(cinematic)
 
 Nano [upset] "Não. Essa vida foi tirada de mim há muito tempo."
 
-Narrator "CAIXCINHA CALMA KKKKKK calcinha"
+Nano.Hide(), ClearLayerMedia(background), SetLayerMedia(cinematic "caixa")
+
+wait(4)
+
+ClearLayerMedia(cinematic), SetLayerMedia(background "sala_nano_escura"), Nano.Show()
 
 Nano [sad] "Mas eu queria lembrar sem doer tanto…"
 
 Narrator "Passando os dedos pelas formas esculpidas, um rastro escuro e limpo surgia em meio a grossa camada de pó, terminando na manivela remendada."
 
-Narrator "..........................."
+Nano [huh] "*suspiro* ………………Eu consigo."
 
-PlaySFX(flashback_imagens_interagindo)
-
-Nano [tired] "……………Eu consigo."
-
-ClearLayerMedia(background)
+ClearLayerMedia(background), Nano.Hide()
 
 Load(A3C4 true)

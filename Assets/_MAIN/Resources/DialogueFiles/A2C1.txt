@@ -1,12 +1,12 @@
+PlaySong(cybersong -vol 0.1)
+
 Narrator "Um mês após o início do novo trabalho..."
 
 SetLayerMedia(background "oficina_interior" -blend rightLeft)
 
-PlaySong(cybersong)
+enter Connor Spada at 0.5 [armless_laugh] "Bom, eu vou passar seu celular pro técnico pra fazermos um orçamento."
 
-enter Connor Spada at 0.5 [laugh] "Bom, eu vou passar seu celular pro técnico pra fazermos um orçamento."
-
-Connor Spada [idle] "Pode me passar seu nome e número?"
+Connor Spada [armless_idle] "Pode me passar seu nome e número?"
 
 Cliente "Claro, é Enzo e o número é 11 98765-4321."
 
@@ -14,7 +14,7 @@ Narrator "Mesmo não sendo a melhor pessoa quando se trata de tecnologia, Connor
 
 PlaySFX(keyboard)
 
-Connor Spada [laugh] "Prontinho! A gente entra em contato pra te falar quanto fica e quando fica pronto, ok?"
+Connor Spada [armless_laugh] "Prontinho! A gente entra em contato pra te falar quanto fica e quando fica pronto, ok?"
 
 Cliente "Ok, obrigado, moço!"
 
@@ -24,19 +24,19 @@ Connor Spada.Move(0.2 0)
 
 enter Alex [idle] at 0.8 "E aí? Qual a boa de hoje?"
 
-Connor Spada [idle] "Nada demais, outra pessoa com um celular coisado só."
+Connor Spada [armless_idle] "Nada demais, outra pessoa com um celular coisado só."
 
-Connor Spada [nervous] "Se bem que qualquer coisa é nada demais depois daquele dia…"
+Connor Spada [armless_nervous] "Se bem que qualquer coisa é nada demais depois daquele dia…"
 
 Alex [sigh] "Eu falei pra você que os mendigos gostam muito daqui. Cê já deveria estar preparado."
 
-Connor Spada [pain] "É, realmente, todo mundo tem que estar preparado pras invasões dos louquinhos do centro gritando uma pá de coisa sem sentido enquanto ELES te perseguem em uma loja minúscula…"
+Connor Spada [armless_pain] "É, realmente, todo mundo tem que estar preparado pras invasões dos louquinhos do centro gritando uma pá de coisa sem sentido enquanto ELES te perseguem em uma loja minúscula…"
 
 Alex [laugh] "Viu? Já está totalmente adaptado!"
 
-Connor Spada [nervous] "………………………………"
+Connor Spada [armless_nervous] "………………………………"
 
-Connor Spada [idle] "Bom, é melhor eu deixar isso aqui com o Nano, ele mexe com essas coisas melhor do que eu."
+Connor Spada [armless_idle] "Bom, é melhor eu deixar isso aqui com o Nano, ele mexe com essas coisas melhor do que eu."
 
 PlaySFX(walk)
 
@@ -45,7 +45,7 @@ Narrator "Com o celular em mãos, ele caminha até a porta das Salas dos Fundos"
 
 enter Nano at 0.5 [idle] "Veio cliente?"
 
-Connor Spada [surprised] "Ah! Veio sim!"
+Connor Spada [armless_surprised] "Ah! Veio sim!"
 
 Connor Spada "Eu tava indo levar pra sala dos fundos pra-"
 
@@ -53,22 +53,21 @@ Nano [thinking] "Não precisa, eu levo."
 
 Alex.SetSprite(baffled)
 
-Narrator "Sem muita explicação - ou nenhuma - Nano pega o celular quebrado e passa pela porta, a batendo logo em seguida.", PlaySFX(door_slam)
-Nano.Move(1.2 0), Nano.Hide()
-"Não deixando brecha para que Conor pudesse o interior da sala"
+Nano.Move(1.2 0), Nano.Hide(), wait(1), PlaySFX(door_slam)
+Narrator "Sem muita explicação - ou nenhuma - Nano pega o celular quebrado e passa pela porta, a batendo logo em seguida.", 
+"Não deixando brecha para que Connor pudesse ver o interior da sala"
 
-
-Connor Spada [shock] "Então tá bom…"
+Connor Spada [armless_shock] "Então tá bom…"
 
 Alex "Humpf, grosso…"
 
 Narrator "……………………………………………………………………………"
 
-Connor Spada [tired] "Ele vai ficar de novo o dia todo aí, né?"
+Connor Spada [armless_tired] "Ele vai ficar de novo o dia todo aí, né?"
 
 Alex [pensive] "Se pá que sim. Ele tem se esforçado bastante no trabalho. Se ele sair daí antes de você ir embora, vai ser até que cedo conhecendo ele como eu conheço."
 
-Connor Spada [pain] "Verdade né. Desde que eu entrei aqui eu só tenho visto ele a hora que eu chego."
+Connor Spada [armless_pain] "Verdade né. Desde que eu entrei aqui eu só tenho visto ele a hora que eu chego."
 "Nem parece que eu tenho patrão às vezes…"
 
 Alex "O Nano é… Fechado. Até demais pro meu gosto. Ele também não costuma falar muito com outras pessoas, ainda mais alguém que ainda é um desconhecido para ele, como você."

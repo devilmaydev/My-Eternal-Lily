@@ -1,279 +1,147 @@
-Fade In
+SetLayerMedia(background "sala_nano")
 
-—--------------------------------
-Sala dos fundos - 17h35
-—-------------------------------
+enter Nano [cry] at 0.8 "*suspiro* Desculpe por isso."
 
-[Som de passos]
+enter Connor Spada at 0.2 [armless_sympathetic] " sniff T-Tá de boa…"
 
-[Som de porta abrindo]
+Nano [cry] "……………Cê tá bem…?"
 
-[Foco no cenário]
+Connor Spada "Sim, é-é eu sou meio sensível."
 
-Connor Spada [sem sprite] "‘Oh, ele me chamou pra ir na sala dos fundos! Eu nunca pensei que fosse entrar aqui de novo…’"
+Nano [smile] "Heh…"
 
-[Sem dizer uma palavra, Conor observou Nano caminhar em silêncio até o outro lado da sala, parando em frente a uma mesa incrivelmente bagunçada com uma enorme caixa ao centro]
+Connor Spada.SetSprite(armless_surprised)
+Nano.Move(0.8 0 -spd 2)
 
-[Conor entra em cena]
+PlaySong(cybersong -vol 0.1)
 
-[Sprite Connor surpreso]
+enter Alex at 0.5 [laugh] "Beleza! Finalmente eu-"
 
-[Nano entra em cena]
+Alex [neutral] "Vish, que que aconteceu? Porque o Connor tá chorando?"
 
-Nano "Acho que cê já deve saber, mas aqui é minha oficina. É aqui que eu gosto de ficar a maior parte do tempo e onde eu conserto tudo da loja."
+Connor Spada [armless_nervous] "A gente tava…"
 
-[Piscando algumas vezes, ele demorou para sair do lugar e entrar de fato, se aproximando ainda desacreditado de Nano]
+Connor Spada.SetSprite(armless_surprised)
 
-Nano [sprite dele de xereca] "Desculpe pela bagunça, não tive tempo de arrumar."
+Nano [idle] "Eu tava mostrando como o braço tinha ficado e ele ficou emocionado, não se preocupa."
 
-[Seus olhos quase saltaram para fora assim que olhou dentro da caixa. Vendo um braço mecânico novinho em folha]
+Alex [sigh] "Cê já mostrou!? Ah mano, queria ter visto a reação dele…"
 
-[Imagem do Braço]
+Alex [idle] "Mas tudo bem, pelo menos eu cheguei na melhor parte! Preparei meus sistemas e poli eles esse tempo todo para…"
 
-Connor Spada [sem palavras/surpreso] "..........................."
+Narrator "Connor Spada observou Alex passar por ambos enquanto continuava a falar animadamente, sem notar os dois ficando gradativamente para trás."
 
-Nano [sorrindo pequeno] "Demorou um pouco, mas finalmente deu pra terminar o sistema interno a tempo pra você."
+Connor Spada [armless_sympathetic] "*sussurro* Valeu…"
 
-Connor Spada [sem palavras/surpreso] "..........................."
+Nano [smile] "*sussurro* De boas."
 
-Nano [confuso] "………Spada?"
+Alex [laugh] "…E isso vai ativá-lo, entendeu?"
 
-[Sprite Nano mais perto do Spada]
+Connor Spada [armless_nervous] "Hã?"
 
-[Som de estalo de dedo]
+Alex [pensive] "............"
 
-[Nano se afastando rápido de novo]
+Nano.SetSprite(idle)
+Connor Spada.SetSprite(armless_idle)
 
-[Sprite Nano surpreso]
+Alex [idle] "Explicando de novo, seu braço tem um sistema especial que vai pegar a poluição do ar e transformar em energia para que você possa move-lo."
 
-Connor Spada [super animado] "CARACA OLHA ISSO!!"
+Connor Spada [armless_thinking] "Ué, mas o Nano disse vai mexer com esse treco que tá na minha nuca…"
 
-[Sprite Nano recuando um passo assustado]
+Alex [laugh] "Isso é só a primeira parte!"
 
-Connor Spada [animado] "É todo brilhante e bonito… E não tem nenhum cabo saindo pra fora como eram os outros!"
+Alex [sigh] "Mas cê teria prestado atenção se não tivesse de casinho com o Nano lá trás."
 
-Connor Spada "Uau!!!"
+Nano.SetSprite(huh)
 
-[Sprite Nano sorrindo pequeno e se aproximando de novo]
+Connor Spada [armless_nervous] "Q-QUÊ!?"
 
-Nano "‘Valeu a pena.’"
+Alex [laugh] "Tô zoando!"
 
-Nano "Ele se mexe por um dispositivo que capta os sinais elétricos do seu sistema nervoso através de eletrodos, e os enviam para esse dispositivo para serem processados e interpretar seus comandos."
+Connor Spada.SetSprite(armless_tired)
 
-Connor Spada [sorrindo] "Hã?"
+Nano.SetSprite(idle)
 
-Nano [cansado] "Vira de costas aí."
+Alex [idle] "Agora, bora trabalhar que eu tô animada!"
 
-[Sem conseguir parar de sorrir, Conor se virou, dando pequenos pulinhos de animação]
+Connor Spada.SetSprite(armless_idle)
 
-Nano [neutro] "Voltando, você vai ficar com um aparelho embutido na sua nuca. Toda vez que pensar em mexer seu braço, esse aparelho vai captar isso e fazer com que ele se mexa, sacou?"
+ClearLayerMedia(background), Connor Spada.Hide(), Nano.Hide(), Alex.Hide()
 
-Connor Spada [surpreso] "‘Então foi por isso que a Alex perguntou do negócio da textura’"
+wait(4)
 
-Connor Spada "Ah, então é um braço gourmet?"
+SetLayerMedia(background "sala_nano")
 
-Nano "……………………Gourmet?"
+Alex.SetSprite(idle)
 
-Connor Spada [sorrindo] "É! Minha vó dizia que na época dela, tudo que era chique e bonito era gourmet."
+Nano.SetSprite(idle)
 
-Connor Spada [sorridente] "Esse aqui é o braço mais maneiro que eu já tive! Então, pra mim é gourmet."
+Connor Spada.SetSprite(new_idle)
 
-Nano [muito confuso] "..........Ok?"
+Connor Spada.Show(), Nano.Show(), Alex.Show()
 
-Nano "Ergue um pouco o cabelo e fica parado, se não eu vou furar no lugar errado sua nuca e vai dar ruim."
+Nano [idle] "Pronto."
 
-Connor Spada [com medo] "Pera, furar!?"
+Connor Spada [new_surprised] "Não é pesado como os outros…! Como cês fizeram isso?"
 
-Nano [bravo] "Shiu, mudo."
+Nano [smile] "Com os recursos de hoje em dia, dá pra fazer qualquer coisa."
 
-[Sprite Nano neutro bem próximo do Conor]
+Connor Spada [new_surprised] "Woah…!"
 
-[Sprite Conor carinha de dor]
+Connor Spada [new_thinking] "Mas eu não consigo mexer ele…"
 
-[Som de negócios tecnológicos que eu não sei explicar]
+Alex "Essa é minha deixa!"
 
-[Silêncio entre os personagens]
+Alex.Hide(), PlaySFX(click)
 
-Connor Spada "...................."
+Connor Spada [new_surprised] "Eita!"
 
-Connor Spada [carinha de dor] "‘Meu, eu nem sei se tô nervoso por estar sendo furado ou por que eu tô sentindo ele respirar na minha nuca!’"
+Alex.Show(), PlaySFX(click)
 
-Nano [pensando] "‘Eu devia ter pego meu outro óculos pra ver de perto, tô com a cara colada no pescoço dele e ainda não tô vendo direito…’"
+Alex [idle] "Beleza, testa ele aí."
 
-Nano "Spada, dá pra parar de tremer por um minuto, por favor?"
+Narrator "Sem precisar se esforçar muito, Connor Spada ergueu o braço de repente, olhando maravilhado para o alto enquanto abria e fechava a mão."
 
-Connor Spada "Tô tentando…!"
+Connor Spada [new_surprised] "‘Eu não conseguia fazer isso antes!’"
 
-[Silêncio entre os personagens]
+Alex [smile] "E aí? Curtiu?"
 
-[Som de negócios tecnológicos que eu não sei explicar]
+Connor Spada [new_laugh] "Muito!!! Eu não preciso nem pensar e ele já vai lá e faz o que eu quero! É muito maneiro!"
 
-[Nano se afasta]
+Nano [smile] "‘Realmente, valeu a pena.’"
 
-Nano "Pronto."
+Alex [sigh] "Levou uns 3 meses e umas boas noites de sono, mas deu tempo de te entregar antes do prazo."
 
-Connor Spada [surpreso] "Ué, cê já furou? Não senti nadinha…"
+Connor Spada [new_neutral] "Ah, o prazo… Isso significa que o nosso contrato acabou, né?"
 
-Nano [neutro] "É uma agulha bem fina pra ela ficar em contato com seu nervo. Cê não vai nem perceber que isso tá aí."
+Nano.SetSprite(sad)
 
-Connor Spada [nervoso] "‘Me perguntaram se eu me incomodava com textura mas não se eu tinha problemas com agulhas…’"
+Alex [neutral] "Na teoria, seria até o final deste mês. Mas tecnicamente, o contrato acaba quando te entregamos o produto final."
 
-Nano "Já vamo colocar seu braço no lugar. Só me dê um segundo pra eu pegar uma coisa."
+Alex [neutral] "Então, sim, seu contrato termina hoje."
 
-Nano "Não mexe no bagulho que tá na sua nuca"
+Connor Spada [new_tired] "Ah sim…"
 
-Connor Spada [sorrindo] "Tá bom."
+Narrator "..............................."
 
-Nano [pensando] "‘Eu realmente preciso do meu outro óculos’"
+PlaySong(drama -vol 0.1)
 
-[Som de passos]
+Nano [idle] "A vaga na loja vai ficar aberta."
 
-[Nano sai de cena]
+Alex [pensive] "É, eu sei. A gente vai ter que-"
 
-[Som de porta batendo]
+Nano [idle] "A menos que ele queira ficar."
 
-[Silêncio]
+Connor Spada [new_surprised] "Hã??"
 
-Connor Spada "É, mais uma vez sozinho…"
+Nano [idle] "Eu te contrataria para trabalhar na mesma escala e os mesmos benefícios que cê tava tendo antes, com mais alguns e um aumento."
 
-[Era estranho estar naquele lugar. Tudo parecia igual à loja, porém, de um jeito mais… Tecnológico.]
+Nano [smile] "A decisão é sua."
 
-[Observando com mais calma a sala, seus olhos foram imediatamente para a estante perto da porta, se sentindo imediatamente atraído a vê-la.]
+Connor Spada [new_thinking] "‘Se eu for para a marcenaria, vou poder pagar rapidinho o tratamento da vovó.’"
 
-Connor Spada [receoso] "................."
+Connor Spada [new_tired] "‘Mas eu me apeguei muito a eles dois… E com um aumento, talvez eu consiga ir juntando uma quantia melhor de dinheiro para pagar o tratamento por mais um tempinho.’"
 
-[Mordendo brevemente os lábios, ele precisou tomar um pouco de coragem para se aproximar, parando a uma distância segura.]
-
-Connor Spada "‘Ver com os olhos, não com as mãos. Lembra do que aconteceu da última vez.’"
-
-[Passando os olhos pelas poucas coisas expostas, imediatamente parou ao ver o porta-retrato]
-
-Connor Spada [choque] "‘Esse é o Franz?’"
-
-[Imagem do porta-retrato com Franz e Nano abraçados rindo]
-
-[Connor fora de cena]
-
-Connor Spada "Os dois parecem felizes juntos…"
-
-[Silêncio]
-
-………………………………………………
-
-Connor Spada "Dói, mas eu consigo aguentar."
-
-[Imagem do porta-retrato fora de cena]
-
-[De volta ao Conor]
-
-[Sprite Connor cabisbaixo em silêncio]
-
-[Som porta sendo aberta]
-
-[Nano entra em cena]
-
-[Sprite Connor surpreso]
-
-Nano [pensando] "‘Finalmente, agora vou poder enxergar…’"
-
-Nano [surpreso] "‘Melhor…’"
-
-[Silêncio]
-
-………………………………………………
-
-Connor Spada [carinha de dor] "Não mexi em nada, eu juro!"
-
-Nano [neutro] "Eu sei que não."
-
-[Som de passos]
-
-[Conor se surpreendeu ao ver Nano tão calmo sobre aquilo, apenas se aproximando e parando ao lado em silêncio, observando a estante com um olhar distante]
-
-[Sem saber o que fazer, Conor apenas ficou em silêncio, reunindo internamente coragem para dizer algo]
-
-Connor Spada [nervoso] "......................"
-
-Connor Spada "É bem legal."
-
-Nano [confuso] "Hm?"
-
-Connor Spada [sorrindo] "O que você construiu e colocou aqui. Não sabia que gostava de coisas antigas."
-
-Nano [triste] "Ah… Não fui eu que fiz, foi ele."
-
-Connor Spada [pensando] "O cara da foto?"
-
-Nano [neutro] "Hm. Franz Tresaulti, esse era o nome dele."
-
-[Sprite Connor surpreso]
-
-Nano [neutro] "Eu conheci ele há pouco mais de 5 anos. Na época, eu era sozinho. Vivia de pequenos protótipos de jogos que vendia para grandes empresas. Eu ainda faço isso, mas não com tanta frequência."
-
-[Sprite Connor neutro sem sorrir]
-
-Nano [neutro] "Ele surgiu de repente na minha vida implorando por ajuda, e como eu não tinha nada a perder, eu o ajudei."
-
-Nano "Em pouco tempo, nós começamos a nos dar muito bem. Tínhamos personalidades completamente opostas, ele sempre foi apaixonado por coisas vintage e amava criar e reinventar tudo. Já eu, gostava da computação, das linhas de código e ficar no computador."
-
-[Sprite Connor neutro sem sorrir]
-
-Nano [envergonhado meio corado] "Mas eram personalidades que funcionavam em conjunto de alguma forma, tá ligado?"
-
-Nano [neutro] "E como esperado, a gente começou a namorar."
-
-Nano [huh] "Inicialmente, eu achava que seria só um rolo de pouco tempo, não sou lá a melhor pessoa para interagir com outro ser humano."
-
-Nano [envergonhado sem corar] "Mas eu não esperava que fosse realmente sentir amor por ele. Amor romântico."
-
-Nano [cansado] "Mas… suspiro Aconteceu."
-
-Nano [pensando] "Depois de algum tempo juntos, nós fizemos a Alex. Ela seria nossa IA ajudante, então eu a programei e ele construiu o dispositivo que faz ela ter um corpo sólido."
-
-Nano [neutro] "A Alex que você conhece, tem a personalidade inteiramente baseada na do Franz."
-
-Connor Spada [surpreso] "‘Ah…’"
-
-Nano [neutro] "O ponto é que, pouco depois, nós abrimos a loja. Era ele quem cuidava de atender os clientes, consertar a maioria das coisas…"
-
-Nano [triste] "Eu e Alex ficávamos nos fundos na parte administrativa e aprendendo com o Franz o que ele sabia sobre engenharia e robótica."
-
-Connor Spada [choque] "‘Então quem as pessoas se referiam ao antigo balconista era ele…’"
-
-Nano [triste] "Foi uma época pacífica. A loja fazia sucesso, nosso relacionamento era saudável, e as coisas finalmente começaram a ficar boas na nossa vida… Até aquele dia."
-
-Connor Spada [surpreso] "Hm?"
-
-Nano [triste] "................ Não vou entrar em detalhes sobre o que aconteceu, mas resumindo, ele não está mais aqui."
-
-Connor Spada [choque] "Ele…"
-
-Nano [neutro] "……Ele morreu, Spada."
-
-Connor Spada [choque] ".........................."
-
-Nano [triste] ".........."
-
-Nano [triste] "Eu nunca pensei que uma única pessoa teria tanto efeito em mim."
-
-Nano "Negativo e Positivo."
-
-Connor Spada [triste] "Eu sinto muito, Nano…"
-
-Nano [neutro] "Não sinta, isso já tem 2 anos, era eu que estava me apegando demais ao passado."
-
-Nano [envergonhado sem corar] "Na realidade, eu deveria estar me desculpando contigo."
-
-Connor Spada [choque] "Como assim?"
-
-Nano [neutro] "………………Você me lembra muito ele. E de alguma forma, isso me frustrava, porque eu via o Franz em você."
-
-Nano [triste] "E quando você mexia nas coisas dele, esse sentimento ficava ainda mais forte, mas eu não queria senti-lo."
-
-Nano [triste] "Era doloroso demais ver aquelas coisas todos os dias e não conseguir sentir nada além de tristeza depois de tanto tempo. Por isso tudo nesse lugar tava pegando pó."
-
-Nano [neutro] "Eu fui muito rude com você. Se eu tivesse sido maduro o bastante pra ter superado isso lá atrás, talvez esse lugar não tivesse tantas dívidas e você não seria tão maltratado por mim-"
-
-Fade out
+Connor Spada [new_tired] "‘Ah, que decisão difícil…’"
 
 Load(A3C11E8 true)

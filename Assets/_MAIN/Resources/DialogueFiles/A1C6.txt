@@ -24,7 +24,7 @@ PlaySFX(message_in)
 
 Narrator "Connor abre os olhos ao ouvir o barulho da mensagem vindo de seu celular. Curioso, ele estica o braço e pega o celular."
 
-SetLayerMedia(background "quarto spada" -blend sides)
+SetLayerMedia(background "quarto_spada" -blend sides)
 
 Narrator "[NOVA MENSAGEM DE BONA: Amg! Esqueci de te mandar o link do Enstragrama daquela loja q te falei. Dá uma olhada lá depois bjsssss <3]"
 

@@ -1,14 +1,14 @@
-Connor Spada [laugh] "Foi tudo bem, vó. A loja tá aos pouquinhos voltando a ter clientes."
+Connor Spada [armless_laugh] "Foi tudo bem, vó. A loja tá aos pouquinhos voltando a ter clientes."
 
 Avó "Que ótimo! O centro é um bom lugar pra se ter uma loja."
 
-Connor Spada [neutral] "Sim, sim. Tem bastante gente…"
+Connor Spada [armless_neutral] "Sim, sim. Tem bastante gente…"
 
-Connor Spada [idle] "Olha, se precisar de qualquer coisa, eu vou ficar lá embaixo ajudando a mãe, tá bom?"
+Connor Spada [armless_idle] "Olha, se precisar de qualquer coisa, eu vou ficar lá embaixo ajudando a mãe, tá bom?"
 
 Avó "Juízo você e sua mãe, vocês vão acabar tomando um choque mexendo naquele coiso."
 
-Connor Spada [laugh] "Ah, vovó… Sabe como é, nada que uma gambiarra bem feita não faça."
+Connor Spada [armless_laugh] "Ah, vovó… Sabe como é, nada que uma gambiarra bem feita não faça."
 
 ClearLayerMedia(background), Connor Spada.Hide(), Avó.Hide()
 

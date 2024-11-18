@@ -1,117 +1,103 @@
-Fade In
+Narrator "Loja do Nano - 17H30"
 
-—------------------------
-Loja do Nano - 17H30
-—------------------------
+PlaySong(cybersong -vol 0.1)
 
-[Música tranquila]
+SetLayerMedia(background "oficina_interior")
 
-[Ambiente da loja um pouco mais escuro]
-
-[Conor entra em cena]
-
-Connor Spada [sorrindo pequeno] "‘Ah, dia bem tranquilo hoje… Poucos clientes, ninguém invadindo do nada…’"
+enter Connor Spada at 0.2 [armless_idle] "‘Ah, dia bem tranquilo hoje… Poucos clientes, ninguém invadindo do nada…’"
 
 Connor Spada "..................."
 
-Connor Spada [pensando] "‘Tá quieto até demais…’"
+Connor Spada [armless_thinking] "‘Tá quieto até demais…’"
 
-[Alex entra em cena]
+enter Alex at 0.8 "Conor!"
 
-Alex "Conor!"
+Connor Spada [armless_idle] "AH!"
 
-Connor Spada [assustado] "AH!"
+Connor Spada [armless_pain] "Por deus, cê ainda vai me matar dessa forma!"
 
-Connor Spada [carinha de dor] "Por deus, cê ainda vai me matar dessa forma!"
-
-Alex [rindo] "Foi mal, é a força do hábito."
+Alex [laugh] "Foi mal, é a força do hábito."
 
 Alex "Mas é um assunto meio urgente."
 
 Alex "Você tem algum problema com algum tipo de textura?"
 
-Connor Spada [pensativo] "Textura? Não, não, acho que não."
+Connor Spada [armless_thinking] "Textura? Não, não, acho que não."
 
-Connor Spada [neutro] "Assim, desde que não seja cetim, tá de boa pra mim."
+Connor Spada [armless_neutral] "Assim, desde que não seja cetim, tá de boa pra mim."
 
-[Som hover]
+PlaySFX(Hover), wait(1), PlaySFX(click)
 
-[Som click]
+Alex [laugh] "Ok, dados atualizados! Obrigada!"
 
-Alex [sorridente] "Ok, dados atualizados! Obrigada!"
+Alex.Hide()
 
-[Fade out lento na Alex]
+Connor Spada [armless_shock] "Perai! Não vai!"
 
-Connor Spada [surpreso] "Perai! Não vai!"
+Alex.Show(), Alex.SetSprite(pensive)
 
-[Fade in na Alex até ela voltar ao normal]
+Connor Spada [armless_thinking] "Tá tudo bem contigo e o Nano? Não vi cês dois o dia inteiro."
 
-[Sprite Alex surpresa]
+Alex [laugh] "Sim, nós dois estamos bem!"
 
-Connor Spada [preocupado] "Tá tudo bem contigo e o Nano? Não vi cês dois o dia inteiro."
-
-Alex [sorridente] "Sim, nós dois estamos bem!"
-
-Connor Spada [choque] "Mesmo? É que faz algum tempo em que ele aparece aqui na loja e nem responde minhas mensagens."
+Connor Spada [armless_shock] "Mesmo? É que faz algum tempo em que ele aparece aqui na loja e nem responde minhas mensagens."
 
 Alex "Ah não, relaxa, ele tá lá em cima. Sendo bem sincera, ele tem trabalhado como nunca nos últimos dias, por isso o sumiço. E também tem se preparado para uma coisa muito importante, então logo mais ele aparece."
 
 Alex "Mas aproveitando que ele não tá aqui agora, eu queria te agradecer."
 
-Connor Spada [surpreso] "Me agradecer? Pelo o que?"
+Connor Spada [armless_surprised] "Me agradecer? Pelo o que?"
 
-Alex [sorrindo] "Por tudo! Você não faz ideia do quanto você ajudou o Nano em tão pouco tempo aqui."
+Alex [laugh] "Por tudo! Você não faz ideia do quanto você ajudou o Nano em tão pouco tempo aqui."
 
-Connor Spada [envergonhado] "Poxa, obrigado… Mas eu sou só um balconista, acho que cê não deveria ser tão grata assim."
+Connor Spada [armless_nervous] "Poxa, obrigado… Mas eu sou só um balconista, acho que cê não deveria ser tão grata assim."
 
 Alex "Tá zoando? Faz muito tempo que eu não vejo o Nano ter um amigo de verdade!"
 
-Connor Spada [triste] "‘Amigo…’"
+Connor Spada [armless_sympathetic] "‘Amigo…’"
 
 Alex "Enfim, eu preciso ir agora porque tô bem ocupada."
 
 Alex "Mas, por favor, não mude seu jeito de ser com o Nano depois de hoje."
 
-Connor Spada [confuso] "Hã? Como assim?"
+Connor Spada [armless_thinking] "Hã? Como assim?"
 
-[Alex sai de cena]
+Alex.Hide()
 
-Connor Spada [carinha de dor] "Ah."
+Connor Spada [armless_pain] "Ah."
 
-Connor Spada [bravo] "‘Certo, hoje Deus tirou o dia pra plantar 5 mil bagulhos diferentes na minha cabeça’"
+Connor Spada [armless_neutral] "‘Certo, hoje Deus tirou o dia pra plantar 5 mil bagulhos diferentes na minha cabeça’"
 
-Connor Spada [surtando] "‘Dois meses de boa daí surge um tal de Franz, o Nano tá acabado, a Alex tá estranha perguntando de textura e tals, e eu não sei o que eu quero da vida!’"
+Connor Spada [armless_shock] "‘Dois meses de boa daí surge um tal de Franz, o Nano tá acabado, a Alex tá estranha perguntando de textura e tals, e eu não sei o que eu quero da vida!’"
 
-Connor Spada [carinha de dor] "‘Por favor, que esse dia acabe antes que eu me explod-’"
+Connor Spada [armless_pain] "‘Por favor, que esse dia acabe antes que eu me explod-’"
 
-[Nano exausto entra em cena]
+enter Nano [idle] "Spada?"
 
-Nano [neutro] "Spada?"
+Connor Spada [armless_shock] "Nano!"
 
-Connor Spada [surpreso] "Nano!"
+Connor Spada [armless_thinking] "Cê tá bem!?"
 
-Connor Spada [preocupado] "Cê tá bem!?"
-
-Nano [confuso] "Tô…? "
+Nano [thinking] "Tô…?"
 
 Nano "Porque cê tá assim?"
 
-Connor Spada [bravo] "Eu tava preocupado, vei! Cê não deu mais sinal de vida!"
+Connor Spada [armless_neutral] "Eu tava preocupado, vei! Cê não deu mais sinal de vida!"
 
-Nano [meio bravo?] "Tsk, foram só dois dias, porque se importa?"
+Nano [kindamad] "Tsk, foram só dois dias, porque se importa?"
 
-Connor Spada [bravo] "Porque…!"
+Connor Spada [upset] "Porque…!"
 
-Connor Spada [cansado] "suspiro Tudo bem, já foi. O importante é que cê tá bem."
+Connor Spada [armless_tired] "suspiro Tudo bem, já foi. O importante é que cê tá bem."
 
 Nano [huh] "Hm……"
 
-Nano [neutro] "Cê tá ocupado?"
+Nano [idle] "Cê tá ocupado?"
 
-Connor Spada [surpreso] "Agora? Não, eu já tava indo fechar a loja inclusive…"
+Connor Spada [armless_surprised] "Agora? Não, eu já tava indo fechar a loja inclusive…"
 
-Nano [neutro] "Deixa ela aí e vem comigo, quero te mostrar uma coisa."
+Nano [idle] "Deixa ela aí e vem comigo, quero te mostrar uma coisa."
 
-[Fade Out]
+ClearLayerMedia(background), Nano.Hide(), Connor Spada.Hide() 
 
 Load(A3C9 true)

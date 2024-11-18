@@ -1,8 +1,8 @@
-Connor Spada [idle] "E como tá indo a criação do braço? Cês precisam que eu faça algo?"
+Connor Spada [armless_idle] "E como tá indo a criação do braço? Cês precisam que eu faça algo?"
 
 Alex [idle] "Não, relaxa, tudo na mais completa paz! Se ele precisar de alguma coisa, pode deixar que eu te falo."
 
-Connor Spada [laugh] "Ah, tá bom então!"
+Connor Spada [armless_laugh] "Ah, tá bom então!"
 
 Alex [laugh] "Bom, se precisar de alguma coisa, me dá um toque."
 
