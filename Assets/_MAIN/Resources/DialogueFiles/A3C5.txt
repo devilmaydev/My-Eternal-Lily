@@ -1,59 +1,61 @@
-SetLayerMedia(background "sala_nano")
+Narrator "Loja do Nano - 10h40"
 
-Connor Spada [pain] "Adivinha? Via Calamidade DE NOVO."
+Narrator "Mais cedo no mesmo dia..."
+
+SetLayerMedia(background "oficina_interior")
+
+PlaySong(cybersong -vol 0.1)
 
 PlaySFX(door_bell)
 
-Alex [laugh] "Bom dia! Bem-vind-"
+CreateCharacter(Connor Spada), Connor Spada.Move(0.2 0), Connor Spada.SetSprite(armless_pain), Connor Spada.Show()
 
-Alex [surprised] "Connor Spada? Ué, achei que cê não fosse vir hoje."
+enter Alex [laugh] at 0.8 "Bom dia! Bem-vind-"
 
-Connor Spada [pain] "Pois é. Se o Buber não fosse tão caro pra cá, eu pegava sem nem pensar duas vezes!"
+Alex [neutral] "Conor? Ué, achei que cê não fosse vir hoje."
 
-PlaySFX(passo_descendo_escada)
+Connor Spada "Adivinha? Via Calamidade DE NOVO."
 
-Nano [neutral] "Alex, você viu o meu…"
+Alex "Não brinca."
 
-Narrator "………………………"
+Connor Spada [armless_tired]"Pois é. Se o Buber não fosse tão caro pra cá, eu pegava sem nem pensar duas vezes!"
 
-Nano.SetSprite(idle)
+PlaySFX(walk)
 
-Connor Spada.SetSprite(pain)
+enter Nano at 0.6 "Alex, você viu o meu…"
 
-Alex.SetSprite(pain)
+Nano.SetSprite(idle), Connor Spada.SetSprite(armless_neutral), Alex.SetSprite(idle)
 
-Narrator "………………………"
+Narrator "................"
 
-Nano [neutral] "Bom dia."
+Nano "Bom dia."
 
-Connor Spada [pain] "Bom dia."
+Connor Spada "Bom dia."
 
-Narrator "Outro silêncio desconfortável."
+Narrator "................................."
 
-Nano [neutral] "Alex, cê viu meu headset?"
+Nano "Alex, cê viu meu headset?"
 
-Alex [neutral] "Lá em cima."
+Alex "Lá em cima."
 
-Nano [neutral] "Valeu."
+Nano "Valeu."
 
 Nano.Hide()
 
-Connor Spada.SetSprite(tired)
+Connor Spada.SetSprite(armless_tired), Alex.SetSprite(neutral)
 
-Alex.SetSprite(tired)
+Narrator "...................."
 
-Narrator "Silêncio com ambos se encarando."
+Connor Spada [armless_nervous] "Então…"
 
-Connor Spada [pain] "Então…"
+Alex "Por favor, não fala nada."
 
-Alex [baffled] "Por favor, não fala nada."
+Connor Spada [armless_tired] "Tá bom."
 
-Connor Spada [tired] "Tá bom."
+Alex [pensive] ".............. *suspiro*"
 
-Alex [tired] ".............. suspiro"
+Alex "Me ajuda com uma coisa?"
 
-Alex [baffled] "Me ajuda com uma coisa?"
-
-ClearLayerMedia(background)
+ClearLayerMedia(background), Connor Spada.Hide(), Alex.Hide()
 
 Load(A3C6 true)

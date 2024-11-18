@@ -1,137 +1,121 @@
-Fade Out
+ClearLayerMedia(background), Connor Spada.Hide(), Alex.Hide(), Nano.Hide()
 
-—---------------------------------------------
-Sala dos fundos - 5 meses depois - 16h30
-—---------------------------------------------
+Narrator "Sala dos fundos - 5 meses depois - 16h30"
 
-Fade In
+SetLayerMedia(background "sala_nano")
 
-[Alex e Nano entram em cena]
+PlaySong(calmsong -vol 0.1)
 
-[Música tranquila]
+enter Nano [idle] at 0.8 "Tá, o que mais diz aí?"
 
-Nano (neutro): Tá, o que mais diz aí?
+enter Alex [smile] at 0.6 "Tá dizendo que é pra inverter os polos e conectar na placa mãe."
 
-Alex (sorrindo): Tá dizendo que é pra inverter os polos e conectar na placa mãe.
+Nano [idle] "Ok."
 
-Nano (neutro): Ok.
+Nano [thinking] "Essa coisa de engenharia e robótica é mais fácil do que eu pensei, é só pegar a manha e dá pra eu fazer o que eu quiser."
 
-Nano (pensando): Essa coisa de engenharia e robótica é mais fácil do que eu pensei, é só pegar a manha e dá pra eu fazer o que eu quiser.
+Nano [thinking] "Não sei porque eu demorei tanto pra fazer isso."
 
-Nano (pensando): Não sei porque eu demorei tanto pra fazer isso.
+Alex [sigh] "Quer que eu te lembre do porquê?"
 
-Alex (olhando de lado): Quer que eu te lembre do porquê?
+Nano [kindamad] "Tsk…"
 
-Nano (meio bravo): Tsk…
+Nano [idle] "‘Certo, agora é só tomar cuidado pros ímãs não caírem no lugar errado e…’"
 
-Nano (neutro): Certo, agora é só tomar cuidado pra os ímãs não caírem no lugar errado e…
+StopSong(calmsong)
 
-[Conor entra em cena]
+enter Connor Spada at 0.2 [new_shock] "NANO!"
 
-[Música para]
+Nano [thinking] "……………………………………"
 
-[Som de porta abrindo e batendo]
+Nano [thinking] "‘Caíram’"
 
-Conor (choque): NANO!
+PlaySong(storesong -vol 0.1)
 
-[Som de metal caindo]
+Connor Spada [new_nervous] "Ah- Foi mal."
 
-[Sprite Alex surpresa]
+Nano [huh] "*suspiro* Que que foi, Spada?"
 
-Nano (surpreso): ……………………………………
+Connor Spada [pain] "É que…"
 
-Nano (pensando): 'Caíram…'
+Connor Spada [new_nervous] "Meu braço começou a sair umas faíscas enquanto  eu falava com o cliente e daí meus dedos se mexeram sozinhos e eu fiquei com medo de acontecer a mesma coisa da última vez!"
 
-[Música mais engraçada]
+Alex [neutral] "Wow, respira um pouco…"
 
-Conor (nervoso): Ah- Foi mal.
+Alex [idle] "Deve ser alguma coisa que oxidou e cê precisa trocar na parte interna."
 
-Nano (huh): suspiro Que que foi, Spada?
+Nano.SetSprite(idle)
 
-Conor (carinha de dor): É que…
+Connor Spada [new_nervous] "T-Tem certeza?"
 
-Conor (nervoso): Meu braço começou a sair umas faíscas enquanto eu falava com o cliente e daí meus dedos se mexeram sozinhos e eu fiquei com medo de acontecer a mesma coisa da última vez!
+Alex [laugh] "Claro! Vai, eu cuido do cliente, o Nano te ajuda."
 
-[Sprite Nano e Alex surpresos]
+Connor Spada [new_shock] "Mas-"
 
-Alex (surpresa): Wow, respira um pouco…
+Alex [idle] "*sussurro* Vai que é tua!"
 
-Alex (sorrindo): Deve ser alguma coisa que oxidou e cê precisa trocar na parte interna.
+Alex.Hide(), StopSong(storesong)
 
-[Sprite Nano neutro]
+Connor Spada [new_pain] "......................"
 
-Conor (nervoso): T-Tem certeza?
+Nano [idle] "Vem, deixa eu ver o que aconteceu"
 
-Alex (sorridente): Claro! Vai, eu cuido do cliente, o Nano te ajuda.
+Narrator "Quase que tímido, Conor se aproximou da mesa onde Nano estava, se sentando no banquinho bem ao lado enquanto Nano abria lentamente o braço para checar o interior."
 
-Conor (choque): Mas-
+Connor Spada [new_idle] "Tava estudando?"
 
-Alex (sorriso de lado, sussurrando): Vai que é tua!
+Nano [smile] "Sim. Tem muita coisa naqueles cadernos, se eu conseguir aprender o básico, vamos poder finalmente aceitar outros pedidos de membros robóticos como o seu."
 
-[Alex sai de cena]
+Connor Spada [new_laugh] "Caramba, isso é tão legal! Cê vai conseguir replicar as coisas que o Franz fez também!"
 
-[Sem música]
+Nano [huh] "As coisas dele são complicadas… Demais pra mim."
 
-Conor (carinha de dor): …………………
+Connor Spada [new_surprised] "Sério? Mas você usou a tecnologia dele para fazer meu braço! Não deve ser tão difícil."
 
-Nano (neutro): Vem, deixa eu ver o que aconteceu.
+Nano [sad] "...................."
 
-[Quase tímido, Conor se aproxima da mesa onde Nano está, se sentando no banquinho bem ao lado enquanto Nano abria lentamente o braço para checar o interior.]
+Connor Spada [new_neutral] "Nano?"
 
-[Sons metálicos de fundo]
+Nano [sad] "Você me vê como essa pessoa incrível que consegue fazer tudo e tals… Fico sem ter como reagir."
 
-Conor (neutro, sorrindo): Tava estudando?
+Nano [sad] "Se eu pudesse ser pelo menos 5% do que você diz…"
 
-Nano (sorrindo pequeno): Sim. Tem muita coisa naqueles cadernos, se eu conseguir aprender o básico, vamos poder finalmente aceitar outros pedidos de membros robóticos como o seu.
+Connor Spada [new_idle] "Ué, mas você é bem mais do que 5%."
 
-Conor (sorridente): Caramba, isso é tão legal! Cê vai conseguir replicar as coisas que o Franz fez também!
+Nano [idle] "Hm?"
 
-Nano (huh): As coisas dele são complicadas… Demais pra mim.
+Connor Spada [new_laugh] "Acho que só você não consegue ver o quão extraordinário é… Você fez uma das IAs mais bem feitas que eu já vi, fez questão de estudar engenharia e enfrentar seu maior fantasma só pra ajudar outra pessoa!"
 
-Conor (surpreso): Sério? Mas você usou a tecnologia dele para fazer meu braço! Não deve ser tão difícil.
+Connor Spada [new_nervous] "E… Me deu uma oportunidade de finalmente poder ajudar minha família como eu queria."
 
-Nano (triste): ……………….
+Connor Spada [new_idle] "Você progrediu muito desde que a gente se conheceu, e tem todos os méritos por isso."
 
-Conor (neutro): Nano?
+Nano [sad] "................"
 
-Nano (triste): Você me vê como essa pessoa incrível que consegue fazer tudo e tal… Fico sem saber como reagir.
+Nano [smile] "Cê disse com tanto amor que até eu me convenci."
 
-Nano (triste): Se eu pudesse ser pelo menos 5% do que você diz…
+Connor Spada [new_nervous] "Ah, e-eu só tava falando a verdade!"
 
-Conor (sorrindo): Ué, mas você é bem mais do que 5%.
+Nano [smile] "…………………………………………………………………"
 
-Nano (surpreso): Hm?
+Nano [smile] "‘Quem sabe eu aprenda a amar de novo como você.’"
 
-Conor (sorridente): Acho que só você não consegue ver o quão extraordinário é… Você fez uma das IAs mais bem feitas que eu já vi, fez questão de estudar engenharia e enfrentar seu maior fantasma só pra ajudar outra pessoa!
+ClearLayerMedia(background), Connor Spada.Hide(), Alex.Hide(), Nano.Hide()
 
-Conor (envergonhado e corado): E… Me deu uma oportunidade de finalmente poder ajudar minha família como eu queria.
+Narrator "Com o silêncio confortável preenchendo o ambiente, Conor logo se calou também, até notar um pequeno detalhe em cima da mesa."
 
-Conor (sorrindo): Você progrediu muito desde que a gente se conheceu, e tem todos os méritos por isso.
+SetLayerMedia(cinematic "mesa_carta")
 
-Nano (surpreso): ……………….
+Connor Spada "Ah, cê trocou as flores do vaso!"
 
-[Sprite Nano rindo baixinho por um momento]
+Nano "Sim, já estavam murchas há muito tempo."
 
-Nano (sorrindo pequeno): Cê disse com tanto amor que até eu me convenci.
+Connor Spada "E são tão bonitas… Que flores são?"
 
-Conor (nervoso): Ah, e-eu só tava falando a verdade!
+Nano "Amaranto e Lírio. São as mais bonitas pra mim."
 
-Nano (sorrindo pequeno): …………………………………………………………………
+HideDB(), ClearLayerMedia(cinematic)
 
-Nano (sorrindo pequeno): Quem sabe eu aprenda a amar de novo, como você.
+wait(4)
 
-[Com o silêncio confortável preenchendo o ambiente, Conor logo se calou também, até notar um pequeno detalhe em cima da mesa.]
-
-[Imagem da mesa bagunçada com o vaso]
-
-Conor (sem sprite): Ah, cê trocou as flores do vaso!
-
-Nano (sem sprite): Sim, já estavam murchas há muito tempo.
-
-Conor (sem sprite): E são tão bonitas… Que flores são?
-
-Nano (sem sprite): Amaranto e Lírio. São as mais bonitas pra mim.
-
-[Fade Out]
-
-[Subir créditos]
+HideDB(), SetLayerMedia(cinematic "CREDITOS")

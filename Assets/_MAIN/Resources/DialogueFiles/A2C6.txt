@@ -1,57 +1,23 @@
-SetLayerMedia(background "oficina_interior")
+Nano [kindamad] "Independente! Eu deixei bem claro pra você que não era pra ir lá, e na primeira oportunidade você vai!? E ainda mexe nas minhas coisas!"
 
-PlaySFX(sino_da_loja)
+Connor Spada [armless_nervous] "Tá bom! Foi mal! Você guarda um monte de tranqueira antiga e quebrada, eu só consertei a caixinha de música porque eu achei que—"
 
-enter Alex [laugh] at 0.8 "Bom dia, Connor! Cê tá radiante como um LED hoje. Anda vai, me conta, quê que aconteceu?"
+Nano [upset] "NÃO ERA PRA MEXER!"
 
-enter Connor Spada [laugh] at 0.2 "Bom dia, Alex! Não é lá grande coisa, mas cê sabe que minha mãe tem aquele brechó virtual, né? Então, ela conseguiu uma cliente que mora lá na City Campo Grande que pediu uma pá de roupa pra ela dar uma olhada e levar de presente pra família no interior!"
+Connor Spada.SetSprite(armless_shock)
 
-Alex [laugh] "Rapaz, isso é maravilhoso! Já vi uma vez as roupas da loja dela, são lindas mesmo! Eu usaria 100%. Fico muito feliz por ela!"
+Nano [kindamad] "....................."
 
-Connor Spada [laugh] "Sim! Isso é muito bom mesmo! Ah, e o trem tava até que bem rápido hoje. Um milagre, já que aquela Via Calamidade sempre dá algum problema."
+Nano [upset] "Vou te dar um último aviso. Se eu descobrir que você entrou lá de novo, ou mexeu nas minhas coisas sem minha permissão, pode esquecer seu braço e ir pro olho da rua. Entendeu?"
 
-Alex [laugh] "Então o dia começou muito bem mesmo."
+Connor Spada [armless_pain] "........ Sim, sinto muito."
 
-Narrator "Ambos continuavam a conversar tranquilamente. Com o movimento baixo da parte da manhã, os dois podiam se dar ao luxo de papear por algum tempo antes que o primeiro cliente aparecesse."
+Nano [kindamad] "Ótimo. Essa é sua segunda chance, espero que não tenha uma próxima vez."
 
-PlaySFX(som_de_passos)
+Nano.Hide(), Connor Spada.Hide()
 
-enter Nano [idle] at 0.5 "Bom dia."
+ClearLayerMedia(background)
 
-Alex "Olha só, desceu mais cedo hoje. Fala aí, acordou de bom humor também?"
+wait(1)
 
-Nano [sarcastic] "Ah sim, meu humor tá maravilhoso hoje."
-
-Nano "Alex, consegue ver pra mim o chat com o cliente de ontem lá em cima?"
-
-Alex [baffled] "Ué, e você não consegue responder porque? Tá com medo de falar até por chat?"
-
-Nano [thinking] "Só vai logo, por favor."
-
-Alex [baffled] "Tsk."
-
-Alex.Hide()
-
-Nano.SetSprite(upset)
-
-Narrator "O silêncio paira entre ambos, mas, mesmo assim, Connor continua sorrindo perante o olhar matador de Nano, procurando por algo dentro de sua ecobag."
-
-Connor Spada [laugh] "Eu não tava querendo falar disso na frente da Alex, porque ela provavelmente não pode comer, mas eu passei numa padaria antes de vir pra cá e trouxe pão de queijo pra voc—"
-
-Nano.Move(0.3 0)
-
-Narrator "Nano se aproxima de Spada, visivelmente incomodado. Na verdade, nem incomodado, ele estava furioso."
-
-Nano "Você entrou lá, não foi?"
-
-Connor Spada [nervous] "O-O quê!? N-Nãaaao, eu não fui lá nos fundos não…"
-
-Connor Spada "‘Muito perto! Muito perto…!’"
-
-Narrator "........................................................."
-
-Connor Spada [pain] "Ai, bosta…"
-
-Nano [upset] "Cê não sabe obedecer os outros não?"
-
-Load(A2C6E5 true)
+Load(A2C7 true)

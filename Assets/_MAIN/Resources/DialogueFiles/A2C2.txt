@@ -1,28 +1,28 @@
 Narrator "Depois de uma tarde sem muitos clientes, mais um dia terminava na Assistência FNA"
 "Chega o fim do expediente."
 
-PlaySong(cybersong), SetLayerMedia(background "oficina_interior" -blend rightLeft)
+PlaySong(storesong -vol 0.1), SetLayerMedia(background "oficina_interior" -blend rightLeft)
 
-enter Connor Spada at 0.5 [thinking] "‘Vem tão pouca gente aqui que eu fico até perdido do que fazer no tempo livre’"
+enter Connor Spada at 0.5 [armless_thinking] "‘Vem tão pouca gente aqui que eu fico até perdido do que fazer no tempo livre’"
 "‘Deve ser mais a galera que já conhece aqui faz tempo…’"
 "‘E não ironicamente, a maioria são senhorinhas perguntando sobre o antigo cara do balcão.’"
-Connor Spada [laugh] "‘Hahah, o Nano devia ser famosinho entre elas!’"
+Connor Spada [armless_laugh] "‘Hahah, o Nano devia ser famosinho entre elas!’"
 
 Narrator "Terminando de se arrumar, Conor colocou seus últimos pertences dentro de sua - maravilhosa - ecobag com estampa de vira-lata caramelo"
 "Mas antes que pudesse ir embora, um click da porta dos fundos chamou sua atenção"
 
 PlaySFX(door_open)
 
-Connor Spada.Move(0.4 0), Nano.Move(0.6 0), Nano.SetSprite(idle) ,Nano.Show()
+Connor Spada.Move(0.4 0),CreateCharacter(Nano), Nano.Move(0.6 0), Nano.SetSprite(idle), Nano.Show()
 
 Nano "Toma."
 
-Connor Spada [surprised] "Hã? Você já consertou o celular de hoje de manhã!?"
+Connor Spada [armless_surprised] "Hã? Você já consertou o celular de hoje de manhã!?"
 
 Nano "Sim, não era um grande problema."
 "A propósito, Alex já falou com o cliente. Ele vem buscar amanhã."
 
-Connor Spada [laugh] "Cê é bem habilidoso nisso né? Tá parecendo até que saiu da caixa agorinha!"
+Connor Spada [armless_laugh] "Cê é bem habilidoso nisso né? Tá parecendo até que saiu da caixa agorinha!"
 
 Nano [huh] "………………"
 "É só um celular, não tem nada demais nisso."
@@ -38,29 +38,28 @@ Nano.Hide(), Connor Spada.Move(0.5 0)
 Narrator "Com um breve aceno de mão, Nano subiu silenciosamente as escadas para o segundo andar, onde era seu apartamento."
 PlaySFX(door_open)
 "Enquanto isso, Conor já se dirigia para a entrada do loja para finalmente voltar para casa, até um ranger surgir de repente."
-"Connor se vira visivelmente confuso, apenas notando a porta da sala dos fundos entreaberta."
+"Connor se vira visivelmente confuso, apenas notando a porta da sala dos fundos entreaberta.", PlaySong(mystery -vol 0.1)
 
-Connor Spada [surprised] "Ué?"
+Connor Spada [armless_surprised] "Ué?"
 
 Narrator "Ele se aproxima, sendo guiado por sua curiosidade."
 
-Connor Spada [surprised] "‘Ele nunca esquece de trancar os fundos…’"
+Connor Spada "‘Ele nunca esquece de trancar os fundos…’"
 
 Narrator "Tentado pela luz fraca que vinha de dentro, ele se aproximou mais automaticamente, até parar no meio do caminho."
 
-Connor Spada [tired] "‘Toma juízo, Connie! Se ele não deixa entrar lá, é porque não é pra ir!’"
+Connor Spada [armless_tired] "‘Toma juízo, Connie! Se ele não deixa entrar lá, é porque não é pra ir!’"
 
 Narrator "Ele apenas olha para a maçaneta em dúvida por longos segundos. Uma espiada não dói, né?"
 
-Connor Spada [pain] "‘................Só uma olhadinha de leve.’"
+Connor Spada [armless_pain] "‘................Só uma olhadinha de leve.’"
 
 Narrator "Conor respira fundo, se agarrando com firmeza na maçaneta e abrindo um pouco mais a porta, apenas o suficiente para colocar a cabeça para dentro."
 "Com receio, ele passa os olhos por todo o cômodo, notando como era apenas uma sala comum."
 
-Connor Spada [surprised] "Uau....."
+Connor Spada [armless_surprised] "Uau....."
 
-PlaySFX(walk), PlaySong(calmsong)
-Narrator "Mesmo sendo uma sala comum, Conor imediatamente entra ao notar a quantidade de coisas espalhadas por todos os lados e os LEDs em vermelho no teto. Tudo isso era...bem a cara do Nano."
+PlaySFX(walk), PlaySong(calmsong -vol 0.1)
 
 Connor Spada.Hide(), ClearLayerMedia(background -blend leftRight)
 

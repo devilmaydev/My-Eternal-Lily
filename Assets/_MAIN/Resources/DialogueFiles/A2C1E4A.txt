@@ -5,46 +5,46 @@ Connor Spada.Move(0.5 0)
 Narrator "Conor apenas se apoia no balcão com tédio, olhando para a loja vazia, como se estivesse esperando algo acontecer para tirá-lo da monotonia."
 "Ele observa as prateleiras repletas de cacarecos estranhos, notando como tudo estava cheio de pó, e uma ideia sobe á cabeça do garoto. Por que não fazer uma faxina?"
 
-Connor Spada [laugh] "‘Isso aqui não parece ser limpo faz tempo…’"
+Connor Spada [armless_thinking] "‘Isso aqui não parece ser limpo faz tempo…’"
 
-Connor Spada [laugh] "‘Eu nunca vi o Nano ou a Alex limpando esse lugar também.’"
+Connor Spada "‘Eu nunca vi o Nano ou a Alex limpando esse lugar também.’"
 
 Narrator "Conor pega um paninho com álcool que sempre deixa no balcão, e borrifa mais um pouco do líquido."
 
-Connor Spada [laugh] "‘Nah, eles tão focados no trabalho, dar um tapa na loja vai agilizar um pouco as coisas pra eles!’"
+Connor Spada [armless_laugh] "‘Nah, eles tão focados no trabalho, dar um tapa na loja vai agilizar um pouco as coisas pra eles!’"
 
-PlaySFX(borrifador), PlaySound(calmsong)
+PlaySFX(borrifador), PlaySong(calmsong -vol 0.1)
 
 Narrator "Ele começa a limpar as prateleiras empoeiradas, tomando cuidado com - seja lá o que fosse - que estava tirando do lugar."
 "No entanto, Connor acaba não medindo sua força ao pegar um Firby reconstruído e apertá-lo um pouco demais."
 
-Connor Spada [laugh] "Eu hein, que trem sinistro…"
+Connor Spada [armless_thinking] "Eu hein, que trem sinistro…"
 
-Connor Spada [laugh] "HM!?"
+Connor Spada [armless_shock] "HM!?"
 
-PlaySound(CrazyFrog)
+StopSound(), PlaySong(CrazyFrog -vol 0.1)
 Narrator "Assim que apertado, o Firby começa a tocar alto uma música estourada e repetitiva, assustando Connor."
 
-Connor Spada [laugh] "Ai caramba, como desliga isso!?"
+Connor Spada "Ai caramba, como desliga isso!?"
 
 Connor Spada.Move(0.2 0)
 Alex.Show(), Alex.Move(0.8 0)
 Alex.SetSprite(neutral)
 
-enter Nano 0.6 [kindamad] "Que tá acontecendo!?"
+enter Nano at 0.6 [kindamad] "Que tá acontecendo!?"
 
-Connor Spada [pain] "Esse trem não quer parar! Como que desliga!?"
+Connor Spada [armless_pain] "Esse trem não quer parar! Como que desliga!?"
 
 Nano "………………"
 "Me dá isso aqui."
 
 Narrator "Se aproximando em passos pesados, Nano tomou, sem qualquer delicadeza, o Firby de Connor. O desligando facilmente."
 
-Alex.SetSprite(baffled)
+StopSong(), PlaySong(nano -vol 0.2), Alex.SetSprite(baffled)
 
 Nano "Onde cê pegou isso?"
 
-Connor Spada [nervous] "Eu fui passar um paninho na prateleira e aquele treco-"
+Connor Spada [armless_nervous] "Eu fui passar um paninho na prateleira e aquele treco-"
 
 Nano "Não era pra você mexer nisso."
 
@@ -56,9 +56,9 @@ Nano "Você está aqui pra trabalhar como balconista. Você não foi contratado 
 
 Nano [upset] "Então fique no seu lugar e faça aquilo que foi designado a você."
 
-Connor Spada [shock] "………………………"
+Connor Spada [armless_shock] "………………………"
 
-Connor Spada [tired] "Sim senhor…"
+Connor Spada [armless_tired] "Sim senhor…"
 
 Nano.Hide()
 
@@ -66,7 +66,7 @@ Narrator "Cabisbaixo, Connor apenas retorna para o balcão, voltando a se apoiar
 
 Alex.SetSprite(pensive)
 
-Connor Spada [pain] "‘Eu queria um daqueles…’"
+Connor Spada [armless_pain] "‘Eu queria um daqueles…’"
 
 Alex [baffled] "..............."
 
@@ -74,4 +74,4 @@ Alex.Hide(), Connor Spada.Hide()
 
 ClearLayerMedia(background -blend sides)
 
-Load(A2C2 true)
+Load(A2C7 true)

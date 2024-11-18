@@ -4,11 +4,11 @@ SetLayerMedia(background "quarto_vo")
 
 PlaySFX(knock)
 
-enter Connor Spada at 0.2 [idle] "Vó?"
+enter Connor Spada at 0.2 [armless_idle] "Vó?"
 
 enter Avó at 0.8 "Connie? É você? Não to vendo nada, eu fiquei cega??"
 
-Connor Spada [laugh] "Haha, não vovó. Olha, eu trouxe luz pra senhora."
+Connor Spada [armless_laugh] "Haha, não vovó. Olha, eu trouxe luz pra senhora."
 
 Avó "Ah, obrigada. Sua mãe deve tá de cabelo em pé lá embaixo, não trouxe nenhuma velinha pra mãezinha querida dela."
 
@@ -18,11 +18,15 @@ Narrator "......................."
 
 Avó "Vem, senta aqui um pouco."
 
+Connor Spada.SetSprite(armless_idle)
+
 Narrator "Ele lentamente se sentou no chão de costas para a cama, sentindo como a mão esquelética da avó começava a lhe fazer um carinho singelo no cabelo."
+
+Connor Spada.SetSprite(armless_neutral)
 
 Avó "Como foi seu dia?"
 
-Connor Spada [neutral] "Foi bom, o trem tava bem vazio e rápido hoje."
+Connor Spada "Foi bom, o trem tava bem vazio e rápido hoje."
 
 Avó "Bom, bom. E o trabalho?"
 

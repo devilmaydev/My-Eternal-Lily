@@ -1,3 +1,17 @@
-[Cinematica]
+SetLayerMedia(cinematic "hug" -spd 0.7 -blend pitchBlack)
+
+Nano "S-Spada!? Que iss-"
+
+Connor Spada "Por favor, não diz essas coisas! Tá tudo bem você se sentir mal! Você não teve culpa do que aconteceu…"
+
+Nano "Spada, porqu- "
+
+Connor Spada "Não liga pra isso, só coloca pra fora…"
+
+Nano "O que…! Eu não…!{a} Não quero… Chorar…"
+
+HideDB(), ClearLayerMedia(cinematic -spd 0.7 -blend sides)
+
+wait(3)
 
 Load(A3C11 true)

@@ -1,6 +1,6 @@
 [wait]SetLayerMedia(background "barao_noite" -blend radialClock)
 
-PlaySong(cyberjazz), ShowDB()
+PlaySong(barsong -vol 0.1), ShowDB()
 
 enter Connor Spada at 0.5 [alt_work_tired] "A Bona tinha razão, esse lugar fica muito pior durante a noite, eu respiro e já tem cliente!"
 

@@ -6,11 +6,11 @@ Nano as ??? "Espero que cê não esteja fazendo esse fuzuê todo por causa de ou
 
 Alex "Dessa vez não é! Eu juro!"
 
-Conor "Eu conheço essa voz…"
+Connor Spada [thinking] "Eu conheço essa voz…"
 
 Show(Nano Alex), Nano.Move(0.6 0), Alex.Move(0.8)
 
-Connor Spada "'Ah… É o cara do bar… Ferrou.'"
+Connor Spada [shock] "'Ah… É o cara do bar… Ferrou.'"
 
 Narrator "................."
 
@@ -20,7 +20,7 @@ Nano "Oi."
 
 Alex "…Eu hein, que tensão estranha entre vocês dois…"
 
-Nano "*suspiro* Que que cê tá fazendo aqui?"
+Nano [thinking] "*suspiro* Que que cê tá fazendo aqui?"
 
 Connor Spada "U-Uma amiga me recomendou vir aqui pra arrumar o meu braço… Ela disse que você podia me ajudar."
 
@@ -30,35 +30,37 @@ Nano "Tá, me mostra."
 
 Connor Spada "'Ele não parece que tá bravo mais…'" 
 
+Connor Spada.SetSprite(armless_nervous)
+
 Narrator "Conor remove o braço e coloca no balcão, tomando muito cuidado para não danificá-lo ainda mais."
 
 Narrator ".............................."
 
 Nano "Quê que você acha?"
 
-Alex "É o pior modelo que eu já vi."
+Alex [baffled] "É o pior modelo que eu já vi."
 
-Nano "Com certeza. Remendo com fita, parafusos soltos, soldagem mal feita, ferrugem…"
+Nano [thinking] "Com certeza. Remendo com fita, parafusos soltos, soldagem mal feita, ferrugem…"
 
 Alex "Rapaz, você tem é sorte de não ter pego tétano ou levado um choque violento com isso."
 
-Connor Spada [idle] "Tá legal, eu já entendi."
+Connor Spada [armless_neutral] "Tá legal, eu já entendi."
 
-Connor Spada "Tem como arrumar ele?"
+Connor Spada [armless_surprised] "Tem como arrumar ele?"
 
 Nano [kindamad] "Arrumar? Isso aqui? Não precisa ser nenhum influente em peças pra saber que isso devia estar no lixo."
 
 Alex "Exato. Isso infringe pelo menos umas 8 normas de saúde pública."
 
-Connor Spada "................"
+Connor Spada [armless_pain] "................"
 
-Connor Spada [tired] "O que eu faço então!?"
+Connor Spada [armless_shock] "O que eu faço então!?"
 
 Nano [idle] "Dá pra fazer um do zero. Iria demorar cerca de…"
 
 Alex [idle] "3 meses."
 
-Connor Spada [shock] "3 MESES!? E quanto custa isso??"
+Connor Spada "3 MESES!? E quanto custa isso??"
 
 Nano "5 mil."
 
@@ -66,7 +68,7 @@ Connor Spada "CINCO MIL!?!? Moço, cê me desculpa mas eu não tenho esse dinhei
 
 Nano "Tá, cê que sabe."
 
-Connor Spada.Move(-0.2 0), [wait]Connor Spada.Hide()
+Connor Spada.SetSprite(shock), Connor Spada.Move(-0.2 0), [wait]Connor Spada.Hide()
 
 Narrator "............................."
 
@@ -74,13 +76,13 @@ Nano.Move(0.2 0)
 
 Alex [baffled] "Eu não acredito que você vai perder um cliente só por causa disso!"
 
-Nano "Quê que é? Cê sabe que o máximo que eu sei fazer é consertar celular e computador. Eu tô aliviado que aquele mano não aceitou."
+Nano [chuckle] "Quê que é? Cê sabe que o máximo que eu sei fazer é consertar celular e computador. Eu tô aliviado que aquele mano não aceitou."
 
 Alex [idle] "E quem falou que você não tem o conhecimento disso na palma da sua mão!? Eu posso pesquisar pra você como fazer isso! Ou então tem os cadernos do Fra-"
 
-Nano [kindamad] "Eu não vou mexer nas coisas dele."
+Nano [upset] "Eu não vou mexer nas coisas dele."
 
-Alex "Nano, se a gente conseguir replicar naquela tecnologia e conseguir fazer esse braço funcionar, a gente vai finalmente conseguir fazer essa loja sair das dívidas!"
+Alex [pensive] "Nano, se a gente conseguir replicar naquela tecnologia e conseguir fazer esse braço funcionar, a gente vai finalmente conseguir fazer essa loja sair das dívidas!"
 
 Alex "Vai, você sabe que consegue fazer isso!"
 

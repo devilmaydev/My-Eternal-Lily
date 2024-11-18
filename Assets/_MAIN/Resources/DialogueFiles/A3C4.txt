@@ -1,33 +1,35 @@
-SetLayerMedia(background "sala_nano")
+Narrator "Apartamento do Nano - 11h30"
 
-Nano [frustrated] "Aaaaaah caralho, não consigo fazer isso!"
+SetLayerMedia(background "nano_casa")
 
-PlaySFX(teclado_digitando_rapido)
-
-Nano [tired] "suspiro Isso tava mais fácil na minha cabeça…"
-
-Nano [neutral] (Narrator) "Olhando diretamente para a tela do computador, Nano já tinha perdido as contas de quantas vezes tinha escrito um pedido de desculpas, sendo nenhum deles bom o suficiente."
-
-Nano [frustrated, thinking] ‘Meu, quando foi que eu fiquei tão ruim em falar com outro ser humano!?’
-
-Nano [tired] ‘Odeio admitir que a Alex tá certa…’
-
-Silêncio
-
-Nano [neutral] ‘Tá. Uma última vez, depois uma partida de LAL pra esfriar a cabeça.’
+enter Nano [upset] "Aaaaaah caralho, não consigo fazer isso!"
 
 PlaySFX(teclado_digitando_rapido)
 
-Nano.SetSprite(surpreso)
+Nano [huh] "*suspiro* Isso tava mais fácil na minha cabeça…"
 
-Conor [idle] "Foi!?!?"
+Narrator "Olhando diretamente para a tela do computador, Nano já tinha perdido as contas de quantas vezes tinha escrito um pedido de desculpas, sendo nenhum deles bom o suficiente."
 
-Alex [idle] "Ainda não! Tenta de novo!"
+Nano [thinking] "‘Meu, quando foi que eu fiquei tão ruim em falar com outro ser humano!?’"
 
-Nano [surprised] "............................"
+Nano [huh] "‘Odeio admitir que a Alex tá certa…’" 
 
-Nano [thinking] ‘O que caralhos esses dois tão fazendo?’
+Narrator "......................"
 
-ClearLayerMedia(background)
+Nano [idle] "‘Tá. Uma última vez, depois uma partida de LAL pra esfriar a cabeça.’"
+
+PlaySFX(teclado_digitando_rapido)
+
+Nano.SetSprite(thinking)
+
+Connor Spada "Foi!?!?"
+
+Alex "Ainda não! Tenta de novo!"
+
+Nano [thinking] "............................"
+
+Nano [huh] "‘O que caralhos esses dois tão fazendo?’"
+
+ClearLayerMedia(background), Nano.Hide()
 
 Load(A3C5 true)

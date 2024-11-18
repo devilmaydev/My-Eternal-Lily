@@ -1,82 +1,25 @@
-SetLayerMedia(background "sala_nano" -blend rightLeft)
+Narrator "Mais tarde....."
+
+SetLayerMedia(background "sala_nano")
 
 PlaySFX(walk)
 
-enter Connor Spada at 0.5 [surprised] "Rapaz, num é que ele é talentoso mesmo…"
-Connor Spada [thinking] "‘O que é isso aqui?’"
+enter Nano [thinking] "Eu juro por tudo que é mais sagrado que se isso não estiver aqui…"
 
-Narrator "Connor se aproxima com interesse na bancada de trabalho, observando sem entender as dezenas de papéis e blueprints com cálculos."
-"Além do computador ligado com uma página da web aberta."
+Narrator "…………………………………"
 
-Connor Spada "Hau tchu construquíti a…"
-"....................................."
-Connor Spada [tired] "Aí, deixa quieto."
+Nano [kindamad] "Meu, três horas procurando essa bagaça de celular pra estar aqui embaixo. E nem pra Alex se reativar pra me ajudar a procurar."
 
-Narrator "Desistindo, ele apenas caminha para o outro lado, parando em frente a uma estante."
+Narrator "Nano se aproximou já cansado da pequena mesinha de centro, imediatamente notando como ela parecia mais cheia do que antes."
 
-Connor Spada [surprised] "‘É bem sujo como as prateleiras da loja…’"
-Connor Spada [thinking] "‘Tem tanta coisa aqui… Foi ele quem fez tudo isso? Porque ele não cuida delas?’"
+Nano [upset] "Isso é…"
 
-Narrator "Passando os olhos por todas as coisas estranhas dispostas, Conor pousou os olhos em uma caixinha de música com seus pequenos detalhes de flores e coelhos cheios de pó"
-"A pegando com todo cuidado possível com sua única mão"
+Narrator "Os olhos de Nano imediatamente focam na caixinha de música consertada, e no porta-retrato com marcas de dedo sobre o pó."
 
-Connor Spada [surprised] "‘Que linda… Tenho nem ideia do quão velho isso aqui deve ser…’"
-"‘Não sabia que o Nano gostava tanto dessas coisas antigas, ele parece tão…’"
-"'Hm?'"
+Nano "………………………"
 
-Narrator "Mesmo com a beleza da caixinha, ela parecia um pouco… Incompleta?"
+Nano.SetSprite(upset)
 
-Connor Spada [thinking] "‘Não tem manivela.’"
-
-Narrator "Ficando na ponta dos pés, Conor apoiou a caixinha na prateleira de baixo e se esticou ao máximo para buscar a peça que faltava, acabando por pegar algo diferente do esperado"
-
-Connor Spada [surprised] "‘Que isso..? Um porta retrato? Eles ainda são fábrica…dos…’"
-
-Narrator "Ele imediatamente se calou ao ver melhor a foto de um rapaz de boina abraçando Nano enquanto ambos riam."
-
-Connor Spada "..........................."
-
-Narrator "E Nano tinha um sorriso lindo."
-
-Connor Spada [nervous] "‘C-Certo, a manivela…’"
-
-Narrator "Apenas o colocando na mesinha de centro da sala, Conor voltou a ficar na ponta dos pés e a tatear por alguns segundos a estante até encontrar a manivela partida ao meio."
-
-Connor Spada [tired] "‘Tá quebrada… Desse jeito não vai dar pra usar isso aqui nunca!’"
-Connor Spada [thinking] "‘A não ser que…’"
-
-PlaySFX(ducktape)
-
-Connor Spada [laugh] "‘Eis aqui! A salvadora de todas as pátrias!’"
-
-PlaySFX(ducktape)
-
-Narrator "Juntando as duas metades, ele rapidamente as conectou as enrolando em um longo pedaço de fita."
-"Talvez tenha exagerado um pouco, mas era melhor prevenir do que remediar."
-"Assim que ficou pronta, ele prontamente conectou a manivela de volta na caixinha, dando algumas voltas para ver se funcionava."
-
-PlaySFX(tectec), PlaySong(boxmusic)
-
-"Connor respirou fundo, sentindo uma súbita paz apenas com o som daquela melodia preenchendo o ambiente."
-"Era melancólica, mas de certa forma, reconfortante. Preenchendo o coração e se alastrando pela alma como um campo colorido de lírios"
-"Subitamente, todas as preocupações entaladas em seu âmago desapareceram quando ele finalmente se permitiu relaxar."
-
-wait(1), StopSong(boxmusic)
-
-Connor Spada [surprised] "‘Uau… Fazia tanto tempo que eu não ficava tão tranquilo…’"
-Connor Spada [tired] "‘Eu consegui consertar o registro como a mamãe pediu, com o dinheiro da gorjeta da Barão. Eu deveria estar feliz com isso, mas ainda tem o problema nas pernas da vovó e um monte de conta atrasada...’"
-Connor Spada [idle] "‘Bom, tem mais dois meses de salário garantido. Se eu abrir mão de algumas coisas, talvez sobre algum dinheiro no fim do mês que vem.’"
-"....................."
-"‘......Dois meses. Mais dois meses e eu volto à estaca zero.’"
-Connor Spada [pain] "‘Não, vai ficar tudo bem. Pensamento positivo, Connie! Bota um sorriso nesse rosto que as coisas vão dar certo!’"
-Connor Spada [idle] "‘Cê vai arrumar outro trampo e continuar ajudando em casa. É claro que vai!’"
-
-Narrator "Ele para por um momento, colocando a caixinha de música no lugar, seu olhar caindo instintivamente no porta retrato."
-
-Connor Spada.Hide(), ClearLayerMedia(background -blend leftRight)
-
-Connor Spada "‘........... Eu quero mesmo outro emprego?’"
-
-ClearLayerMedia(background -blend sides)
+wait(1), Nano.Hide(), ClearLayerMedia(background)
 
 Load(A2C5 true)

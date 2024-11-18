@@ -1,0 +1,7 @@
+choice "Escolha:"
+{
+    -Tinha uma luz vindo de dentro…
+        wait(1), Load(A2C6 true)
+    -A porta tava aberta…
+        wait(1), Load(A2C6 true)
+}

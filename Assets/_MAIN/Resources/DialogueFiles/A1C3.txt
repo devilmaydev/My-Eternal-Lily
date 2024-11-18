@@ -1,8 +1,8 @@
 Narrator "Bar e Café Barão - 16h40"
 
-SetLayerMedia(background "barao_dia" -blend radialClock)
+SetLayerMedia(background "barao_dia")
 
-PlaySong(fancybarsong -vol 0.4)
+PlaySong(fancybarsong -vol 0.1)
 
 wait(1)
  
@@ -21,7 +21,7 @@ Connor Spada [alt_work_nervous] "Ah, eu até tentei usar ele na hora que abriu, 
 
 Bona "Vish. Tá precisando atualizar o sistema desse braço aí. Tá tão detonado que parece que foi feito no século passado!"
 
-Connor Spada "Ei, ele não é detonado! É autêntico."
+Connor Spada [alt_work_pain] "Ei, ele não é detonado! É autêntico."
 
 Bona "Detonado, xoxo, capenga e enferrujado."
 
@@ -33,29 +33,29 @@ Narrator "Ela envia por mensagem uma imagem da fachada de uma loja."
 
 SetLayerMedia(cinematic "rua_loja")
 
-Connor Spada "Assistência FNA. Nossa, é lá na República…"
+Connor Spada [alt_work_shock] "Assistência FNA. Nossa, é lá na República…"
 
 Bona "Amigo, quanto mais pro centro da cidade, melhor é a qualidade."
 
 ClearLayerMedia(cinematic)
 
-Connor Spada "…………………………"
+Connor Spada [alt_work_nervous] "…………………………"
 
 "É exatamente o contrário!"
 
 Bona "Confia, o preço é bom e eu conheço o cara. Vai sem medo!"
 
-Connor Spada "Tá, talvez dê pra ir lá com o dinheiro da gorjeta que vou receber hoje."
+Connor Spada [alt_work_thinking] "Tá, talvez dê pra ir lá com o dinheiro da gorjeta que vou receber hoje."
 
 Bona "É sério que você vai ficar pro turno da noite? Cara, aqui vira um inferno quando o bar abre!"
 
 Connor Spada "O registro lá de casa tá vazando ainda mais, nem minhas fitas estão aguentando."
 
-Connor Spada "Fora que… Não falta tanto assim para eu conseguir consertar as pernas da minha avó. Então ela não vai precisar mais ficar presa dentro de casa com aquela cadeira de rodas."
+Connor Spada [alt_work_laugh] "Fora que… Não falta tanto assim para eu conseguir consertar as pernas da minha avó. Então ela não vai precisar mais ficar presa dentro de casa com aquela cadeira de rodas."
 
 Bona "Poxa amigo… Já sabe onde vai ficar nesse turno?"
 
-Connor Spada "Vou ficar no balcão cuidando dos drinks e servindo umas mesas."
+Connor Spada [alt_work_tired] "Vou ficar no balcão cuidando dos drinks e servindo umas mesas."
 
 Bona "Bem, então boa sorte. Até amanhã!"
 
