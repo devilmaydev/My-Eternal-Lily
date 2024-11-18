@@ -26,7 +26,7 @@ Connor Spada [armless_laugh] "Beijos!"
 
 PlaySFX(click), ClearLayerMedia(cinematic)
 
-Narrator "Respirando fundo, Connor apenas se jogou na cama de costas, divagando enquanto olhava pensativo para o teto"
+Narrator "Respirando fundo, Connor apenas se jogou na cama de costas, divagando enquanto olhava pensativo para o teto."
 
 Connor Spada [armless_thinking] "‘Quem é Franz?’"
 

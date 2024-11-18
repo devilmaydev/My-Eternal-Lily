@@ -10,7 +10,7 @@ enter Nano [kindamad] at 0.8 "Que barulheira é essa!?"
 
 Alex "Olhe por você mesmo."
 
-Narrator "Se assustando, os olhos de Nano quase saem do rosto ao ver Conor se apoiando em uma escada velha e enferrujada no letreiro da loja"
+Narrator "Se assustando, os olhos de Nano quase saem do rosto ao ver Conor se apoiando em uma escada velha e enferrujada no letreiro da loja."
 
 CreateCharacter(Connor Spada),Connor Spada.SetSprite(armless_thinking), Connor Spada.Move(0.2 0), Connor Spada.Show()
 
