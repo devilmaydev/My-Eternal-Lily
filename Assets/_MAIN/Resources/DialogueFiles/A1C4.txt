@@ -114,9 +114,9 @@ Cliente "É CLARO QUE NÃO! TU ME DEU UM SOCO, CARA! CÊ TÁ MALUCO!?"
 
 Narrator "A música do local parece desaparecer em meio aos cochichos dos clientes ao redor, enquanto outros procuravam ajudar o cliente que havia sido atingido."
 
-Connor Spada "Ai, minha nossa, eu sinto muito! Eu não sei o que aconteceu com o meu braço." 
+Connor Spada "Ai, minha nossa, eu sinto muito! Eu não sei o que aconteceu com o meu braço."
 
-Cliente "CADÊ O GERENTE!? EU VOU PROCESSAR ESSE LUGAR! MEU PAI É ADVOGADO! NÃO, EU VOU PROCESSAR VOCÊ, SEU FILHO DA PUTA! VOCÊ VAI PAGAR POR ISSO!
+Cliente "CADÊ O GERENTE!? EU VOU PROCESSAR ESSE LUGAR! MEU PAI É ADVOGADO! NÃO, EU VOU PROCESSAR VOCÊ, SEU FILHO DA PUTA! VOCÊ VAI PAGAR POR ISSO!"
 
 Connor Spada "*suspiro* Eu tô tão ferrado…"
 
