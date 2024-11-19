@@ -11,7 +11,7 @@ wait(60)
 
 ClearLayerMedia(cinematic)
 
-HideDB(), wait(4)
+HideDB(), wait(4), PlaySong(box -vol 0.1)
 
 SetLayerMedia(cinematic "CARTA")
 
