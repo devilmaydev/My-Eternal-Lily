@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using _MAIN.Scripts.Enums;
+using Core.Utils.Enums;
 
 namespace Core.Dialogue.DataContainers
 {

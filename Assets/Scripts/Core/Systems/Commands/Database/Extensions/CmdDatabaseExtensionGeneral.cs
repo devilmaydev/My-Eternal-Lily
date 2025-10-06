@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
-using _MAIN.Scripts.Core.IO;
 using Core.Dialogue;
 using Core.Dialogue.Managers;
+using Core.Utils.IO;
 using UnityEngine;
 
 namespace Core.Commands.Database.Extensions
@@ -35,15 +35,13 @@ namespace Core.Commands.Database.Extensions
             parameters.TryGetValue(ParamEnqueue, out bool enqueue, defaultValue: false);
 
             var filePath = FilePaths.GetPathToResource(FilePaths.ResourcesDialogueFiles, fileName);
-            var file = Resources.Load<TextAsset>(filePath);
+            var lines = FileManager.ReadTextAsset(filePath, includeBlankLines: true);
 
-            if (file == null)
+            if (lines == null)
             {
                 Debug.LogWarning($"File '{filePath}' could not be loaded from dialogue files. Please ensure it exists within the '{FilePaths.ResourcesDialogueFiles}' resources folder.");
                 return;
             }
-
-            var lines = FileManager.ReadTextAsset(file, includeBlankLines: true);
             var newConversation = new Conversation(lines);
 
             if (enqueue)

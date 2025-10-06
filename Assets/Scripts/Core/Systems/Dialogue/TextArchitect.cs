@@ -1,5 +1,5 @@
 using System.Collections;
-using _MAIN.Scripts.Enums;
+using Core.Utils.Enums;
 using TMPro;
 using UnityEngine;
 

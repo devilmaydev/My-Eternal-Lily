@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using _MAIN.Scripts.Core.GraphicPanel;
-using _MAIN.Scripts.Core.IO;
+using Core.Utils.IO;
 using UnityEngine;
 using UnityEngine.Video;
 

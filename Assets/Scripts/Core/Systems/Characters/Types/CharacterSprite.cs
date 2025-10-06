@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using _MAIN.Scripts.Enums;
 using Core.Characters;
+using Core.Utils.Enums;
 using UnityEngine;
 using UnityEngine.UI;
 

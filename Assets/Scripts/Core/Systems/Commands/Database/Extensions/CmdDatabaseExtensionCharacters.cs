@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _MAIN.Scripts.Core.Characters.Types;
-using _MAIN.Scripts.Extensions;
 using Core.Characters;
+using Core.Utils.Extensions;
 using UnityEngine;
 
 namespace Core.Commands.Database.Extensions

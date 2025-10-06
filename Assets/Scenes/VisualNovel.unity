@@ -2426,6 +2426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72edbc2423101ea4ea03fade8fe8e5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterConfig: {fileID: 0}
   characterPanel: {fileID: 1740047608}
 --- !u!1 &1045280890
 GameObject:
@@ -3490,11 +3491,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3020cfcff57149fab990db26eac3c343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicMixer: {fileID: 1288703247692698901, guid: 1e787a3074dec4a43b6de01b4e20c39e,
-    type: 2}
-  sfxMixer: {fileID: 419176033316949679, guid: 1e787a3074dec4a43b6de01b4e20c39e, type: 2}
-  voicesMixer: {fileID: 8448542693851119970, guid: 1e787a3074dec4a43b6de01b4e20c39e,
-    type: 2}
+  audioSettings:
+    musicMixer: {fileID: 1288703247692698901, guid: 1e787a3074dec4a43b6de01b4e20c39e,
+      type: 2}
+    sfxMixer: {fileID: 419176033316949679, guid: 1e787a3074dec4a43b6de01b4e20c39e,
+      type: 2}
+    voicesMixer: {fileID: 8448542693851119970, guid: 1e787a3074dec4a43b6de01b4e20c39e,
+      type: 2}
+    masterVolume: 1
+    musicVolume: 1
+    sfxVolume: 1
+    voiceVolume: 1
+    maxAudioSources: 50
+    initialPoolSize: 10
+    trackTransitionSpeed: 1
+    defaultVolume: 1
+    defaultPitch: 1
+    defaultLoop: 0
+    spatialBlend: 0
+    musicPath: Audio/Music/
+    sfxPath: Audio/SFX/
+    voicePath: Audio/Voice/
 --- !u!1 &1569408151
 GameObject:
   m_ObjectHideFlags: 0
@@ -4579,6 +4596,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 93}
   m_SizeDelta: {x: -772.02, y: -487.32}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2101435436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101435438}
+  - component: {fileID: 2101435439}
+  m_Layer: 0
+  m_Name: Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101435438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101435436}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.57235676, y: 0.09736359, z: 1.0871798}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2101435439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101435436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afb55f5a6d36ca4c97fdf0e2ccb4bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testFileName: A1C1
+  runTestOnStart: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4587,3 +4650,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 974479996}
   - {fileID: 850497237}
+  - {fileID: 2101435438}

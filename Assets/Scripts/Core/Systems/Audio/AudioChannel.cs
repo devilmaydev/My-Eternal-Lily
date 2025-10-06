@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Core.Managers;
 using UnityEngine;
 
-namespace Core.Audio
+namespace Core.Systems.Audio
 {
     public class AudioChannel
     {
@@ -12,7 +13,7 @@ namespace Core.Audio
         public Transform TrackContainer { get; }
 
         public AudioTrack ActiveTrack { get; private set; }
-        private List<AudioTrack> _tracks = new();
+        private readonly List<AudioTrack> _tracks = new();
 
         private bool IsLevelingVolume => _coVolumeLeveling != null;
         private Coroutine _coVolumeLeveling;
@@ -37,7 +38,7 @@ namespace Core.Audio
                 return existingTrack;
             }
 
-            var track = new AudioTrack(clip, loop, startingVolume, volumeCap, pitch, this, AudioManager.Instance.musicMixer);
+            var track = new AudioTrack(clip, loop, startingVolume, volumeCap, pitch, this, AudioManager.Instance.MusicMixer);
             track.Play();
 
             SetAsActiveTrack(track);
@@ -91,7 +92,7 @@ namespace Core.Audio
                     if (track == ActiveTrack && Mathf.Approximately(track.Volume, targetVol))
                         continue;
 
-                    track.Volume = Mathf.MoveTowards(track.Volume, targetVol, AudioManager.TrackTransitionSpeed * Time.deltaTime);
+                    track.Volume = Mathf.MoveTowards(track.Volume, targetVol, AudioManager.Instance.TrackTransitionSpeed * Time.deltaTime);
 
                     if (track != ActiveTrack && track.Volume == 0)
                     {

@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using _MAIN.Scripts.Core.Characters.Types;
 using _MAIN.Scripts.Core.ScriptableObjects;
-using _MAIN.Scripts.Enums;
 using Core.Dialogue;
+using Core.Utils.Enums;
 using UnityEngine;
 
 namespace Core.Characters
@@ -15,7 +15,8 @@ namespace Core.Characters
         public Character[] AllCharacters => _characters.Values.ToArray();
 
 
-        private CharacterConfigSO Config => DialogueSystem.Instance.Config.characterConfigurationAsset;
+        [SerializeField] private CharacterConfigSO characterConfig;
+        private CharacterConfigSO Config => characterConfig ?? DialogueSystem.Instance?.Config?.characterConfigurationAsset;
         
         private const string CharacterCastingID = " as ";
         private const string CharacterNameID = "<charname>";

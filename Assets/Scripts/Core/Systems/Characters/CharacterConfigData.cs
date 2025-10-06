@@ -1,5 +1,5 @@
-using _MAIN.Scripts.Enums;
 using Core.Dialogue;
+using Core.Utils.Enums;
 using TMPro;
 using UnityEngine;
 

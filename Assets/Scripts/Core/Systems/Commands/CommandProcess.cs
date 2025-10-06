@@ -1,5 +1,5 @@
 using System;
-using _MAIN.Scripts.Extensions;
+using Core.Utils.Extensions;
 using UnityEngine.Events;
 
 namespace Core.Commands

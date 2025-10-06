@@ -1,12 +1,12 @@
 using System.Collections;
 using _MAIN.Scripts.Core;
 using _MAIN.Scripts.Core.Logical_LInes;
-using _MAIN.Scripts.Enums;
-using _MAIN.Scripts.Extensions;
 using Core.Characters;
 using Core.Commands;
 using Core.Dialogue.DataContainers;
 using Core.Logical_LInes;
+using Core.Utils.Enums;
+using Core.Utils.Extensions;
 using UnityEngine;
 
 namespace Core.Dialogue.Managers

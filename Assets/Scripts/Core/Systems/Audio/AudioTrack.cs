@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace Core.Audio
+namespace Core.Systems.Audio
 {
     public class AudioTrack
     {

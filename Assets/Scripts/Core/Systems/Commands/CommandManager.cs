@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using _MAIN.Scripts.Enums;
-using _MAIN.Scripts.Extensions;
 using Core.Characters;
 using Core.Commands.Database;
+using Core.Utils.Enums;
+using Core.Utils.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 

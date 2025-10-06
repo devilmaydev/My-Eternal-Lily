@@ -33,8 +33,8 @@ AudioMixerController:
   m_AudioMixerGroupViews:
   - guids:
     - 4c056a1f719e4ed46b17a5149fd2f9f2
-    - 00d3a9212da949b4eaf5e71a3b5aa1a4
     - 7b817195f3b523a4094f84e965f308d8
+    - 00d3a9212da949b4eaf5e71a3b5aa1a4
     - fe949ab2b2918bf4190fc58cd891619b
     name: View
   m_CurrentViewIndex: 0
