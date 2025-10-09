@@ -1,4 +1,5 @@
 using Core.Dialogue;
+using Core.Systems.Dialogue;
 using Core.Utils.Enums;
 using TMPro;
 using UnityEngine;

@@ -1,4 +1,5 @@
 using _MAIN.Scripts.Core;
+using Core.Systems.Dialogue;
 using TMPro;
 using UnityEngine;
 

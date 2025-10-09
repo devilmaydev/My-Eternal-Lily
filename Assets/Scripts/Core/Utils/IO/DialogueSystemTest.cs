@@ -5,6 +5,9 @@ using Core.Commands;
 using Core.Characters;
 using Core.Utils.IO;
 using System.Collections;
+using Core.Systems.Commands;
+using Core.Systems.Dialogue;
+using Core.Managers;
 
 namespace Core.Utils.IO
 {

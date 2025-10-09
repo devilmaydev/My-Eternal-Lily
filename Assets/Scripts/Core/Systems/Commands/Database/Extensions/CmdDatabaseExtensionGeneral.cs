@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
-using Core.Dialogue;
 using Core.Dialogue.Managers;
+using Core.Systems.Dialogue;
 using Core.Utils.IO;
 using UnityEngine;
 

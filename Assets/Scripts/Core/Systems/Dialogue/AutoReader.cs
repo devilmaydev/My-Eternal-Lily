@@ -1,6 +1,7 @@
 using System.Collections;
 using Core.Dialogue;
 using Core.Dialogue.Managers;
+using Core.Systems.Dialogue;
 using TMPro;
 using UnityEngine;
 

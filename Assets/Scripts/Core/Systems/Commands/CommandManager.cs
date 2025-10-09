@@ -4,24 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Core.Characters;
+using Core.Commands;
 using Core.Commands.Database;
+using Core.Systems.Commands.Events;
+using Core.Systems.Commands.Interfaces;
+using Core.Systems.Commands.Settings;
 using Core.Utils.Enums;
 using Core.Utils.Extensions;
+using Core.Managers;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Core.Commands
+namespace Core.Systems.Commands
 {
-    public class CommandManager : MonoBehaviour
+    public class CommandManager : MonoBehaviour, ICommandService
     {
         public static CommandManager Instance { get; private set; }
         private static Coroutine _process = null;
         private static bool _isRunning => _process != null;
     
+        [Header("Command Settings")]
+        [SerializeField] private VnCommandSettings commandSettings;
+        public VnCommandSettings CommandSettings => commandSettings;
+        
         private CommandsDatabase _database;
-    
         private Dictionary<string, CommandsDatabase> _subDatabases = new();
         public List<CommandProcess> ActiveProcesses = new();
+        
+        // Events (ICommandService)
+        public event System.Action<string> OnCommandExecuted;
+        public event System.Action<string> OnCommandFailed;
+        public event System.Action<CommandProcess> OnProcessStarted;
+        public event System.Action<CommandProcess> OnProcessCompleted;
+        public event System.Action<CommandProcess> OnProcessStopped;
     
         private const char SubCommandIdentifier = '.';
         public const string DatabaseCharactersBase = "characters";
@@ -30,6 +45,10 @@ namespace Core.Commands
         public const string DatabaseCharactersModel3D = "characters_model3D";
 
         private CommandProcess TopProcess => ActiveProcesses.Last();
+        
+        // Properties (ICommandService)
+        public bool IsRunning => _isRunning;
+        public int ActiveProcessCount => ActiveProcesses.Count;
 
         private void Awake()
         {
@@ -54,14 +73,18 @@ namespace Core.Commands
                 DestroyImmediate(gameObject);
         }
     
-        private CoroutineWrapper ExecuteCharacterCommand(string commandName, params string[] args)
+        public CoroutineWrapper ExecuteCharacterCommand(string commandName, params string[] args)
         {
             Delegate command;
+            string characterName = args.Length > 0 ? args[0] : "Unknown";
 
             var db = _subDatabases[DatabaseCharactersBase];
             if (db.HasCommand(commandName))
             {
                 command = db.GetCommand(commandName);
+                OnCommandExecuted?.Invoke(commandName);
+                CommandEvents.InvokeCommandExecuted(commandName);
+                CommandEvents.InvokeCharacterCommandExecuted(characterName, commandName);
                 return StartProcess(commandName, command, args);
             }
 
@@ -78,8 +101,16 @@ namespace Core.Commands
             command = db.GetCommand(commandName);
 
             if (command != null)
+            {
+                OnCommandExecuted?.Invoke(commandName);
+                CommandEvents.InvokeCommandExecuted(commandName);
+                CommandEvents.InvokeCharacterCommandExecuted(characterName, commandName);
                 return StartProcess(commandName, command, args);
+            }
 
+            OnCommandFailed?.Invoke(commandName);
+            CommandEvents.InvokeCommandFailed(commandName);
+            CommandEvents.InvokeCharacterCommandFailed(characterName, commandName);
             Debug.LogError($"Command Manager was unable to execute command '{commandName}' on character '{args[0]}'. The character name or command may be invalid.");
             return null;
         }
@@ -88,12 +119,25 @@ namespace Core.Commands
         {
             if (commandName.Contains(SubCommandIdentifier))
                 return ExecuteSubCommand(commandName, args);
+                
             var command = _database.GetCommand(commandName);
-        
-            return command == null ? null : StartProcess(commandName, command, args);
+            
+            if (command == null)
+            {
+                OnCommandFailed?.Invoke(commandName);
+                CommandEvents.InvokeCommandFailed(commandName);
+                CommandEvents.InvokeCommandNotFound(commandName);
+                return null;
+            }
+            
+            OnCommandExecuted?.Invoke(commandName);
+            CommandEvents.InvokeCommandExecuted(commandName);
+            CommandEvents.InvokeCommandStarted(commandName, args);
+            
+            return StartProcess(commandName, command, args);
         }
     
-        private CoroutineWrapper ExecuteSubCommand(string commandName, string[] args)
+        public CoroutineWrapper ExecuteSubCommand(string commandName, string[] args)
         {
             var parts = commandName.Split(SubCommandIdentifier);
             var databaseName = string.Join(SubCommandIdentifier, parts.Take(parts.Length - 1));
@@ -104,10 +148,16 @@ namespace Core.Commands
                 var command = _subDatabases[databaseName].GetCommand(subCommandName);
                 if (command != null)
                 {
+                    OnCommandExecuted?.Invoke(commandName);
+                    CommandEvents.InvokeCommandExecuted(commandName);
+                    CommandEvents.InvokeCommandStarted(commandName, args);
                     return StartProcess(commandName, command, args);
                 }
                 else
                 {
+                    OnCommandFailed?.Invoke(commandName);
+                    CommandEvents.InvokeCommandFailed(commandName);
+                    CommandEvents.InvokeCommandNotFound(commandName);
                     Debug.LogError($"No command called '{subCommandName}' was found in sub database '{databaseName}'");
                     return null;
                 }
@@ -124,6 +174,9 @@ namespace Core.Commands
                 return ExecuteCharacterCommand(subCommandName, args);
             }
 
+            OnCommandFailed?.Invoke(commandName);
+            CommandEvents.InvokeCommandFailed(commandName);
+            CommandEvents.InvokeCommandNotFound(commandName);
             Debug.LogError($"No sub database called '{databaseName}' exists! Command '{subCommandName}' could not be run.");
             return null;
         }
@@ -133,6 +186,9 @@ namespace Core.Commands
             var processID = Guid.NewGuid();
             var cmd = new CommandProcess(processID, commandName, command, null, args, null);
             ActiveProcesses.Add(cmd);
+
+            OnProcessStarted?.Invoke(cmd);
+            CommandEvents.InvokeProcessStarted(cmd);
 
             var co = StartCoroutine(RunningProcess(cmd));
 
@@ -144,6 +200,10 @@ namespace Core.Commands
         private IEnumerator RunningProcess(CommandProcess process)
         {
             yield return WaitProcessComplete(process.Command, process.Args);
+
+            OnProcessCompleted?.Invoke(process);
+            CommandEvents.InvokeProcessCompleted(process);
+            CommandEvents.InvokeCommandCompleted(process.ProcessName, process.Args);
 
             KillProcess(process);
         }
@@ -172,8 +232,14 @@ namespace Core.Commands
             ActiveProcesses.Remove(cmd);
 
             if (cmd.RunningProcess is { IsDone: false })
+            {
                 cmd.RunningProcess.Stop();
+                OnProcessStopped?.Invoke(cmd);
+                CommandEvents.InvokeProcessStopped(cmd);
+            }
 
+            OnProcessStopped?.Invoke(cmd);
+            CommandEvents.InvokeProcessKilled(cmd);
             cmd.OnTerminateAction?.Invoke();
         }
     
@@ -222,7 +288,20 @@ namespace Core.Commands
             var newDatabase = new CommandsDatabase();
             _subDatabases.Add(databaseName, newDatabase);
 
+            CommandEvents.InvokeSubDatabaseCreated(databaseName);
+
             return newDatabase;
+        }
+        
+        // Additional interface methods
+        public bool HasCommand(string commandName)
+        {
+            return _database.HasCommand(commandName);
+        }
+        
+        public bool HasSubCommand(string databaseName, string commandName)
+        {
+            return _subDatabases.ContainsKey(databaseName) && _subDatabases[databaseName].HasCommand(commandName);
         }
     }
 }

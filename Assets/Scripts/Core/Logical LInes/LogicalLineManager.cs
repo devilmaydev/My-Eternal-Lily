@@ -5,6 +5,7 @@ using System.Reflection;
 using _MAIN.Scripts.Core.Logical_LInes;
 using Core.Dialogue;
 using Core.Dialogue.DataContainers;
+using Core.Systems.Dialogue;
 using UnityEngine;
 
 namespace Core.Logical_LInes

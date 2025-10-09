@@ -1,20 +1,26 @@
 using System.Collections.Generic;
-using _MAIN.Scripts.Core;
 using _MAIN.Scripts.Core.ScriptableObjects;
 using Core.Characters;
+using Core.Dialogue;
 using Core.Dialogue.DataContainers;
 using Core.Dialogue.Managers;
+using Core.Systems.Dialogue.Events;
+using Core.Systems.Dialogue.Interfaces;
+using Core.Systems.Dialogue.Settings;
+using Core.Managers;
 using UnityEngine;
 
-namespace Core.Dialogue
+namespace Core.Systems.Dialogue
 {
-    public class DialogueSystem : MonoBehaviour
+    public class DialogueSystem : MonoBehaviour, IDialogueService
     {
         public static DialogueSystem Instance { get; private set; }
         
         [SerializeField] private CanvasGroup mainCanvas;
         [SerializeField] private DialogueSystemConfigurationSO config;
+        [SerializeField] private VnDialogueSettings dialogueSettings;
         public DialogueSystemConfigurationSO Config => config;
+        public VnDialogueSettings DialogueSettings => dialogueSettings;
         
         public DialogueContainer dialogueContainer = new();
         public DialogueContinuePrompt dialogueContinuePrompt;
@@ -24,8 +30,15 @@ namespace Core.Dialogue
         private CanvasGroupController _cgController;
 
         public bool IsRunningConversation => ConversationManager.IsRunning;
+        public bool IsInitialized => _isInitialized;
         private bool _isInitialized;
 
+        // Events (IDialogueService)
+        public event System.Action OnDialogueStarted;
+        public event System.Action OnDialogueEnded;
+        public event System.Action<string> OnSpeakerChanged;
+        
+        // Legacy Events (for compatibility)
         public delegate void DialogueSystemEvent();
         public event DialogueSystemEvent OnUserPromptNextEvent;
         
@@ -79,12 +92,21 @@ namespace Core.Dialogue
         public void ShowSpeakerName(string speakerName = "")
         {
             if (speakerName.ToLower() != "narrator")
+            {
                 dialogueContainer.nameContainer.Show(speakerName);
+                OnSpeakerChanged?.Invoke(speakerName);
+                DialogueEvents.InvokeSpeakerChanged(speakerName);
+                DialogueEvents.InvokeSpeakerNameShown(speakerName);
+            }
             else
                 HideSpeakerName();
         }
 
-        public void HideSpeakerName() => dialogueContainer.nameContainer.Hide();
+        public void HideSpeakerName()
+        {
+            dialogueContainer.nameContainer.Hide();
+            DialogueEvents.InvokeSpeakerNameHidden();
+        }
 
         public Coroutine Say(string speaker, string dialogue)
         {
@@ -95,17 +117,25 @@ namespace Core.Dialogue
         public Coroutine Say(List<string> lines)
         {
             var conversation = new Conversation(lines);
-            return ConversationManager.StartConversation(conversation);
+            return Say(conversation);
         }
 
         public Coroutine Say(Conversation conversation)
         {
+            OnDialogueStarted?.Invoke();
+            DialogueEvents.InvokeDialogueStarted();
+            DialogueEvents.InvokeConversationStarted(conversation);
+            
             return ConversationManager.StartConversation(conversation);
         }
 
         public void OnUserPromptNext()
         {
+            // Legacy event
             OnUserPromptNextEvent?.Invoke();
+            
+            // Note: OnUserPromptNext event is handled by InputSystem
+            // DialogueSystem only handles the logic, not the event
             
             if(_autoReader != null && _autoReader.isOn)
                 _autoReader.Disable();
@@ -113,11 +143,23 @@ namespace Core.Dialogue
 
         public void OnSystemPromptNext()
         {
+            // Legacy event
             OnUserPromptNextEvent?.Invoke();
+            
+            // Note: OnUserPromptNext event is handled by InputSystem
+            // DialogueSystem only handles the logic, not the event
         }
         
-        public Coroutine Show(float speed = 1f, bool immediate = false) => _cgController.Show(speed, immediate);
+        public Coroutine Show(float speed = 1f, bool immediate = false)
+        {
+            DialogueEvents.InvokeDialogueUIShown();
+            return _cgController.Show(speed, immediate);
+        }
 
-        public Coroutine Hide(float speed = 1f, bool immediate = false) => _cgController.Hide(speed, immediate);
+        public Coroutine Hide(float speed = 1f, bool immediate = false)
+        {
+            DialogueEvents.InvokeDialogueUIHidden();
+            return _cgController.Hide(speed, immediate);
+        }
     }
 }

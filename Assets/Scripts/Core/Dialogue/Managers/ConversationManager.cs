@@ -5,8 +5,11 @@ using Core.Characters;
 using Core.Commands;
 using Core.Dialogue.DataContainers;
 using Core.Logical_LInes;
+using Core.Systems.Commands;
+using Core.Systems.Dialogue;
 using Core.Utils.Enums;
 using Core.Utils.Extensions;
+using Core.Managers;
 using UnityEngine;
 
 namespace Core.Dialogue.Managers

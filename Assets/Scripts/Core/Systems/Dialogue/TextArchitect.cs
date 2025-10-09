@@ -15,7 +15,6 @@ namespace Core
         public string CurrentText => TmPro.text;
         public string TargetText { get; private set; } = "";
         public string PreText { get; private set; } = "";
-        private int _preTextLength = 0;
         
         public string FullTargetText => PreText + TargetText;
 

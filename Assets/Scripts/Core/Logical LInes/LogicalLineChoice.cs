@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using _MAIN.Scripts.Core.Feature_Panels.ChoicePanel;
 using _MAIN.Scripts.Core.Logical_LInes;
-using Core.Dialogue;
 using Core.Dialogue.DataContainers;
 using Core.Dialogue.Managers;
+using Core.Systems.Dialogue;
 using UnityEngine;
 
 namespace Core.Logical_LInes

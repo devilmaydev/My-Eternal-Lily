@@ -1,5 +1,6 @@
 using System.Collections;
 using Core.Dialogue;
+using Core.Systems.Dialogue;
 using UnityEngine;
 
 namespace Core

@@ -1,22 +1,35 @@
 using System.Collections.Generic;
 using System.Linq;
-using _MAIN.Scripts.Core.Characters.Types;
 using _MAIN.Scripts.Core.ScriptableObjects;
-using Core.Dialogue;
-using Core.Utils.Enums;
+using Core.Systems.Dialogue;
+using Core.Systems.Characters.Interfaces;
+using Core.Systems.Characters.Events;
+using Core.Systems.Characters.Settings;
+using Core.Systems.Characters.Factory;
+using Core.Characters;
 using UnityEngine;
 
-namespace Core.Characters
+namespace Core.Managers
 {
-    public class CharacterManager : MonoBehaviour
+    public class CharacterManager : MonoBehaviour, ICharacterService
     {
         public static CharacterManager Instance { get; private set; }
         private Dictionary<string, Character> _characters = new();
         public Character[] AllCharacters => _characters.Values.ToArray();
 
+        [Header("Character Settings")]
+        [SerializeField] private VnCharacterSettings characterSettings;
+        public VnCharacterSettings CharacterSettings => characterSettings;
 
         [SerializeField] private CharacterConfigSO characterConfig;
         private CharacterConfigSO Config => characterConfig ?? DialogueSystem.Instance?.Config?.characterConfigurationAsset;
+        
+        // Events (ICharacterService)
+        public event System.Action<Character> OnCharacterCreated;
+        public event System.Action<Character> OnCharacterDestroyed;
+        public event System.Action<Character> OnCharacterShown;
+        public event System.Action<Character> OnCharacterHidden;
+        public event System.Action<Character, int> OnCharacterPriorityChanged;
         
         private const string CharacterCastingID = " as ";
         private const string CharacterNameID = "<charname>";
@@ -26,6 +39,10 @@ namespace Core.Characters
 
         [SerializeField] private RectTransform characterPanel = null;
         public RectTransform CharacterPanel => characterPanel;
+        
+        // Properties (ICharacterService)
+        public int CharacterCount => _characters.Count;
+        
         private void Awake() => Instance = this;
         
         public CharacterConfigData GetCharacterConfig(string characterName, bool getOriginal = false)
@@ -61,9 +78,19 @@ namespace Core.Characters
 
             var info = GetCharacterInfo(characterName);
 
-            var character = CreateCharacterFromInfo(info);
+            var character = CharacterFactory.CreateCharacterWithValidation(info.Name, info.Config, info.Prefab, info.RootCharacterFolder);
+
+            if (character == null)
+            {
+                Debug.LogError($"Failed to create character '{characterName}'");
+                return null;
+            }
 
             _characters.Add(info.Name.ToLower(), character);
+
+            // Disparar eventos
+            OnCharacterCreated?.Invoke(character);
+            CharacterEvents.InvokeCharacterCreated(character);
 
             if (revealAfterCreated)
                 character.Show();
@@ -94,17 +121,6 @@ namespace Core.Characters
             return Resources.Load<GameObject>(prefabPath);
         }
 
-        private Character CreateCharacterFromInfo(CharacterInfo info)
-        {
-            return info.Config.characterType switch
-            {
-                ECharacterType.Text => new CharacterText(info.Name, info.Config),
-                ECharacterType.Sprite or ECharacterType.SpriteSheet => new CharacterSprite(info.Name, info.Config, info.Prefab, info.RootCharacterFolder),
-                ECharacterType.Live2D => new CharacterLive2D(info.Name, info.Config, info.Prefab, info.RootCharacterFolder),
-                ECharacterType.Model3D => new CharacterModel3D(info.Name, info.Config, info.Prefab, info.RootCharacterFolder),
-                _ => null
-            };
-        }
 
         public void SortCharacters()
         {
@@ -118,6 +134,9 @@ namespace Core.Characters
             activeCharacters.Concat(inactiveCharacters);
 
             SortCharacters(activeCharacters);
+            
+            // Disparar eventos
+            CharacterEvents.InvokeCharactersSorted();
         }
 
         public void SortCharacters(string[] charactersNames)
@@ -144,6 +163,9 @@ namespace Core.Characters
             var allCharacters = remainingCharacters.Concat(sortedCharacters).ToList();
             
             SortCharacters(allCharacters);
+            
+            // Disparar eventos
+            CharacterEvents.InvokeCharactersSortedByNames(charactersNames);
         }
 
         private void SortCharacters(List<Character> charactersSorted)
@@ -154,6 +176,48 @@ namespace Core.Characters
         }
         
         public string FormatCharacterPath(string path, string characterName) => path.Replace(CharacterNameID, characterName);
+        
+        // Additional interface methods
+        public void DestroyCharacter(string characterName)
+        {
+            if (!_characters.ContainsKey(characterName.ToLower()))
+            {
+                Debug.LogWarning($"Character '{characterName}' does not exist!");
+                return;
+            }
+            
+            var character = _characters[characterName.ToLower()];
+            _characters.Remove(characterName.ToLower());
+            
+            // Disparar eventos
+            OnCharacterDestroyed?.Invoke(character);
+            CharacterEvents.InvokeCharacterDestroyed(character);
+            
+            // Destruir o personagem se necessário
+            if (character.Root != null)
+            {
+                Destroy(character.Root.gameObject);
+            }
+        }
+        
+        public void DestroyAllCharacters()
+        {
+            var charactersToDestroy = _characters.Values.ToList();
+            _characters.Clear();
+            
+            foreach (var character in charactersToDestroy)
+            {
+                // Disparar eventos
+                OnCharacterDestroyed?.Invoke(character);
+                CharacterEvents.InvokeCharacterDestroyed(character);
+                
+                // Destruir o personagem se necessário
+                if (character.Root != null)
+                {
+                    Destroy(character.Root.gameObject);
+                }
+            }
+        }
 
         private class CharacterInfo
         {
